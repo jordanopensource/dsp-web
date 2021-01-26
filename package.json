@@ -1,0 +1,21 @@
+{
+  "name": "dsp-web",
+  "version": "1.0.0",
+  "description": "Digital Safety Portal - Jordan Open Source Association",
+  "author": "JOSA",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
+    "core-js": "^3.8.2",
+    "nuxt": "^2.14.12"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^3.4.2"
+  }
+}
