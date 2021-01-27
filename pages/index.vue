@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ $t('title') }}</h1>
+    <h1 class="ltr:text-left rtl:text-right">{{ $t('title') }}</h1>
   </div>
 </template>
 

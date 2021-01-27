@@ -15,4 +15,10 @@ module.exports = {
       },
     }
   },
+  variants: {
+    textAlign: ['responsive', 'direction'],
+  },
+  plugins: [
+    require('tailwindcss-dir')(),
+  ]
 }
