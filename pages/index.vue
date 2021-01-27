@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Digital Safety Portal - JOSA</h1>
+    <h1>{{ $t('title') }}</h1>
   </div>
 </template>
 
