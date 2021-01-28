@@ -1,0 +1,58 @@
+/* Typography Styles */
+
+/* Body */
+body {
+  @apply text-josa-black;
+}
+
+[lang="en"] body, .en {
+  @apply font-lato text-base leading-normal;
+}
+
+[lang="ar"] body, .ar {
+  @apply font-almarai text-base leading-normal;
+}
+
+/* H */
+[lang="en"] h1,
+[lang="en"] h2,
+[lang="en"] h3,
+[lang="en"] h4,
+[lang="en"] h5,
+[lang="en"] h6 {
+  @apply font-aleoLight leading-normal text-josa-black;
+}
+
+[lang="ar"] h1,
+[lang="ar"] h2,
+[lang="ar"] h3,
+[lang="ar"] h4,
+[lang="ar"] h5,
+[lang="ar"] h6 {
+  @apply font-almarai leading-normal text-josa-black;
+}
+
+/* h1 */
+h1 {
+  @apply font-medium text-5xl;
+}
+
+/* h2 */
+h2 {
+  @apply font-medium text-4xl;
+}
+
+/* h3 */
+[lang="en"] h3 {
+  @apply font-medium text-2xl font-lato;
+}
+
+[lang="ar"] h3 {
+  @apply font-medium text-2xl font-almarai;
+}
+
+a:hover > h1, a:hover > h2, a:hover > h3 {
+  @apply text-josa-blue;
+  transition: color 0.25s linear;
+  -webkit-transition: color 0.25s linear;
+}
