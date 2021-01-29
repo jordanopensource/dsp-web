@@ -1,4 +1,5 @@
 export default {
     title: "Digital Safety Portal - JOSA",
-    spotlight: 'Spotlight'
+    spotlight: 'Spotlight',
+    popularGuides: 'Popular Guides'
 }
