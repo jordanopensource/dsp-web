@@ -9,7 +9,7 @@
         :title="item['title_' + $i18n.locale]"
         :dateCreated="item.created_at"
         :dateUpdated="item.updated_at"
-        :link="localePath('/guides/' + item.id)" />
+        :link="localePath('/digital-safety/' + item.id)" />
   </div>
 </template>
 

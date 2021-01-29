@@ -23,7 +23,7 @@
   export default {
     computed: {
       link() {
-        return this.localePath('/guides/' + this.id)
+        return this.localePath('/digital-safety/' + this.id)
       }
     },
     props: {
