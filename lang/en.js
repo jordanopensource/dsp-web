@@ -1,3 +1,4 @@
 export default {
-    title: "Digital Safety Portal - JOSA"
+    title: "Digital Safety Portal - JOSA",
+    spotlight: 'Spotlight'
 }
