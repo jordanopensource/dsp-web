@@ -2,5 +2,6 @@ export default {
     title: "Digital Safety Portal - JOSA",
     spotlight: 'Spotlight',
     popularGuides: 'Popular Guides',
-    allGuides: 'All Guides'
+    allGuides: 'All Guides',
+    all: 'All'
 }
