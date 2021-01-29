@@ -76,6 +76,14 @@ export default {
     seo: true
   },
 
+  publicRuntimeConfig: {
+    APIBaseURL: process.env.API_BASE_URL,
+  },
+
+  privateRuntimeConfig: {
+    APIBaseURL: process.env.API_BASE_URL,
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
