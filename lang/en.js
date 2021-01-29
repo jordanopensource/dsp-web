@@ -3,5 +3,6 @@ export default {
     spotlight: 'Spotlight',
     popularGuides: 'Popular Guides',
     allGuides: 'All Guides',
-    all: 'All'
+    all: 'All',
+    content: 'Content'
 }
