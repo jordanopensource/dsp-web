@@ -13,6 +13,14 @@ body {
   @apply font-almarai text-base leading-normal;
 }
 
+.en {
+  @apply font-lato !important;
+}
+
+.ar {
+  @apply font-almarai !important;
+}
+
 /* H */
 [lang="en"] h1,
 [lang="en"] h2,
