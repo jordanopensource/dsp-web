@@ -27,6 +27,7 @@ export default {
   plugins: [
     { src: '~/plugins/i18n' },
     { src: '~/plugins/datetime-filter' },
+    { src: '~/plugins/vue2-filters' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
