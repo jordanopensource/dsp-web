@@ -20,7 +20,7 @@ module.exports = {
         },
         'josa-grey': {
           default: '#f9f9f9',
-      },
+        },
       },
       fontFamily: {
         'aleoLight': 'aleo-light',
@@ -34,6 +34,12 @@ module.exports = {
   },
   variants: {
     textAlign: ['responsive', 'direction'],
+    margin: ['responsive', 'direction'],
+    padding: ['responsive', 'direction'],
+    fontSize: ['responsive', 'direction'],
+    lineHeight: ['responsive', 'direction'],
+    borderRadius: ['responsive', 'direction'],
+    inset: ['responsive', 'hover', 'focus', 'direction'],
   },
   plugins: [
     require('tailwindcss-dir')(),
