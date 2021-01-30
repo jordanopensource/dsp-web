@@ -6,5 +6,6 @@ export default {
     all: 'All',
     content: 'Content',
     weeklyRecommendations: 'Weekly Recommendations',
-    availableOn: 'Available on'
+    availableOn: 'Available on',
+    secureForm: 'Secure Form',
 }

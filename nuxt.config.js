@@ -14,6 +14,19 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href:'https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap' },
       { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"},
+    ],
+    script:[
+      {
+        src:"https://code.jquery.com/jquery-2.1.4.min.js",
+        body: true,
+        type: "text/javascript"
+      },
+      {
+        src: 'https://ots.jordanopensource.org/assets/form/form.js',
+        id: 'zammad_form_script',
+        body: true,
+        type: "text/javascript"
+      },
     ]
   },
 
@@ -39,6 +52,7 @@ export default {
     { path: '~/components/Views/', prefix: 'Views' },
     { path: '~/components/Sliders/', prefix: 'Sliders' },
     { path: '~/components/SlideTypes/', prefix: 'SlideTypes' },
+    { path: '~/components/Forms/', prefix: 'Forms' },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
