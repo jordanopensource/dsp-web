@@ -28,7 +28,7 @@ body {
 [lang="en"] h4,
 [lang="en"] h5,
 [lang="en"] h6 {
-  @apply font-aleoLight leading-normal text-josa-black;
+  @apply font-aleoLightItalic leading-normal text-josa-black;
 }
 
 [lang="ar"] h1,
