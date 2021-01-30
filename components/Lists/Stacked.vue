@@ -1,6 +1,7 @@
 <template>
   <div class="stacked-list container">
     <h2 class="my-4">{{ title }}</h2>
+    <p v-if="!contentList.length">{{ $t('noResults') }}</p>
     <ViewsCompact
         v-for="item in contentList"
         :key="item.id"

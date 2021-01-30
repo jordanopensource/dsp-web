@@ -10,4 +10,5 @@ export default {
     secureForm: 'Secure Form',
     otherHelpdesks: 'Other Helpdesks',
     helpdesk: 'Helpdesk',
+    noResults: 'No results',
 }
