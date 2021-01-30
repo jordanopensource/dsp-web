@@ -11,7 +11,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        'josa-black': '#2e3436',
+        'josa-black': {
+          'light': '#282e30',
+          default: '#2e3436',
+        },
         'josa-blue': {
           'light': '#c5e1ee',
           default: '#3897c0',

@@ -2,6 +2,7 @@
   <div :dir="$dir()" class="bg-josa-grey-light">
     <UIHeader />
     <Nuxt />
+    <UIFooter />
   </div>
 </template>
 
