@@ -8,4 +8,5 @@ export default {
     weeklyRecommendations: 'Weekly Recommendations',
     availableOn: 'Available on',
     secureForm: 'Secure Form',
+    otherHelpdesks: 'Other Helpdesks',
 }
