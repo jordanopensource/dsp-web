@@ -19,7 +19,10 @@ module.exports = {
           'veryDark': '#163e4e',
         },
         'josa-grey': {
-          default: '#f9f9f9',
+          'very-light': '#cfcfcf',
+          'light': '#f9f9f9',
+          default: '#c3d4e0',
+          'dark': '#7a93a4'
         },
       },
       fontFamily: {
@@ -30,6 +33,9 @@ module.exports = {
         'lato': 'lato',
         'almarai': 'Almarai',
       },
+      maxWidth: {
+        'xxs': '12rem'
+      }
     }
   },
   variants: {
