@@ -54,6 +54,7 @@ export default {
     { path: '~/components/SlideTypes/', prefix: 'SlideTypes' },
     { path: '~/components/Forms/', prefix: 'Forms' },
     { path: '~/components/Helpdesk/', prefix: 'Helpdesk' },
+    { path: '~/components/Elements/', prefix: 'Elements' },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
