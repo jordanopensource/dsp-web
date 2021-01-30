@@ -28,6 +28,7 @@ export default {
     { src: '~/plugins/i18n' },
     { src: '~/plugins/datetime-filter' },
     { src: '~/plugins/vue2-filters' },
+    { src: '~/plugins/vue-agile' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -94,5 +95,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vue-agile']
   }
 }
