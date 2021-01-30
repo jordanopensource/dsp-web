@@ -1,9 +1,9 @@
 <template>
   <div>
     <SlidersGuides :slider="slider" v-if="slider" />
-    <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="mt-10" />
     <ListsRecomSpotlight v-if="recommendations.length" :title="$t('weeklyRecommendations')"
       :content="recommendations[0]" class="mt-10" />
+    <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="mt-10" />
   </div>
 </template>
 
