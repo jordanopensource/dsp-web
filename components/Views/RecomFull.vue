@@ -1,5 +1,5 @@
 <template>
-  <div class="view-full py-8">
+  <div class="view-full">
     <div class="flex flex-row flex-wrap md:flex-no-wrap rounded-lg">
       <div class="block flex-shrink-0 w-full md:w-1/2 lg:w-2/5">
         <UIImage v-if="image" :image="image" size="medium" class="image" />
@@ -12,8 +12,8 @@
         <h3 v-if="subtitleBottom" class="mt-6">{{$t('availableOn') + ' ' + subtitleBottom }}</h3>
       </div>
     </div>
-    <div v-if="features.length" class="my-6 flex flex-col sm:flex-row flex-wrap justify-between w-full">
-      <div v-for="feature in features" :key="feature.id" class="my-4">
+    <div v-if="features.length" class="mt-6 flex flex-col sm:flex-row flex-wrap justify-between w-full">
+      <div v-for="feature in features" :key="feature.id" class="mt-4">
         <img src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
         <p class="inline-block ltr:ml-4 rtl:mr-4">{{feature['title_' + $i18n.locale]}}</p>
       </div>

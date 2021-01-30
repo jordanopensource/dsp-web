@@ -2,7 +2,6 @@
   <div class="spotlight-list container">
     <h2 class="my-4">{{ title }}</h2>
     <ViewsRecomFull
-        class="mb-6"
         :id="content.id" 
         :image="content.image" 
         :title="content['name_' + $i18n.locale]"
