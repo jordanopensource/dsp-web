@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <NuxtLink v-for="item in menuItems" :key="item.id" :to="localePath('/' + item.page_id)"
+    <NuxtLink v-for="item in menu.Menu" :key="item.id" :to="ifSlash(item.path) ? localePath(item.path) : localePath('/' + item.path)"
       class="block lg:inline-block py-2 lg:py-0 px-0 lg:ltr:pl-4 lg:rtl:pr-4">
-      <h3>{{ item['title_' + $i18n.locale] }}</h3>
+      <h3>{{ item['name_' + $i18n.locale] }}</h3>
     </NuxtLink>
     <UILanguageSwitcher />
   </nav>
@@ -11,8 +11,17 @@
 <script>
   export default {
     computed: {
-      menuItems() {
-        return this.$store.getters.getPages
+      menu() {
+        return this.$store.getters.getMenus.find((obj) => {
+          return obj.menu_id == 'main'
+        })
+      }
+    },
+    methods: {
+      ifSlash(str) {
+        if (str.startsWith('/')) {
+          return true
+        }
       }
     }
   }
