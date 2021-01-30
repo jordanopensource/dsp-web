@@ -4,6 +4,7 @@
     <ListsRecomSpotlight v-if="recommendations.length" :title="$t('weeklyRecommendations')"
       :content="recommendations[0]" class="mt-10" />
     <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="mt-10" />
+    <Helpdesk class="mt-10" />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
       this.$store.dispatch('guides/fetch')
       this.$store.dispatch('sliders/fetch')
       this.$store.dispatch('recommendations/fetch')
+      this.$store.dispatch('helpdesk/fetch')
     },
     computed: {
       guides() {
