@@ -9,4 +9,5 @@ export default {
     availableOn: 'Available on',
     secureForm: 'Secure Form',
     otherHelpdesks: 'Other Helpdesks',
+    helpdesk: 'Helpdesk',
 }
