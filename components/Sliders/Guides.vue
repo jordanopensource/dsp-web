@@ -1,6 +1,6 @@
 <template>
   <div class="slider bg-white">
-    <div class="container py-16">
+    <div class="container py-10">
       <client-only placeholder="Loading...">
         <agile :options="sliderOption">
           <SlideTypesGuide v-for="slide in slider.slides[0].Slide" :key="slide.id" :id='"slide-" + slide.id'
