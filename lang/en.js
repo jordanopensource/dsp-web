@@ -4,5 +4,7 @@ export default {
     popularGuides: 'Popular Guides',
     allGuides: 'All Guides',
     all: 'All',
-    content: 'Content'
+    content: 'Content',
+    weeklyRecommendations: 'Weekly Recommendations',
+    availableOn: 'Available on'
 }

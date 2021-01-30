@@ -2,6 +2,8 @@
   <div>
     <SlidersGuides :slider="slider" v-if="slider" />
     <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="mt-10" />
+    <ListsRecomSpotlight v-if="recommendations.length" :title="$t('weeklyRecommendations')"
+      :content="recommendations[0]" class="mt-10" />
   </div>
 </template>
 
@@ -10,6 +12,7 @@
     created() {
       this.$store.dispatch('guides/fetch')
       this.$store.dispatch('sliders/fetch')
+      this.$store.dispatch('recommendations/fetch')
     },
     computed: {
       guides() {
@@ -19,7 +22,10 @@
         return this.$store.state.sliders.list.find((obj) => {
           return obj.name == 'home-slider'
         })
-      }
+      },
+      recommendations() {
+        return this.$store.state.recommendations.list
+      },
     }
   }
 
