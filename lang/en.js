@@ -11,4 +11,6 @@ export default {
     otherHelpdesks: 'Other Helpdesks',
     helpdesk: 'Helpdesk',
     noResults: 'No results',
+    search: 'Search',
+    searchResults: 'Searching for:',
 }

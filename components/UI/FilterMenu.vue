@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 container">
+  <div>
     <div class="flex flex-col md:flex-row">
       <span :class="active == 'all' ? 'active': ''" class="link" @click="setActive('all')"><h3>{{ $t('all') }}</h3></span>
       <span v-for="item in items" :key="item.id" :class="active == item.name ? 'active': ''" class="link"
