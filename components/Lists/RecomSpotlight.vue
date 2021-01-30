@@ -1,6 +1,6 @@
 <template>
   <div class="spotlight-list container">
-    <h2 class="my-4">{{ title }}</h2>
+    <h2 class="my-8">{{ title }}</h2>
     <ViewsRecomFull
         :id="content.id" 
         :image="content.image" 
