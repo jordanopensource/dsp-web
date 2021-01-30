@@ -59,6 +59,15 @@ h2 {
   @apply font-medium text-2xl font-almarai;
 }
 
+/* h4 */
+[lang="en"] h4 {
+  @apply font-medium text-lg font-lato;
+}
+
+[lang="ar"] h4 {
+  @apply font-medium text-lg font-almarai;
+}
+
 a:hover > h1, a:hover > h2, a:hover > h3 {
   @apply text-josa-blue;
   transition: color 0.25s linear;
