@@ -2,7 +2,7 @@
   <span>
     <NuxtLink v-for="locale in locales" :key="locale.code" :to="switchLocalePath(locale.code)"
       class="block lg:inline-block py-2 lg:py-0 px-0 lg:ltr:pl-4 lg:rtl:pr-4">
-      <h3 :class="locale.code">{{ locale.name }}</h3>
+      <h4 :class="locale.code">{{ locale.name }}</h4>
     </NuxtLink>
   </span>
 </template>
