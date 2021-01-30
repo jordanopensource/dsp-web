@@ -37,6 +37,7 @@ export default {
     { path: '~/components/UI/', prefix: 'UI' },
     { path: '~/components/Lists/', prefix: 'Lists' },
     { path: '~/components/Views/', prefix: 'Views' },
+    { path: '~/components/Sliders/', prefix: 'Sliders' },
     { path: '~/components/SlideTypes/', prefix: 'SlideTypes' },
   ],
 
