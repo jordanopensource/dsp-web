@@ -1,15 +1,15 @@
-/* Anchor tags */
-a {
+/* Transitions */
+a, button, .link {
   transition: color 0.25s linear;
   -webkit-transition: color 0.25s linear;
   cursor: pointer;
 }
 
+/* Anchor tags */
 a:hover,
 a.active {
   @apply text-josa-blue;
 }
-
 
 /* Lists */
 ol {
@@ -31,5 +31,5 @@ ul {
 
 [dir="rtl"] ol>li,
 [dir="rtl"] ul>li {
-  @apply mr-4
+  @apply mr-4;
 }

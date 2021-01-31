@@ -7,7 +7,7 @@
         <NuxtLink :to="localePath('/digital-safety/' + item.id)" class="flex flex-row flex-no-wrap items-center">
           <UIImage v-if="item.icon" :image="item.icon" size="small" class="icon inline-block" />
           <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
-          <h4 class="inline-block ltr:ml-4 rtl:mr-4 max-w-xxs">{{item['title_' + $i18n.locale]}}</h4>
+          <h4 class="link inline-block ltr:ml-4 rtl:mr-4 max-w-xxs hover:text-josa-blue">{{item['title_' + $i18n.locale]}}</h4>
         </NuxtLink>
       </div>
     </div>
@@ -26,7 +26,7 @@
 
 </script>
 
-<style>
+<style scoped>
   .icon {
     width: 50px;
     height: 50px;
