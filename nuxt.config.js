@@ -56,6 +56,7 @@ export default {
     { path: '~/components/Forms/', prefix: 'Forms' },
     { path: '~/components/Helpdesk/', prefix: 'Helpdesk' },
     { path: '~/components/Elements/', prefix: 'Elements' },
+    { path: '~/components/Tabs/', prefix: 'Tabs' },
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
