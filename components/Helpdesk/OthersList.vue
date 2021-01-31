@@ -1,11 +1,13 @@
 <template>
   <div>
     <h3 class="mb-4">{{ $t('otherHelpdesks') }}</h3>
-    <div v-for="item in contentList" :key="item.id">
+    <div v-for="item in contentList" :key="item.id" class="flex flex-row items-center">
       <UIImage v-if="item.image" :image="item.image" size="small" class="icon inline-block" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
+      <span>
       <p class="inline-block mx-4">{{item['organisation_' + $i18n.locale]}}</p>
-      <p class="inline-block">{{item['description_' + $i18n.locale]}}</p>
+      <p class="inline-block mx-4">{{item['description_' + $i18n.locale]}}</p>
+      </span>
     </div>
   </div>
 </template>
