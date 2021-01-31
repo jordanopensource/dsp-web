@@ -13,4 +13,5 @@ export default {
     noResults: 'No results',
     search: 'Search',
     searchResults: 'Searching for:',
+    stepByStep: 'Step-by-step'
 }
