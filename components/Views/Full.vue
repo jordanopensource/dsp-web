@@ -4,16 +4,16 @@
       <UIImage v-if="image" :image="image" size="medium" class="image" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
     </NuxtLink>
-    <div class="md:ltr:ml-8 md:rtl:mr-8 flex flex-col flex-grow">
+    <div class="md:ltr:ml-8 md:rtl:mr-8 mt-4 md:mt-0 flex flex-col flex-grow">
       <NuxtLink :to="link">
-        <h3 class="mt-6">{{ title }}</h3>
+        <h3>{{ title }}</h3>
       </NuxtLink>
       <p>{{ dateCreated | fullDate($i18n.locale) }} / {{ dateUpdated | fullDate($i18n.locale) }}</p>
-      <p class="flex-grow my-6">{{ description }}</p>
-      <div v-if="contributor">
+      <p class="flex-grow my-4">{{ description }}</p>
+      <div v-if="contributor" class="flex flex-row flex-no-wrap items-center">
         <UIImage v-if="contributor.image" :image="contributor.image" size="small" class="icon inline-block" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
-        <p class="inline-block">{{contributor['name_' + $i18n.locale]}}</p>
+        <h4 class="inline-block ltr:ml-4 rtl:mr-4 max-w-xxs">{{contributor['name_' + $i18n.locale]}}</h4>
       </div>
     </div>
   </div>
