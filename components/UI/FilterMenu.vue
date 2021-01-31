@@ -1,9 +1,13 @@
 <template>
   <div>
     <div class="flex flex-col md:flex-row">
-      <span :class="active == 'all' ? 'active': ''" class="link" @click="setActive('all')"><h3>{{ $t('all') }}</h3></span>
+      <span :class="active == 'all' ? 'active': ''" class="link" @click="setActive('all')">
+        <h4>{{ $t('all') }}</h4>
+      </span>
       <span v-for="item in items" :key="item.id" :class="active == item.name ? 'active': ''" class="link"
-        @click="setActive(item.name)"><h3>{{ item['title_' + $i18n.locale] }}</h3></span>
+        @click="setActive(item.name)">
+        <h4>{{ item['title_' + $i18n.locale] }}</h4>
+      </span>
     </div>
   </div>
 </template>

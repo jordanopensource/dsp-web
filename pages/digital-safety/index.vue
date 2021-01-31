@@ -66,7 +66,6 @@
 
   .search-bar>>>input {
     @apply rounded-full;
-    height: 52px;
   }
 
 </style>
