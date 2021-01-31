@@ -4,7 +4,7 @@
     <ListsRecomSpotlight v-if="recommendations.length" :title="$t('weeklyRecommendations')"
       :content="recommendations[0]" class="mt-10" />
     <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="mt-10" />
-    <Helpdesk class="mt-10" />
+    <Helpdesk v-if="helpdesksList.length" class="mt-10" />
   </div>
 </template>
 
@@ -27,6 +27,9 @@
       },
       recommendations() {
         return this.$store.state.recommendations.list
+      },
+      helpdesksList() {
+        return this.$store.state.helpdesk.list
       },
     }
   }
