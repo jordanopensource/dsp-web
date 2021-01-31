@@ -5,11 +5,13 @@
       <div class="container">
         <div v-if="guide" class="py-20">
           <h1>{{ guide['title_' + $i18n.locale]}}</h1>
-          <div v-if="guide.contributors.length">
-            <UIImage v-if="guide.contributors[0].image" :image="guide.contributors[0].image" size="small"
+          <div v-if="guide.contributors.length" class="flex flex-wrap">
+          <div v-for="contributor in guide.contributors" :key="contributor.id" class="flex flex-row flex-no-wrap items-center ltr:mr-8 rtl:ml-8 mt-4">
+            <UIImage v-if="contributor.image" :image="contributor.image" size="small"
               class="icon inline-block" />
             <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
-            <p class="inline-block">{{guide.contributors[0]['name_' + $i18n.locale]}}</p>
+            <h4 class="inline-block ltr:ml-4 rtl:mr-4 max-w-xxs">{{contributor['name_' + $i18n.locale]}}</h4>
+          </div>
           </div>
         </div>
       </div>
