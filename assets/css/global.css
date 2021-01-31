@@ -1,0 +1,35 @@
+/* Transitions */
+a, button, .link {
+  transition: color 0.25s linear;
+  -webkit-transition: color 0.25s linear;
+  cursor: pointer;
+}
+
+/* Anchor tags */
+a:hover,
+a.active {
+  @apply text-josa-blue;
+}
+
+/* Lists */
+ol {
+  list-style: decimal;
+}
+
+[lang="ar"] ol {
+  list-style: arabic-indic;
+}
+
+ul {
+  list-style: disc;
+}
+
+[dir="ltr"] ol>li,
+[dir="ltr"] ul>li {
+  @apply ml-4;
+}
+
+[dir="rtl"] ol>li,
+[dir="rtl"] ul>li {
+  @apply mr-4;
+}

@@ -1,6 +1,8 @@
 <template>
-  <div :dir="$dir()">
+  <div :dir="$dir()" class="bg-josa-grey-light">
+    <UIHeader />
     <Nuxt />
+    <UIFooter />
   </div>
 </template>
 

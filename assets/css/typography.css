@@ -13,6 +13,14 @@ body {
   @apply font-almarai text-base leading-normal;
 }
 
+.en {
+  @apply font-lato !important;
+}
+
+.ar {
+  @apply font-almarai !important;
+}
+
 /* H */
 [lang="en"] h1,
 [lang="en"] h2,
@@ -20,7 +28,7 @@ body {
 [lang="en"] h4,
 [lang="en"] h5,
 [lang="en"] h6 {
-  @apply font-aleoLight leading-normal text-josa-black;
+  @apply font-aleoLightItalic leading-normal text-josa-black;
 }
 
 [lang="ar"] h1,
@@ -49,6 +57,15 @@ h2 {
 
 [lang="ar"] h3 {
   @apply font-medium text-2xl font-almarai;
+}
+
+/* h4 */
+[lang="en"] h4 {
+  @apply font-medium text-lg font-lato;
+}
+
+[lang="ar"] h4 {
+  @apply font-medium text-lg font-almarai;
 }
 
 a:hover > h1, a:hover > h2, a:hover > h3 {
