@@ -114,6 +114,11 @@ export default {
     seo: true
   },
 
+  moment: {
+    defaultLocale: 'en',
+    locales: ['ar']
+  },
+  
   publicRuntimeConfig: {
     APIBaseURL: process.env.API_BASE_URL,
   },
