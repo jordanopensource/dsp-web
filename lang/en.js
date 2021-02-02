@@ -1,5 +1,4 @@
 export default {
-    title: "Digital Safety Portal - JOSA",
     spotlight: 'Spotlight',
     popularGuides: 'Popular Guides',
     allGuides: 'All Guides',
@@ -13,5 +12,6 @@ export default {
     noResults: 'No results',
     search: 'Search',
     searchResults: 'Searching for:',
-    stepByStep: 'Step-by-step'
+    stepByStep: 'Step-by-step',
+    submit: 'Submit',
 }
