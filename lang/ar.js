@@ -7,7 +7,7 @@ export default {
     weeklyRecommendations: 'توصيات أسبوعية',
     availableOn: 'متوفر على',
     secureForm: 'نموذج آمن',
-    otherHelpdesks: 'مكاتب مساعدة أخرى',
+    allHelpdesks: 'مكاتب المساعدة',
     helpdesk: 'مكتب المساعدة',
     noResults: 'لا يوجد نتائج',
     search: 'بحث',
