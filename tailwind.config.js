@@ -23,7 +23,7 @@ module.exports = {
           'veryDark': '#163e4e',
         },
         'josa-grey': {
-          'very-light': '#cfcfcf',
+          'veryLight': '#cfcfcf',
           'light': '#f9f9f9',
           default: '#c3d4e0',
           'dark': '#7a93a4'
