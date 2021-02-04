@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="mb-4">{{ title }}</h3>
-    <div v-for="item in contentList" :key="item.id" class="flex flex-row items-center">
+    <div v-for="item in contentList" :key="item.id" class="flex flex-row items-center my-4">
       <UIImage v-if="item.image" :image="item.image" size="small" class="icon inline-block" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
       <span>
