@@ -4,9 +4,9 @@
       <div class="flex justify-between flex-wrap lg:flex-no-wrap items-center">
         <div class="flex items-center flex-shrink-0">
           <NuxtLink :to="localePath('index')" class="block">
-            <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/logo-colored-ar.svg"
+            <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/logo-arabic-minimal.svg"
               alt="الجمعية الأردنية للمصدر المفتوح">
-            <img v-else class="logo" src="~/static/images/logo/logo-colored-en.svg"
+            <img v-else class="logo" src="~/static/images/logo/logo-latin-minimal.svg"
               alt="Jordan Open Source Association Logo">
           </NuxtLink>
         </div>
@@ -43,13 +43,8 @@
 
 <style scoped>
   .logo {
-    width: 175px;
-  }
-
-  @screen sm {
-    .logo {
-      width: 240px;
-    }
+    width: 125px;
+    height: 125px;
   }
 
   .menu-icon {
