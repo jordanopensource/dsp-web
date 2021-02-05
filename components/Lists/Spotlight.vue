@@ -7,7 +7,6 @@
         :image="content.image" 
         :title="content['title_' + $i18n.locale]"
         :description="content['description_' + $i18n.locale]"
-        :dateCreated="content.created_at"
         :dateUpdated="content.updated_at"
         :contributor="content.contributors[0]" />
   </div>

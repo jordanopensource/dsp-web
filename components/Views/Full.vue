@@ -8,7 +8,7 @@
       <NuxtLink :to="link">
         <h3>{{ title }}</h3>
       </NuxtLink>
-      <p>{{ dateCreated | fullDate($i18n.locale) }} / {{ dateUpdated | fullDate($i18n.locale) }}</p>
+      <p>{{ dateUpdated | fullDate($i18n.locale) }}</p>
       <p class="flex-grow my-4">{{ description }}</p>
       <div v-if="contributor" class="flex flex-row flex-no-wrap items-center">
         <UIImage v-if="contributor.image" :image="contributor.image" size="small" class="icon inline-block" />
