@@ -8,7 +8,8 @@
         :title="content['title_' + $i18n.locale]"
         :description="content['description_' + $i18n.locale]"
         :dateUpdated="content.updated_at"
-        :contributor="content.contributors[0]" />
+        :contributor="content.contributors[0]"
+        :link="localePath('/digital-safety/' + content.id)" />
   </div>
 </template>
 

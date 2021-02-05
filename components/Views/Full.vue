@@ -21,11 +21,6 @@
 
 <script>
   export default {
-    computed: {
-      link() {
-        return this.localePath('/digital-safety/' + this.id)
-      }
-    },
     props: {
       id: {
         type: Number,
@@ -54,6 +49,10 @@
       contributor: {
         type: Object,
         required: false
+      },
+      link: {
+        type: String,
+        required: true
       },
     }
   }
