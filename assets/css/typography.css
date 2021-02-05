@@ -15,6 +15,14 @@ body {
   @apply font-IBMPlexSansArabic text-base leading-normal;
 }
 
+.en {
+  @apply font-IBMPlexSans !important;
+}
+
+.ar {
+  @apply font-IBMPlexSansArabic !important;
+}
+
 /* H */
 [lang="en"] h1,
 [lang="en"] h2,
