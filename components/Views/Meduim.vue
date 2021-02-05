@@ -8,7 +8,7 @@
       <NuxtLink :to="link">
         <h3 class="mb-4">{{ title }}</h3>
       </NuxtLink>
-      <p>{{ dateUpdated | fullDate($i18n.locale) }} | {{contributor['name_' + $i18n.locale]}}</p>
+      <p>{{ dateUpdated | fullDate($i18n.locale) }}{{ contributor ? ' | ' + contributor['name_' + $i18n.locale] : ''}}</p>
     </div>
   </div>
 </template>
