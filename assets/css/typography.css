@@ -5,11 +5,13 @@ body {
   @apply text-josa-black;
 }
 
-[lang="en"] body, .en {
+[lang="en"] body,
+.en {
   @apply font-IBMPlexSans text-base leading-normal;
 }
 
-[lang="ar"] body, .ar {
+[lang="ar"] body,
+.ar {
   @apply font-IBMPlexSansArabic text-base leading-normal;
 }
 
@@ -60,8 +62,16 @@ h2 {
   @apply font-medium text-lg;
 }
 
-a:hover > h1, a:hover > h2, a:hover > h3 {
+a:hover>h1,
+a:hover>h2,
+a:hover>h3 {
   @apply text-josa-blue;
   transition: color 0.25s linear;
   -webkit-transition: color 0.25s linear;
+}
+
+/* remixicon */
+[class^="ri-"],
+[class*=" ri-"] {
+  @apply text-3xl leading-tight;
 }
