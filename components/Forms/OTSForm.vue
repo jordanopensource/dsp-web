@@ -36,7 +36,7 @@
   }
 
   .zammad-form button {
-    @apply bg-josa-teal inline-block px-6 py-2 w-full;
+    @apply text-white font-medium bg-josa-teal inline-block px-6 py-2 w-full;
   }
 
   .zammad-form button:hover {

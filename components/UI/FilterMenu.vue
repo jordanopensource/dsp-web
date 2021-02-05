@@ -40,7 +40,7 @@
 
   .link:hover,
   .link.active {
-    background-color: #c3d4e0;
+    @apply bg-josa-teal-300
   }
 
   @screen md {

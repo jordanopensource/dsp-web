@@ -135,7 +135,7 @@
   }
 
   .tab-list-item {
-    @apply inline-block m-0 py-4 px-8 bg-josa-grey-300;
+    @apply inline-block m-0 py-4 px-8 bg-josa-teal-100;
   }
 
   .tab-list-item:hover {

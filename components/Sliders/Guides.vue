@@ -59,7 +59,7 @@
   }
 
   .agile__nav-button>* {
-    @apply fill-current text-josa-teal-100;
+    @apply fill-current text-josa-teal-300;
   }
 
   .agile__nav-button:hover>* {
