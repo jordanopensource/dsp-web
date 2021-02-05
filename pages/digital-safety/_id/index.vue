@@ -5,6 +5,8 @@
       <div class="container">
         <div v-if="guide" class="py-10">
           <h1>{{ guide['title_' + $i18n.locale]}}</h1>
+          <h4 class="my-2">{{ guide.updated_at | fullDate($i18n.locale) }}</h4>
+          <p class="mb-4" v-if="guide['description_' + $i18n.locale]">{{ guide['description_' + $i18n.locale] }}</p>
           <div v-if="guide.contributors.length" class="flex flex-wrap">
             <div v-for="contributor in guide.contributors" :key="contributor.id"
               class="flex flex-row flex-no-wrap items-center ltr:mr-8 rtl:ml-8 mt-4">
@@ -19,8 +21,6 @@
     <template v-if="guide">
       <!-- Guide -->
       <div class="container my-10">
-        <h4>{{ guide.created_at | fullDate($i18n.locale) }} / {{ guide.updated_at | fullDate($i18n.locale) }}</h4>
-        <p class="my-4" v-if="guide['description_' + $i18n.locale]">{{ guide['description_' + $i18n.locale] }}</p>
         <!-- Guide Content -->
         <h1>{{ $t('content') }}</h1>
         <div v-if="guide.content_section.length">
