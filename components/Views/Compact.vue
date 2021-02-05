@@ -1,5 +1,5 @@
 <template>
-  <div class="view-full w-full p-4 bg-white rounded-lg">
+  <div class="view-full w-full p-4 bg-white">
     <NuxtLink :to="link">
       <h3>{{ title }}</h3>
     </NuxtLink>

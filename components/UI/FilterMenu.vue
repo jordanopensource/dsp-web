@@ -40,7 +40,6 @@
 
   .link:hover,
   .link.active {
-    @apply rounded-lg;
     background-color: #c3d4e0;
   }
 
