@@ -3,7 +3,7 @@
     <NuxtLink :to="link">
       <h3>{{ title }}</h3>
     </NuxtLink>
-    <p>{{ dateCreated | fullDate($i18n.locale) }} / {{ dateUpdated | fullDate($i18n.locale) }}</p>
+    <p>{{ dateUpdated | fullDate($i18n.locale) }}{{ contributor ? ' | ' + contributor['name_' + $i18n.locale] : ''}}</p>
   </div>
 </template>
 
@@ -30,6 +30,10 @@
         type: String,
         required: true
       },
+      contributor: {
+        type: Object,
+        required: false
+      }
     }
   }
 
