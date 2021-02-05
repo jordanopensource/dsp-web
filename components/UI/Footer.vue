@@ -1,11 +1,20 @@
 <template>
   <div id="footer" class="bg-josa-black-light mt-10">
     <div class="flex items-center justify-between flex-wrap py-12 container">
-      <a href="https://www.jordanopensource.org" target="_blank" class="block my-4">
-        <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/logo-white-ar.svg"
-          alt="الجمعية الأردنية للمصدر المفتوح">
-        <img v-else class="logo" src="~/static/images/logo/logo-white-en.svg" alt="Jordan Open Source Association Logo">
-      </a>
+      <div class="">
+        <a href="/" class="inline-block my-4 ltr:mr-8 rtl:ml-8">
+          <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/logo-arabic-white.svg"
+            alt="منصة الأمان الرقمي">
+          <img v-else class="logo" src="~/static/images/logo/logo-latin-full-white.svg"
+            alt="Aman Raqami Logo">
+        </a>
+        <a href="https://www.jordanopensource.org" target="_blank" class="inline-block my-4">
+          <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/josa-logo-white-ar.svg"
+            alt="الجمعية الأردنية للمصدر المفتوح">
+          <img v-else class="logo" src="~/static/images/logo/josa-logo-white-en.svg"
+            alt="Jordan Open Source Association Logo">
+        </a>
+      </div>
       <div id="social-menu" class="inline-block my-4">
         <a href="https://www.instagram.com/jordanopensource/" target="_blank">
           <font-awesome-icon class="fa-icon" :icon="['fab', 'instagram']" />
@@ -23,8 +32,8 @@
 
 <style scoped>
   .logo {
-    width: 160px;
-    height: 48px;
+    /* width: 160px; */
+    height: 75px;
   }
 
   a:hover {
