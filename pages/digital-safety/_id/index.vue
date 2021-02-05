@@ -6,7 +6,7 @@
         <div v-if="guide" class="py-10">
           <h1>{{ guide['title_' + $i18n.locale]}}</h1>
           <h4 class="my-2">{{ guide.updated_at | fullDate($i18n.locale) }}</h4>
-          <p class="mb-4" v-if="guide['description_' + $i18n.locale]">{{ guide['description_' + $i18n.locale] }}</p>
+          <p class="mb-4 max-w-3xl" v-if="guide['description_' + $i18n.locale]">{{ guide['description_' + $i18n.locale] }}</p>
           <div v-if="guide.contributors.length" class="flex flex-wrap">
             <div v-for="contributor in guide.contributors" :key="contributor.id"
               class="flex flex-row flex-no-wrap items-center ltr:mr-8 rtl:ml-8 mt-4">

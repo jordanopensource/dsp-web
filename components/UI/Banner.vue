@@ -3,7 +3,7 @@
     <div class="container">
       <div class="py-10">
         <h1>{{ title }}</h1>
-        <h4 class="my-4">{{ description }}</h4>
+        <p class="my-4 max-w-3xl">{{ description }}</p>
       </div>
     </div>
   </div>
