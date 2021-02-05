@@ -12,21 +12,21 @@ module.exports = {
     },
     extend: {
       colors: {
+        'josa-teal': {
+          '100': '#daf3f3',
+          '300': '#9bdedf',
+          default: '#14b7b8',
+          '700': '#099293'
+        },
         'josa-black': {
           'light': '#282e30',
           default: '#2e3436',
         },
-        'josa-blue': {
-          'light': '#c5e1ee',
-          default: '#3897c0',
-          'dark': '#1a485b',
-          'veryDark': '#163e4e',
-        },
         'josa-grey': {
-          'veryLight': '#cfcfcf',
-          'light': '#f9f9f9',
-          default: '#c3d4e0',
-          'dark': '#7a93a4'
+          '100': '#f7f6f5',
+          '300': '#e2d7cd',
+          default: '#aea79f',
+          '700': '##665f56',
         },
       },
       fontFamily: {

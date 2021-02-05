@@ -8,7 +8,7 @@ a, button, .link {
 /* Anchor tags */
 a:hover,
 a.active {
-  @apply text-josa-blue;
+  @apply text-josa-teal;
 }
 
 /* Lists */

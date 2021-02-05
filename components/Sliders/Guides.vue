@@ -55,15 +55,15 @@
   }
 
   .agile__nav-button {
-    @apply text-josa-grey;
+    @apply text-josa-teal-100;
   }
 
   .agile__nav-button>* {
-    @apply fill-current text-josa-grey-veryLight;
+    @apply fill-current text-josa-teal-100;
   }
 
   .agile__nav-button:hover>* {
-    @apply fill-current text-josa-grey-dark;
+    @apply fill-current text-josa-teal;
   }
 
 </style>

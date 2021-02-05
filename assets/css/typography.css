@@ -73,7 +73,7 @@ h2 {
 a:hover>h1,
 a:hover>h2,
 a:hover>h3 {
-  @apply text-josa-blue;
+  @apply text-josa-teal;
   transition: color 0.25s linear;
   -webkit-transition: color 0.25s linear;
 }

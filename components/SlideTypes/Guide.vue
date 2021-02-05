@@ -7,7 +7,7 @@
         class="ltr:mr-10 rtl:ml-10 my-4">
         <NuxtLink :to="localePath('/digital-safety/' + item.id)" class="flex flex-row flex-no-wrap items-start">
           <i class="ri-article-line"></i>
-          <h4 class="link inline-block ltr:ml-4 rtl:mr-4 max-w-xxs hover:text-josa-blue">
+          <h4 class="link inline-block ltr:ml-4 rtl:mr-4 max-w-xxs hover:text-josa-teal">
             {{item['title_' + $i18n.locale]}}</h4>
         </NuxtLink>
       </div>
