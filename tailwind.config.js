@@ -30,12 +30,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        'aleoLight': 'aleo-light',
-        'aleo': 'aleo',
-        'aleoItalic': 'aleo-italic',
-        'aleoLightItalic': 'aleo-light-italic',
-        'lato': 'lato',
-        'almarai': 'Almarai',
+        'IBMPlexSansArabic': 'IBM Plex Sans Arabic',
+        'IBMPlexSerif': 'IBM Plex Serif',
+        'IBMPlexSans': 'IBM Plex Sans',
+        'IBMPlexMono': 'IBM Plex Mono',
       },
       maxWidth: {
         'xxs': '12rem'

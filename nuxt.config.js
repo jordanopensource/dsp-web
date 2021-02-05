@@ -12,8 +12,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href:'https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap' },
-      { rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap"},
     ],
     script:[
       {
@@ -33,7 +31,7 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/global.css',
-    '@/assets/css/fonts/aleo.css',
+    '@/assets/css/fonts/ibm-plex.css',
     '@/assets/css/typography.css',
   ],
 
