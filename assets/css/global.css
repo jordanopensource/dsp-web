@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 /* Transitions */
 a, button, .link {
   transition: color 0.25s linear;

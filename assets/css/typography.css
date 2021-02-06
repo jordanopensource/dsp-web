@@ -1,18 +1,35 @@
 /* Typography Styles */
 
 /* Body */
+html {
+  font-family:
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
 body {
-  @apply text-josa-black;
+  @apply text-base leading-normal text-josa-black;
 }
 
-[lang="en"] body,
-.en {
-  @apply font-IBMPlexSans text-base leading-normal;
+[lang="en"] body {
+  @apply font-IBMPlexSans;
 }
 
-[lang="ar"] body,
-.ar {
-  @apply font-IBMPlexSansArabic text-base leading-normal;
+[lang="ar"] body {
+  @apply font-IBMPlexSansArabic;
 }
 
 .en {
@@ -44,29 +61,21 @@ body {
 
 /* h1 */
 h1 {
-  @apply font-medium text-5xl;
+  @apply font-medium text-4xl;
 }
 
 /* h2 */
 h2 {
-  @apply font-medium text-4xl;
+  @apply font-medium text-2xl;
 }
 
 /* h3 */
-[lang="en"] h3 {
-  @apply font-medium text-2xl;
-}
-
-[lang="ar"] h3 {
-  @apply font-medium text-2xl;
+h3 {
+  @apply font-medium text-xl;
 }
 
 /* h4 */
-[lang="en"] h4 {
-  @apply font-medium text-lg;
-}
-
-[lang="ar"] h4 {
+h4 {
   @apply font-medium text-lg;
 }
 
@@ -82,4 +91,28 @@ a:hover>h3 {
 [class^="ri-"],
 [class*=" ri-"] {
   @apply text-3xl leading-tight;
+}
+
+/* Large Screen */
+@screen lg {
+
+  /* h1 */
+  h1 {
+    @apply font-medium text-5xl;
+  }
+
+  /* h2 */
+  h2 {
+    @apply font-medium text-4xl;
+  }
+
+  /* h3 */
+  h3 {
+    @apply font-medium text-2xl;
+  }
+
+  /* h4 */
+  h4 {
+    @apply font-medium text-lg;
+  }
 }

@@ -156,11 +156,22 @@
   }
 
   [lang="en"] .content-section-body>>>* {
-    @apply text-lg;
+    @apply text-base;
   }
 
   [lang="ar"] .content-section-body>>>* {
-    @apply text-2xl;
+    @apply text-lg;
+  }
+
+  @screen lg {
+    
+    [lang="en"] .content-section-body>>>* {
+      @apply text-lg;
+    }
+
+    [lang="ar"] .content-section-body>>>* {
+      @apply text-xl;
+    }
   }
 
 </style>
