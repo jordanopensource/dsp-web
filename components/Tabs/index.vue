@@ -146,14 +146,22 @@
     @apply bg-white;
   }
 
-  .tab-list-item-a:hover,
+
+  .tab-list-item-a {
+    @apply font-medium;
+  }
+
   .tab-list-item-a:hover,
   .tab-list-item-a.active {
     @apply text-josa-black;
   }
 
-.tabs-panels{
-    @apply block m-0 p-4 bg-white;
-}
+  .tabs-panels {
+    @apply block bg-white;
+  }
+
+  .tab-panel {
+    @apply pt-8;
+  }
 
 </style>
