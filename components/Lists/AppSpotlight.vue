@@ -8,7 +8,8 @@
       :description="content['description_' + $i18n.locale]"
       :publisher="content.app_publisher"
       :website="content.website"
-      :platforms="content.Platform" />
+      :platforms="content.Platform"
+      class="xl:ltr:pr-8 xl:rtl:pl-8" />
   </div>
 </template>
 
