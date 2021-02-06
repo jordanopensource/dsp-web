@@ -14,4 +14,5 @@ export default {
     searchResults: 'البحث عن:',
     stepByStep: 'Step-by-step',
     submit: 'إرسال',
+    website: 'الموقع الإلكتروني',
 }
