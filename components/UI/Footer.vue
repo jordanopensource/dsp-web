@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="bg-josa-black-light mt-10">
+  <div id="footer" class="bg-josa-black-light">
     <div class="flex items-center justify-between flex-wrap py-12 container">
       <div class="">
         <a href="/" class="inline-block my-4 ltr:mr-8 rtl:ml-8">
