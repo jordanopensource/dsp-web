@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SlidersGuides :slider="slider" v-if="slider" />
+    <SlidersGuides :slider="slider" v-if="slider" class="bg-white mb-10" />
     <ListsRecomSpotlight v-if="recommendations.length" :title="$t('weeklyRecommendations')"
       :content="recommendations[0]" class="mt-10" />
     <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="mt-10" />

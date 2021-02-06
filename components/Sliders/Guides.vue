@@ -1,6 +1,6 @@
 <template>
-  <div class="slider bg-white">
-    <div class="container pb-10">
+  <div class="slider">
+    <div class="container py-10">
       <client-only placeholder="...">
         <agile :options="sliderOption">
           <SlideTypesGuide v-for="slide in slider.slides[0].Slide" :key="slide.id" :id='"slide-" + slide.id'
@@ -51,12 +51,14 @@
   }
 
   .agile__actions {
-    @apply block;
+    @apply block relative mt-8;
   }
+
 
   [dir='ltr'] .agile__actions {
     @apply text-right;
   }
+
 
   [dir="rtl"] .agile__actions {
     @apply text-left;
@@ -72,6 +74,23 @@
 
   .agile__nav-button:hover>* {
     @apply fill-current text-josa-teal;
+  }
+
+  @screen lg {
+
+    .agile__actions {
+      @apply mt-0;
+    }
+
+    [dir='ltr'] .agile__actions {
+      @apply float-right;
+      bottom: 3rem;
+    }
+
+    [dir="rtl"] .agile__actions {
+      @apply float-left;
+      bottom: 2.25rem;
+    }
   }
 
 </style>

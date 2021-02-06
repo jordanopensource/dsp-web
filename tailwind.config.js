@@ -57,6 +57,7 @@ module.exports = {
     lineHeight: ['responsive', 'direction'],
     borderRadius: ['responsive', 'direction'],
     inset: ['responsive', 'hover', 'focus', 'direction'],
+    alignItems: ['hover', 'focus', 'direction'],
   },
   plugins: [
     require('tailwindcss-dir')(),
