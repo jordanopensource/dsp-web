@@ -1,5 +1,5 @@
 <template>
-  <div class="view-full p-4 bg-white flex flex-row flex-wrap md:flex-no-wrap rounded-lg">
+  <div class="view-full p-4 bg-white flex flex-row flex-wrap md:flex-no-wrap">
     <NuxtLink :to="link" class="block flex-shrink-0 w-full md:w-1/2 lg:w-2/5">
       <UIImage v-if="image" :image="image" size="medium" class="image" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
@@ -21,11 +21,6 @@
 
 <script>
   export default {
-    computed: {
-      link() {
-        return this.localePath('/digital-safety/' + this.id)
-      }
-    },
     props: {
       id: {
         type: Number,
@@ -43,10 +38,6 @@
         type: String,
         required: true
       },
-      dateCreated: {
-        type: String,
-        required: true
-      },
       dateUpdated: {
         type: String,
         required: true
@@ -54,6 +45,10 @@
       contributor: {
         type: Object,
         required: false
+      },
+      link: {
+        type: String,
+        required: true
       },
     }
   }
@@ -73,7 +68,6 @@
     max-height: 375px;
     object-fit: cover;
     object-position: 50% 50%;
-    border-radius: 0.5rem;
   }
 
 </style>

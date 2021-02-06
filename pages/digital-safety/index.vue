@@ -1,10 +1,11 @@
 <template>
   <div>
     <UIBanner :title="pageInfo['title_' + $i18n.locale]" :description="pageInfo['description_' + $i18n.locale]" />
-    <div class="container flex flex-row flex-wrap justify-between py-6">
+    <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
       <UIFilterMenu :items="guidesCategories" :active="activeCat" @setActive="setActiveCat"
-        class="ltr:mr-10 rtl:ml-10 sm:ltr:mr-20 sm:rtl:ml-20" />
-      <ElementsControlInput v-model="searchString" :placeholder="$t('search')" class="search-bar" />
+        class="lg:ltr:mr-10 lg:rtl:ml-10" />
+      <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
+        class="search-bar mb-8 rounded-full flex-grow w-full lg:w-auto" />
     </div>
     <ListsSpotlight v-if="guides.length && !searchString" :title="$t('spotlight')" :content="guides[0]" class="mt-10" />
     <ListsGrid v-if="guides.length && !searchString" :title="$t('popularGuides')" :contentList="guides" :count="3"
@@ -60,10 +61,6 @@
 
 </script>
 <style scoped>
-  .search-bar {
-    @apply rounded-full flex-grow max-w-md;
-  }
-
   .search-bar>>>input {
     @apply rounded-full;
   }

@@ -65,7 +65,7 @@
 <style scoped>
   .input-control input,
   .input-control textarea {
-    @apply p-3 bg-josa-grey-light w-full;
+    @apply p-3 bg-josa-grey-100 w-full;
   }
 
   .input-control input {
@@ -74,11 +74,11 @@
 
   input::placeholder,
   input:disabled {
-    @apply text-josa-grey-dark;
+    @apply text-josa-grey-700;
   }
 
   textarea::placeholder {
-    @apply text-josa-grey-dark;
+    @apply text-josa-grey-700;
   }
 
   .input-control input:focus,

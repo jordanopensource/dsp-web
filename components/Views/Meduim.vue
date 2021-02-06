@@ -1,5 +1,5 @@
 <template>
-  <div class="view-full p-4 bg-white rounded-lg flex flex-row md:flex-col flex-no-wrap">
+  <div class="view-full p-4 bg-white flex flex-row md:flex-col flex-no-wrap">
     <NuxtLink :to="link" class="block w-2/5 md:w-full flex-shrink-0">
       <UIImage v-if="image" :image="image" size="medium" class="image" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
@@ -8,7 +8,7 @@
       <NuxtLink :to="link">
         <h3 class="mb-4">{{ title }}</h3>
       </NuxtLink>
-      <p>{{ dateUpdated | fullDate($i18n.locale) }} / {{contributor['name_' + $i18n.locale]}}</p>
+      <p>{{ dateUpdated | fullDate($i18n.locale) }}{{ contributor ? ' | ' + contributor['name_' + $i18n.locale] : ''}}</p>
     </div>
   </div>
 </template>
@@ -52,7 +52,6 @@
     max-height: 375px;
     object-fit: cover;
     object-position: 50% 50%;
-    border-radius: 0.5rem;
   }
 
 </style>

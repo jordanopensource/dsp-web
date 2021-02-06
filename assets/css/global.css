@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 /* Transitions */
 a, button, .link {
   transition: color 0.25s linear;
@@ -7,8 +14,9 @@ a, button, .link {
 
 /* Anchor tags */
 a:hover,
-a.active {
-  @apply text-josa-blue;
+a.active,
+.nuxt-link-active {
+  @apply text-josa-teal;
 }
 
 /* Lists */

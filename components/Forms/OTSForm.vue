@@ -28,7 +28,7 @@
   }
 
   .zammad-form .form-control {
-    @apply text-josa-grey-dark border-none rounded-md p-3;
+    @apply text-josa-black border-none p-3;
   }
 
   .zammad-form .form-control[type="file"] {
@@ -36,11 +36,11 @@
   }
 
   .zammad-form button {
-    @apply bg-josa-grey inline-block rounded-md px-6 py-2 w-full;
+    @apply text-white font-medium bg-josa-teal inline-block px-6 py-2 w-full;
   }
 
   .zammad-form button:hover {
-    @apply bg-josa-grey-dark
+    @apply bg-josa-teal-700
   }
 
 </style>

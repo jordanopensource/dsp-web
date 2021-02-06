@@ -124,36 +124,49 @@
 </script>
 
 <style scoped>
-  .tab-list-item {
-    transition: background-color 0.25s linear;
-    -webkit-transition: background-color 0.25s linear;
-    cursor: pointer;
+  .tab-component {
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
   }
 
   .tabs-list {
-    @apply list-none;
+    @apply list-none relative;
+    -webkit-box-shadow: 0px 4px 8px -8px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 8px -8px rgba(0, 0, 0, 0.6);
   }
 
   .tab-list-item {
-    @apply inline-block m-0 py-4 px-8 bg-josa-grey;
+    @apply cursor-pointer relative inline-block m-0 py-4 px-8 bg-josa-teal-100 z-10;
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+  }
+
+  .tab-list-item.is-active {
+    @apply bg-white z-20;
+    -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
   }
 
   .tab-list-item:hover {
-    @apply bg-white;
+    -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
   }
 
-  .is-active {
-    @apply bg-white;
+  .tab-list-item-a {
+    @apply z-0 font-medium;
   }
 
-  .tab-list-item-a:hover,
   .tab-list-item-a:hover,
   .tab-list-item-a.active {
     @apply text-josa-black;
   }
 
-.tabs-panels{
-    @apply block m-0 p-4 bg-white;
-}
+  .tabs-panels {
+    @apply block bg-white;
+  }
+
+  .tab-panel {
+    @apply pt-8;
+  }
 
 </style>

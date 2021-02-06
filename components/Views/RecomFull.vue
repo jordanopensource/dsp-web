@@ -1,6 +1,6 @@
 <template>
   <div class="view-full">
-    <div class="flex flex-row flex-wrap md:flex-no-wrap rounded-lg">
+    <div class="flex flex-row flex-wrap md:flex-no-wrap">
       <div class="block flex-shrink-0 w-full md:w-1/2 lg:w-2/5">
         <UIImage v-if="image" :image="image" size="medium" class="image" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
@@ -67,7 +67,6 @@
     max-height: 375px;
     object-fit: cover;
     object-position: 50% 50%;
-    border-radius: 0.5rem;
   }
 
 </style>

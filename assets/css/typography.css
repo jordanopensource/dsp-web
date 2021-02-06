@@ -1,24 +1,43 @@
 /* Typography Styles */
 
 /* Body */
+html {
+  font-family:
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
 body {
-  @apply text-josa-black;
+  @apply text-base leading-normal text-josa-black;
 }
 
-[lang="en"] body, .en {
-  @apply font-lato text-base leading-normal;
+[lang="en"] body {
+  @apply font-IBMPlexSans;
 }
 
-[lang="ar"] body, .ar {
-  @apply font-almarai text-base leading-normal;
+[lang="ar"] body {
+  @apply font-IBMPlexSansArabic;
 }
 
 .en {
-  @apply font-lato !important;
+  @apply font-IBMPlexSans !important;
 }
 
 .ar {
-  @apply font-almarai !important;
+  @apply font-IBMPlexSansArabic !important;
 }
 
 /* H */
@@ -28,7 +47,7 @@ body {
 [lang="en"] h4,
 [lang="en"] h5,
 [lang="en"] h6 {
-  @apply font-aleoLightItalic leading-normal text-josa-black;
+  @apply font-IBMPlexMono leading-normal text-josa-black;
 }
 
 [lang="ar"] h1,
@@ -37,39 +56,63 @@ body {
 [lang="ar"] h4,
 [lang="ar"] h5,
 [lang="ar"] h6 {
-  @apply font-almarai leading-normal text-josa-black;
+  @apply font-IBMPlexSansArabic leading-normal text-josa-black;
 }
 
 /* h1 */
 h1 {
-  @apply font-medium text-5xl;
+  @apply font-medium text-4xl;
 }
 
 /* h2 */
 h2 {
-  @apply font-medium text-4xl;
+  @apply font-medium text-2xl;
 }
 
 /* h3 */
-[lang="en"] h3 {
-  @apply font-medium text-2xl font-lato;
-}
-
-[lang="ar"] h3 {
-  @apply font-medium text-2xl font-almarai;
+h3 {
+  @apply font-medium text-xl;
 }
 
 /* h4 */
-[lang="en"] h4 {
-  @apply font-medium text-lg font-lato;
+h4 {
+  @apply font-medium text-lg;
 }
 
-[lang="ar"] h4 {
-  @apply font-medium text-lg font-almarai;
-}
-
-a:hover > h1, a:hover > h2, a:hover > h3 {
-  @apply text-josa-blue;
+a:hover>h1,
+a:hover>h2,
+a:hover>h3 {
+  @apply text-josa-teal;
   transition: color 0.25s linear;
   -webkit-transition: color 0.25s linear;
+}
+
+/* remixicon */
+[class^="ri-"],
+[class*=" ri-"] {
+  @apply text-3xl leading-tight;
+}
+
+/* Large Screen */
+@screen lg {
+
+  /* h1 */
+  h1 {
+    @apply font-medium text-5xl;
+  }
+
+  /* h2 */
+  h2 {
+    @apply font-medium text-4xl;
+  }
+
+  /* h3 */
+  h3 {
+    @apply font-medium text-2xl;
+  }
+
+  /* h4 */
+  h4 {
+    @apply font-medium text-lg;
+  }
 }
