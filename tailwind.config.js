@@ -43,6 +43,9 @@ module.exports = {
       },
       maxWidth: {
         'xxs': '12rem'
+      },
+      opacity: {
+        '90': '0.90'
       }
     }
   },
