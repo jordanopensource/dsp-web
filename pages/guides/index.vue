@@ -28,7 +28,7 @@
     },
     computed: {
       pageInfo() {
-        return this.$store.getters.getPages.find((page) => page.page_id == 'digital-safety')
+        return this.$store.getters.getPages.find((page) => page.page_id == 'guides')
       },
       guides() {
         let list = this.$store.state.guides.list
