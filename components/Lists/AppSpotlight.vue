@@ -9,7 +9,7 @@
       :publisher="content.app_publisher"
       :website="content.website"
       :platforms="content.Platform"
-      class="xl:ltr:pr-8 xl:rtl:pl-8" />
+      class="mb-10 p-4 bg-white" />
   </div>
 </template>
 
