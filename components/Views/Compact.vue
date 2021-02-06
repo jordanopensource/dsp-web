@@ -22,10 +22,6 @@
         type: String,
         required: true
       },
-      dateCreated: {
-        type: String,
-        required: true
-      },
       link: {
         type: String,
         required: true

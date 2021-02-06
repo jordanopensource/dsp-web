@@ -38,10 +38,6 @@
         type: String,
         required: true
       },
-      dateCreated: {
-        type: String,
-        required: true
-      },
       dateUpdated: {
         type: String,
         required: true
