@@ -1,6 +1,6 @@
 <template>
   <div class="grid-list container">
-    <h2 class="my-8">{{ title }}</h2>
+    <h2 class="mb-8">{{ title }}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     <ViewsMeduim
         v-for="item in limitBy(contentList, count)"
