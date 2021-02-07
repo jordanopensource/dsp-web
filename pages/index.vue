@@ -1,8 +1,8 @@
 <template>
   <div>
     <SlidersGuides :slider="slider" v-if="slider" class="bg-white mb-10" />
-    <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="my-10 py-12" />
     <ListsAppSpotlight v-if="apps.length" :title="$t('weeklyRecommendations')" :content="apps[0]" class="my-10 py-12" />
+    <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="my-10 py-12" />
     <Helpdesk v-if="helpdesksList.length" class="mt-10 py-12 bg-white" />
   </div>
 </template>
