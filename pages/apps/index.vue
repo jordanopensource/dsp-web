@@ -23,7 +23,7 @@
     },
     computed: {
       pageInfo() {
-        return this.$store.getters.getPages.find((page) => page.page_id == 'softwares')
+        return this.$store.getters.getPages.find((page) => page.page_id == 'apps')
       },
       apps() {
         let list = this.$store.state.apps.list
