@@ -13,16 +13,31 @@
               <!-- </NuxtLink> -->
             </div>
           </div>
-          <p class="excerpt" v-if="app['description_' + $i18n.locale]">{{ app["description_" + $i18n.locale] }}</p>
-          <div class="flex flex-col-reverse md:flex-row flex-wrap md:items-center w-full mt-4 md:mt-8">
-            <a v-if="app.website" :href="app.website" target="_blank"
-              class="button button-teal inline-block">{{ $t('website') }}</a>
-            <div v-if="app.Platform.length"
-              class="inline-flex flex-row flex-wrap justify-start md:justify-end flex-grow mb-4 md:mb-0">
-              <a v-for="platform in app.Platform" :key="platform.id" :href="platform.download_url" target="_blank"
-                class="ltr:mr-2 rtl:ml-2 inline-block">
-                <i :class="logos[platform.name]" class="icon"></i>
+          <div class="flex flex-row flex-wrap md:flex-no-wrap">
+            <p class="excerpt mb-8 md:ltr:mr-8 md:rtl:ml-8" v-if="app['description_' + $i18n.locale]">
+              {{ app["description_" + $i18n.locale] }}</p>
+            <div class="flex flex-col justify-end min-w-max w-full">
+              <a v-if="app.app_publisher.website_url" :href="app.app_publisher.website_url" target="_blank"
+                class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
+                <span class="mx-2">{{ $t('devWebsite') }}</span>
               </a>
+              <a v-if="app.privacy_policy_url" :href="app.privacy_policy_url" target="_blank"
+                class="flex flex-row flex-no-wrap items-center"><i class="ri-shield-keyhole-fill"></i>
+                <span class="mx-2">{{ $t('privacyPolicy') }}</span>
+              </a>
+              <a v-if="app.github_url" :href="app.github_url" target="_blank"
+                class="flex flex-row flex-no-wrap items-center"><i class="ri-github-fill"></i>
+                <span class="mx-2">{{ $t('sourceCode') }}</span>
+              </a>
+              <hr class="w-full my-2">
+              <div v-if="app.Platform.length" class="flex flex-row flex-no-wrap justify-start items-end mb-4 md:mb-0 ">
+                <template v-for="platform in app.Platform">
+                  <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
+                    class="ltr:mr-2 rtl:ml-2 inline-block">
+                    <i :class="logos[platform.name]" class="icon"></i>
+                  </a>
+                </template>
+              </div>
             </div>
           </div>
         </div>
@@ -73,7 +88,7 @@
   }
 
   .excerpt {
-    @apply font-bold opacity-90 mb-4;
+    @apply font-bold opacity-90;
   }
 
 </style>
