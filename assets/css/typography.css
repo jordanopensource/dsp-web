@@ -47,7 +47,7 @@ body {
 [lang="en"] h4,
 [lang="en"] h5,
 [lang="en"] h6 {
-  @apply font-IBMPlexMono leading-normal text-josa-black;
+  @apply font-IBMPlexMono leading-tight text-josa-black;
 }
 
 [lang="ar"] h1,
@@ -56,7 +56,7 @@ body {
 [lang="ar"] h4,
 [lang="ar"] h5,
 [lang="ar"] h6 {
-  @apply font-IBMPlexSansArabic leading-normal text-josa-black;
+  @apply font-IBMPlexSansArabic leading-tight text-josa-black;
 }
 
 /* h1 */
@@ -96,6 +96,15 @@ a:hover>h4 {
 [class^="ri-"],
 [class*=" ri-"] {
   @apply text-3xl leading-tight;
+}
+
+/* Displays */
+.display-faded {
+  @apply opacity-75 text-josa-grey-700;
+}
+
+.display-excerpt {
+  @apply font-bold opacity-90;
 }
 
 /* Large Screen */

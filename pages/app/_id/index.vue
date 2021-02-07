@@ -4,17 +4,28 @@
     <div v-else>
       <article v-if="app" class="container py-12">
         <div class="content">
-          <div class="flex flex-row flex-no-wrap items-start mb-8">
+          <div class="flex flex-col sm:flex-row flex-no-wrap items-start mb-12">
             <UIImage v-if="app.image" :image="app.image" size="medium" class="app-image" />
-            <div class="ltr:ml-8 rtl:mr-8">
+            <div class="mt-4 sm:mt-0 sm:ltr:ml-8 sm:rtl:mr-8">
               <h1>{{ app["name_" + $i18n.locale] }}</h1>
               <!-- <NuxtLink v-if="app.app_publisher" :to="publisherLink"> -->
               <h3 v-if="app.app_publisher" class="my-2">{{ app.app_publisher['title_' + $i18n.locale] }}</h3>
               <!-- </NuxtLink> -->
+              <div class="display-faded mt-4 sm:mt-8 flex flex-col md:flex-row">
+                <span class="ltr:mr-4 rtl:ml-4" v-if="app.open_source"><i
+                    class="ri-open-source-fill text-2xl align-middle"></i><span
+                    class="text-sm mx-1 align-middle">{{$t('openSource')}}</span></span>
+                <span class="ltr:mr-4 rtl:ml-4" v-if="app.free"><i
+                    class="ri-creative-commons-nc-fill text-2xl align-middle"></i><span
+                    class="text-sm mx-1 align-middle">{{$t('free')}}</span></span>
+                <span class="ltr:mr-4 rtl:ml-4" v-if="app.endorsed"><i
+                    class="ri-medal-fill text-2xl align-middle"></i><span
+                    class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span></span>
+              </div>
             </div>
           </div>
-          <div class="flex flex-row flex-wrap md:flex-no-wrap">
-            <p class="excerpt mb-8 md:ltr:mr-8 md:rtl:ml-8" v-if="app['description_' + $i18n.locale]">
+          <div class="flex flex-row flex-wrap md:flex-no-wrap my-12">
+            <p class="display-excerpt mb-8 md:ltr:mr-8 md:rtl:ml-8" v-if="app['description_' + $i18n.locale]">
               {{ app["description_" + $i18n.locale] }}</p>
             <div class="flex flex-col justify-end min-w-max w-full">
               <a v-if="app.app_publisher.website_url" :href="app.app_publisher.website_url" target="_blank"
@@ -63,12 +74,12 @@
     async fetch() {
       this.app = this.$store.state.apps.list.find((obj) => {
         return obj.id == this.$route.params.id;
-      });
+      })
       if (!this.app) {
         await this.$store.dispatch("apps/fetch");
         this.app = this.$store.state.apps.list.find((obj) => {
           return obj.id == this.$route.params.id;
-        });
+        })
       }
     }
   };
@@ -77,8 +88,8 @@
 
 <style scoped>
   .app-image {
-    width: 120px;
-    height: 120px;
+    width: 124px;
+    height: 124px;
     object-fit: cover;
     object-position: 50% 50%;
   }
@@ -87,8 +98,18 @@
     @apply max-w-screen-md bg-white relative z-50 mx-auto;
   }
 
-  .excerpt {
-    @apply font-bold opacity-90;
+  @screen sm {
+    .app-image {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  @screen lg {
+    .app-image {
+      width: 160px;
+      height: 160px;
+    }
   }
 
 </style>

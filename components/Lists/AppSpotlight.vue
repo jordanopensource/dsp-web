@@ -1,5 +1,5 @@
 <template>
-  <div class="spotlight-list container mb-12">
+  <div class="spotlight-list container">
     <h2 class="mb-8">{{ title }}</h2>
     <ViewsAppFull
       :id="content.id" 
@@ -11,7 +11,10 @@
       :platforms="content.Platform"
       :privacyPolicy="content.privacy_policy_url"
       :sourceCode="content.github_url"
-      class="mb-10 p-8 bg-white" />
+      :openSource="content.open_source"
+      :free="content.free"
+      :endorsed="content.endorsed"
+      class="p-8 bg-white" />
   </div>
 </template>
 

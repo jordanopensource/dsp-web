@@ -18,4 +18,7 @@ export default {
     devWebsite: 'Developer website',
     privacyPolicy: 'Privacy policy',
     sourceCode: 'Source code',
+    openSource: 'Open source',
+    endorsed: 'Endorsed by JOSA',
+    free: 'Free',
 }
