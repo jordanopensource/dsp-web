@@ -9,7 +9,9 @@
       :publisher="content.app_publisher"
       :website="content.website"
       :platforms="content.Platform"
-      class="mb-10 p-4 bg-white" />
+      :privacyPolicy="content.privacy_policy_url"
+      :sourceCode="content.github_url"
+      class="mb-10 p-8 bg-white" />
   </div>
 </template>
 
