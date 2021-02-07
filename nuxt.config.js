@@ -71,15 +71,6 @@ export default {
     '@nuxtjs/axios',
     'nuxt-i18n',
     '@nuxtjs/moment',
-    ['nuxt-fontawesome',
-    {
-      imports: [
-       {
-         set:'@fortawesome/free-brands-svg-icons',
-         icons: ['fab']
-       }
-     ]
-    }],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
