@@ -60,9 +60,3 @@
   }
 
 </script>
-<style scoped>
-  .search-bar>>>input {
-    @apply rounded-full;
-  }
-
-</style>

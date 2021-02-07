@@ -27,7 +27,7 @@
   export default {
     computed: {
       ifSlot() {
-        if(this.$slots.label || this.$slots.sub) {
+        if (this.$slots.label || this.$slots.sub) {
           return true
         } else {
           return false
@@ -101,6 +101,11 @@
 
   input[type="date"] {
     @apply uppercase;
+  }
+
+  /* Search Bar */
+  .search-bar>>>input {
+    @apply rounded-full;
   }
 
 </style>

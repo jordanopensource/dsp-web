@@ -14,4 +14,5 @@ export default {
     searchResults: 'Searching for:',
     stepByStep: 'Step-by-step',
     submit: 'Submit',
+    website: 'Visit website',
 }

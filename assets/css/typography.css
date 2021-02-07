@@ -79,9 +79,14 @@ h4 {
   @apply font-medium text-lg;
 }
 
+h1,
+h2,
+h3,
+h4,
 a:hover>h1,
 a:hover>h2,
-a:hover>h3 {
+a:hover>h3,
+a:hover>h4 {
   @apply text-josa-teal;
   transition: color 0.25s linear;
   -webkit-transition: color 0.25s linear;
