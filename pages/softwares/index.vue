@@ -2,13 +2,11 @@
   <div>
     <UIBanner :title="pageInfo['title_' + $i18n.locale]" :description="pageInfo['description_' + $i18n.locale]" />
     <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
-      <UIFilterMenu :items="publishers" :active="activeCat" @setActive="setActiveCat"
-        class="lg:ltr:mr-10 lg:rtl:ml-10" />
+      <ElementsDropdown :items="publishers" :active="activeCat" @setActive="setActiveCat" class="min-w-xs" />
       <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
-        class="search-bar mb-8 rounded-full flex-grow w-full lg:w-auto" />
+        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsAppStacked v-if="apps.length"
-      :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
+    <ListsAppStacked v-if="apps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
       :contentList="filterBy(apps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
       class="mt-10" />
   </div>
