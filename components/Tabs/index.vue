@@ -131,8 +131,6 @@
 
   .tabs-list {
     @apply list-none relative;
-    -webkit-box-shadow: 0px 4px 8px -8px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 4px 8px -8px rgba(0, 0, 0, 0.6);
   }
 
   .tab-list-item {
@@ -143,13 +141,10 @@
 
   .tab-list-item.is-active {
     @apply bg-white z-20;
-    -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
   }
 
   .tab-list-item:hover {
-    -webkit-box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.6);
+    @apply bg-white;
   }
 
   .tab-list-item-a {
