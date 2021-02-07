@@ -11,7 +11,7 @@
             <h4 class="my-2">
               {{ guide.updated_at | fullDate($i18n.locale) }}
             </h4>
-            <p class="excerpt" v-if="guide['description_' + $i18n.locale]">
+            <p class="excerpt display-excerpt" v-if="guide['description_' + $i18n.locale]">
               {{ guide["description_" + $i18n.locale] }}
             </p>
             <div v-if="guide.contributors.length" class="flex flex-wrap">
@@ -136,7 +136,7 @@
   }
 
   .excerpt {
-    @apply font-bold opacity-90 mb-4;
+    @apply mb-4;
   }
 
   .content-body {

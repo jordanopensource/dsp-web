@@ -5,24 +5,46 @@
         <UIImage v-if="image" :image="image" size="medium" class="image" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
       </div>
-      <div class="md:ltr:ml-8 md:rtl:mr-8">
+      <div class="md:mx-8">
         <NuxtLink :to="appLink">
           <h3>{{ name }}</h3>
         </NuxtLink>
         <!-- <NuxtLink :to="publisherLink"> -->
-        <h4 v-if="publisher">{{ publisher['title_' + $i18n.locale] }}</h4>
+        <h4 v-if="publisher" class="my-2">{{ publisher['title_' + $i18n.locale] }}</h4>
         <!-- </NuxtLink> -->
-        <p v-if="description" class="my-2">{{ description }}</p>
-        <div class="flex flex-col-reverse md:flex-row flex-wrap md:items-center w-full mt-4 md:mt-8">
-          <a v-if="website" :href="website" target="_blank"
-            class="button button-teal inline-block">{{ $t('website') }}</a>
-          <div v-if="platforms.length"
-            class="inline-flex flex-row flex-wrap justify-start md:justify-end flex-grow mb-4 md:mb-0">
-            <a v-for="platform in platforms" :key="platform.id" :href="platform.download_url" target="_blank"
+        <div class="display-faded mt-4 flex flex-col sm:flex-row">
+          <span class="ltr:mr-4 rtl:ml-4" v-if="openSource"><i
+              class="ri-open-source-fill text-2xl align-middle"></i><span
+              class="text-sm mx-1 align-middle">{{$t('openSource')}}</span></span>
+          <span class="ltr:mr-4 rtl:ml-4" v-if="free"><i
+              class="ri-creative-commons-nc-fill text-2xl align-middle"></i><span
+              class="text-sm mx-1 align-middle">{{$t('free')}}</span></span>
+          <span class="ltr:mr-4 rtl:ml-4" v-if="endorsed"><i class="ri-medal-fill text-2xl align-middle"></i><span
+              class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span></span>
+        </div>
+        <p v-if="description" class="mb-2 mt-4">{{ description }}</p>
+      </div>
+      <div class="flex flex-col flex-wrap justify-end min-w-max">
+        <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank"
+          class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
+          <span class="mx-2">{{ $t('devWebsite') }}</span>
+        </a>
+        <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
+            class="ri-shield-keyhole-fill"></i>
+          <span class="mx-2">{{ $t('privacyPolicy') }}</span>
+        </a>
+        <a v-if="sourceCode" :href="sourceCode" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
+            class="ri-github-fill"></i>
+          <span class="mx-2">{{ $t('sourceCode') }}</span>
+        </a>
+        <hr class="w-full my-2">
+        <div v-if="platforms.length" class="flex flex-row flex-no-wrap justify-start items-end mb-4 md:mb-0 ">
+          <template v-for="platform in platforms">
+            <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
               class="ltr:mr-2 rtl:ml-2 inline-block">
               <i :class="logos[platform.name]" class="icon"></i>
             </a>
-          </div>
+          </template>
         </div>
       </div>
     </div>
@@ -79,6 +101,26 @@
         type: Array,
         required: false
       },
+      privacyPolicy: {
+        type: String,
+        required: false
+      },
+      sourceCode: {
+        type: String,
+        required: false
+      },
+      openSource: {
+        type: String,
+        required: false
+      },
+      free: {
+        type: String,
+        required: false
+      },
+      endorsed: {
+        type: String,
+        required: false
+      },
     }
   }
 
@@ -86,8 +128,8 @@
 
 <style scoped>
   .image {
-    width: 120px;
-    height: 120px;
+    width: 114px;
+    height: 114px;
     object-fit: cover;
     object-position: 50% 50%;
   }

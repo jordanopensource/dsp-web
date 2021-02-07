@@ -15,4 +15,10 @@ export default {
     stepByStep: 'Step-by-step',
     submit: 'Submit',
     website: 'Visit website',
+    devWebsite: 'Developer website',
+    privacyPolicy: 'Privacy policy',
+    sourceCode: 'Source code',
+    openSource: 'Open source',
+    endorsed: 'Endorsed by JOSA',
+    free: 'Free',
 }

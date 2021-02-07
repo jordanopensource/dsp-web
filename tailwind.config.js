@@ -48,7 +48,8 @@ module.exports = {
         '90': '0.90'
       },
       minWidth: {
-        'xs': '20rem'
+        'xs': '20rem',
+        'max': 'max-content',
       }
     }
   },
