@@ -44,10 +44,10 @@
     },
     computed: {
       appLink() {
-        return this.localePath('/softwares/' + this.id)
+        return this.localePath('/app/' + this.id)
       },
       publisherLink() {
-        return this.localePath('/softwares/publishers/' + this.publisher.id)
+        return this.localePath('/publisher/' + this.publisher.id)
       }
     },
     props: {
