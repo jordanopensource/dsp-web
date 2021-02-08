@@ -32,7 +32,7 @@ module.exports = {
           '100': '#f7f6f5',
           '300': '#e2d7cd',
           default: '#aea79f',
-          '700': '##665f56',
+          '700': '#665f56',
         },
       },
       fontFamily: {

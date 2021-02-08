@@ -28,12 +28,13 @@
           <!-- Banner -->
           <!-- Guide -->
           <div v-if="guide.content_section.length" class="content-body">
-            <!-- Guide Content -->
-            <h1>{{ $t("content") }}</h1>
-            <div>
+            <!-- Sections Menu -->
+            <div class="sections-menu w-full relative ">
+              <h1>{{ $t("content") }}</h1>
               <NuxtLink v-for="section in guide.content_section" :key="section.id" :to="'#' + section.section_id"
-                class="block opacity-75 hover:opacity-50">- {{ section["title_" + $i18n.locale] }}</NuxtLink>
+                class="section-link">{{ section["title_" + $i18n.locale] }}</NuxtLink>
             </div>
+            <!-- Guide Content -->
             <div v-for="section in guide.content_section" :key="section.id" :id="section.section_id"
               class="content-section">
               <h2 class="content-section-title">
@@ -155,6 +156,43 @@
     @apply my-4;
   }
 
+  .section-link {
+    @apply block cursor-pointer relative mt-3 opacity-75 text-josa-grey-700;
+  }
+
+  .section-link:hover,
+  .section-link.nuxt-link-active {
+    @apply text-josa-black;
+  }
+
+  .section-link:hover::before,
+  .section-link.nuxt-link-active::before {
+    content: "";
+    background-color: #9bdedf;
+    height: 100%;
+    width: 8px;
+    display: block;
+    position: absolute;
+  }
+
+  [dir="ltr"] .section-link:hover:before,
+  [dir="ltr"] .section-link.nuxt-link-active:before {
+    left: -8px;
+  }
+
+  [dir="rtl"] .section-link:hover:before,
+  [dir="rtl"] .section-link.nuxt-link-active:before {
+    right: -8px;
+  }
+
+  [dir="ltr"] .section-link {
+    padding-left: 8px;
+  }
+
+  [dir="rtl"] .section-link {
+    padding-right: 8px;
+  }
+
   [lang="en"] .content-section-body>>>* {
     @apply text-base;
   }
@@ -164,7 +202,7 @@
   }
 
   @screen lg {
-    
+
     [lang="en"] .content-section-body>>>* {
       @apply text-lg;
     }
