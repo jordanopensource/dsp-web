@@ -99,7 +99,7 @@
     methods: {
       setContentNegMargin() {
         let rem = this.getRem();
-        let cover = this.$refs.cover;
+        let cover = this.$refs.cover.$el;
         let element = this.$refs.title;
         let height = element.offsetHeight;
         let value = parseInt(height) / rem + 3;
