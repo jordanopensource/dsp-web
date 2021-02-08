@@ -21,4 +21,5 @@ export default {
     openSource: 'Open source',
     endorsed: 'Endorsed by JOSA',
     free: 'Free',
+    availableOn: 'Available on:',
 }

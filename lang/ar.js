@@ -21,4 +21,5 @@ export default {
     openSource: 'مفتوح المصدر',
     endorsed: 'مقترح من جوسا',
     free: 'مجاني',
+    availableOn: 'متوفر على:',
 }
