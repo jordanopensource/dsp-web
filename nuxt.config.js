@@ -26,6 +26,7 @@ export default {
         body: true,
         type: "text/javascript"
       },
+      { src:'/js/owa.js' },
     ]
   },
 
