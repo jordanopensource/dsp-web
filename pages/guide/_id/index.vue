@@ -41,26 +41,26 @@
                 {{ section["title_" + $i18n.locale] }}
               </h2>
               <div class="content-section-body" v-html="section['description_' + $i18n.locale]"></div>
+              <!-- Tabs -->
+              <div class="content-body mt-8" v-if="section.steps_guides.length">
+                <h3>{{ $t("stepByStep") }}</h3>
+                <Tabs :options="{ useUrlFragment: true }" class="my-8">
+                  <template v-for="tab in section.steps_guides">
+                    <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id"
+                      :name="tab['platform_' + $i18n.locale]" class="content-section">
+                      <h3 class="content-section-title">
+                        {{ tab["title_" + $i18n.locale] ? tab["title_" + $i18n.locale]: '' }}</h3>
+                      <div v-if="tab['content_' + $i18n.locale]" v-html="tab['content_' + $i18n.locale]"
+                        class="content-section-body"></div>
+                    </TabsTab>
+                  </template>
+                </Tabs>
+              </div>
+              <!-- /Tabs -->
             </div>
             <!-- /Content -->
           </div>
           <!-- Guide -->
-          <!-- Tabs -->
-          <div class="content-body" v-if="guide.steps_guides.length">
-            <h1>{{ $t("stepByStep") }}</h1>
-            <Tabs :options="{ useUrlFragment: true }" class="my-8">
-              <template v-for="tab in guide.steps_guides">
-                <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id" :name="tab['platform_' + $i18n.locale]"
-                  class="content-section">
-                  <h2 class="content-section-title">
-                    {{ tab["title_" + $i18n.locale] ? tab["title_" + $i18n.locale]: '' }}</h2>
-                  <div v-if="tab['content_' + $i18n.locale]" v-html="tab['content_' + $i18n.locale]"
-                    class="content-section-body"></div>
-                </TabsTab>
-              </template>
-            </Tabs>
-          </div>
-          <!-- /Tabs -->
         </div>
       </article>
     </div>
