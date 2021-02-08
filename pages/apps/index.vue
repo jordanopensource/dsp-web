@@ -6,7 +6,7 @@
       <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
         class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsAppStacked v-if="apps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
+    <ListsAppGrid v-if="apps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
       :contentList="filterBy(apps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
       class="mt-10" />
   </div>
@@ -29,7 +29,7 @@
         let list = this.$store.state.apps.list
         if (this.active != 'all') {
           let filteredList = list.filter((item) => {
-            return item.app_publisher.name == this.active
+            return item.category.name == this.active
           })
           return filteredList
         } else {

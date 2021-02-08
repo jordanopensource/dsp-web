@@ -14,7 +14,7 @@ export const mutations = {
     state.publishers = content
   },
   setCategories(state, content) {
-    state.publishers = content
+    state.categories = content
   },
 }
 

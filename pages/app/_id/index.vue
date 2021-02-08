@@ -25,9 +25,9 @@
             </div>
           </div>
           <div class="flex flex-row flex-wrap md:flex-no-wrap my-12">
-            <p class="display-excerpt mb-8 md:ltr:mr-8 md:rtl:ml-8" v-if="app['description_' + $i18n.locale]">
+            <p class="display-excerpt mb-8 md:ltr:mr-8 md:rtl:ml-8 flex-grow" v-if="app['description_' + $i18n.locale]">
               {{ app["description_" + $i18n.locale] }}</p>
-            <div class="flex flex-col justify-end min-w-max w-full">
+            <div class="flex flex-col justify-end min-w-max max-w-min">
               <a v-if="app.app_publisher.website_url" :href="app.app_publisher.website_url" target="_blank"
                 class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
                 <span class="mx-2">{{ $t('devWebsite') }}</span>
