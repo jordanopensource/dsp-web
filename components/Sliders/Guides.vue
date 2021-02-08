@@ -19,6 +19,18 @@
 
 <script>
   export default {
+    updated() {
+      var locale = this.$i18n.locale
+      var slides = document.getElementsByClassName("agile__slide")
+      if (locale == 'ar') {
+        for (let item of slides) {
+          let str = item.style.transform
+          let newStr = str.replace('-', '')
+          item.style.transform = newStr
+          console.log(item.style.transform)
+        }
+      }
+    },
     data() {
       return {
         sliderOption: {
@@ -27,7 +39,7 @@
           fade: true,
           infinite: true,
           pauseOnHover: true,
-          dots: false
+          dots: false,
         }
       }
     },
