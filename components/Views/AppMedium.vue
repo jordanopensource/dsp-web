@@ -1,18 +1,18 @@
 <template>
   <div class="view-full">
-    <div class="flex flex-row flex-wrap md:flex-no-wrap">
+    <div class="flex flex-col h-full">
       <div class="block flex-shrink-0 mb-4">
         <UIImage v-if="image" :image="image" size="medium" class="image" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
       </div>
-      <div class="md:mx-8 flex-grow">
+      <div class="flex-grow">
         <NuxtLink :to="appLink">
           <h3>{{ name }}</h3>
         </NuxtLink>
         <!-- <NuxtLink :to="publisherLink"> -->
         <h4 v-if="publisher" class="my-2">{{ publisher['title_' + $i18n.locale] }}</h4>
         <!-- </NuxtLink> -->
-        <div class="display-faded mt-4 flex flex-col sm:flex-row">
+        <div class="display-faded mt-4 flex flex-row flex-wrap">
           <span class="ltr:mr-4 rtl:ml-4" v-if="openSource"><i
               class="ri-open-source-fill text-2xl align-middle"></i><span
               class="text-sm mx-1 align-middle">{{$t('openSource')}}</span></span>
@@ -24,9 +24,9 @@
         </div>
         <p v-if="description" class="mb-2 mt-4">{{ description }}</p>
       </div>
-      <div class="flex flex-col flex-wrap justify-end min-w-max max-w-min">
-        <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank"
-          class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
+      <div class="w-full">
+        <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank" class="flex flex-row flex-no-wrap items-center"><i 
+            class="ri-global-fill"></i>
           <span class="mx-2">{{ $t('devWebsite') }}</span>
         </a>
         <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
@@ -38,7 +38,8 @@
           <span class="mx-2">{{ $t('sourceCode') }}</span>
         </a>
         <hr class="w-full my-2">
-        <div v-if="platforms.length" class="flex flex-row flex-no-wrap justify-start items-end mb-4 md:mb-0 ">
+        <div v-if="platforms.length" class="">
+          <p class="font-medium my-1">Availabe on:</p>
           <template v-for="platform in platforms">
             <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
               class="ltr:mr-2 rtl:ml-2 inline-block">

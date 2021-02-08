@@ -12,6 +12,11 @@
         :publisher="item.app_publisher"
         :website="item.website"
         :platforms="item.Platform"
+        :privacyPolicy="item.privacy_policy_url"
+        :sourceCode="item.github_url"
+        :openSource="item.open_source"
+        :free="item.free"
+        :endorsed="item.endorsed"
         class="mb-10 p-4 bg-white" />
   </div>
 </template>

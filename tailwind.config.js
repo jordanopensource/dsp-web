@@ -50,6 +50,9 @@ module.exports = {
       minWidth: {
         'xs': '20rem',
         'max': 'max-content',
+      },
+      maxWidth: {
+        'min': 'min-content',
       }
     }
   },
