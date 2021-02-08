@@ -2,7 +2,8 @@ import axios from 'axios';
 
 export const state = () => ({
   list: [],
-  publishers: []
+  publishers: [],
+  categories: [],
 })
 
 export const mutations = {
@@ -11,7 +12,10 @@ export const mutations = {
   },
   setPublishers(state, content) {
     state.publishers = content
-  }
+  },
+  setCategories(state, content) {
+    state.publishers = content
+  },
 }
 
 export const actions = {
@@ -24,5 +28,10 @@ export const actions = {
     const response = await axios.get(this.$config.APIBaseURL + '/app-publishers');
     const content = response.data;
     commit("setPublishers", content);
-  }
+  },
+  async fetchCategories({commit}) {
+    const response = await axios.get(this.$config.APIBaseURL + '/app-categories');
+    const content = response.data;
+    commit("setCategories", content);
+  },
 }
