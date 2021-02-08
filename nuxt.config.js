@@ -95,7 +95,7 @@ export default {
         dir: 'rtl'
       }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'ar',
     vueI18n: {
       fallbackLocale: 'en',
     },
