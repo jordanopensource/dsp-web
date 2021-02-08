@@ -15,13 +15,13 @@
         </a>
       </div>
       <div id="social-menu" class="inline-block my-4">
-        <a href="https://www.instagram.com/jordanopensource/" target="_blank">
+        <a href="https://web.facebook.com/jordanopensource/" target="_blank">
           <i class="ri-facebook-fill"></i>
         </a>
         <a href="https://twitter.com/jo_osa" target="_blank">
           <i class="ri-twitter-fill"></i>
         </a>
-        <a href="https://web.facebook.com/jordanopensource/" target="_blank">
+        <a href="https://www.instagram.com/jordanopensource/" target="_blank">
           <i class="ri-instagram-fill"></i>
         </a>
       </div>
