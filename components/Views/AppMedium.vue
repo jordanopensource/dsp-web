@@ -25,8 +25,8 @@
         <p v-if="description" class="mb-2 mt-4">{{ description }}</p>
       </div>
       <div class="w-full">
-        <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank" class="flex flex-row flex-no-wrap items-center"><i 
-            class="ri-global-fill"></i>
+        <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank"
+          class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
           <span class="mx-2">{{ $t('devWebsite') }}</span>
         </a>
         <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
@@ -39,7 +39,7 @@
         </a>
         <hr class="w-full my-2">
         <div v-if="platforms.length" class="">
-          <p class="font-medium my-1">Availabe on:</p>
+          <p class="font-medium my-1">{{ $t('availableOn')}}</p>
           <template v-for="platform in platforms">
             <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
               class="ltr:mr-2 rtl:ml-2 inline-block">
@@ -112,15 +112,18 @@
       },
       openSource: {
         type: String,
-        required: false
+        required: false,
+        default: false
       },
       free: {
         type: String,
-        required: false
+        required: false,
+        default: false
       },
       endorsed: {
         type: String,
-        required: false
+        required: false,
+        default: false
       },
     }
   }
