@@ -28,38 +28,39 @@
           <!-- Banner -->
           <!-- Guide -->
           <div v-if="guide.content_section.length" class="content-body">
-            <!-- Guide Content -->
-            <h1>{{ $t("content") }}</h1>
-            <div>
+            <!-- Sections Menu -->
+            <div class="sections-menu w-full relative ">
+              <h1>{{ $t("content") }}</h1>
               <NuxtLink v-for="section in guide.content_section" :key="section.id" :to="'#' + section.section_id"
-                class="block opacity-75 hover:opacity-50">- {{ section["title_" + $i18n.locale] }}</NuxtLink>
+                class="section-link">{{ section["title_" + $i18n.locale] }}</NuxtLink>
             </div>
+            <!-- Guide Content -->
             <div v-for="section in guide.content_section" :key="section.id" :id="section.section_id"
               class="content-section">
               <h2 class="content-section-title">
                 {{ section["title_" + $i18n.locale] }}
               </h2>
               <div class="content-section-body" v-html="section['description_' + $i18n.locale]"></div>
+              <!-- Tabs -->
+              <div class="content-body mt-8" v-if="section.steps_guides.length">
+                <h3>{{ $t("stepByStep") }}</h3>
+                <Tabs :options="{ useUrlFragment: true }" class="my-8">
+                  <template v-for="tab in section.steps_guides">
+                    <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id"
+                      :name="tab['platform_' + $i18n.locale]" class="content-section">
+                      <h3 class="content-section-title">
+                        {{ tab["title_" + $i18n.locale] ? tab["title_" + $i18n.locale]: '' }}</h3>
+                      <div v-if="tab['content_' + $i18n.locale]" v-html="tab['content_' + $i18n.locale]"
+                        class="content-section-body"></div>
+                    </TabsTab>
+                  </template>
+                </Tabs>
+              </div>
+              <!-- /Tabs -->
             </div>
             <!-- /Content -->
           </div>
           <!-- Guide -->
-          <!-- Tabs -->
-          <div class="content-body" v-if="guide.steps_guides.length">
-            <h1>{{ $t("stepByStep") }}</h1>
-            <Tabs :options="{ useUrlFragment: true }" class="my-8">
-              <template v-for="tab in guide.steps_guides">
-                <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id" :name="tab['platform_' + $i18n.locale]"
-                  class="content-section">
-                  <h2 class="content-section-title">
-                    {{ tab["title_" + $i18n.locale] ? tab["title_" + $i18n.locale]: '' }}</h2>
-                  <div v-if="tab['content_' + $i18n.locale]" v-html="tab['content_' + $i18n.locale]"
-                    class="content-section-body"></div>
-                </TabsTab>
-              </template>
-            </Tabs>
-          </div>
-          <!-- /Tabs -->
         </div>
       </article>
     </div>
@@ -99,7 +100,7 @@
     methods: {
       setContentNegMargin() {
         let rem = this.getRem();
-        let cover = this.$refs.cover;
+        let cover = this.$refs.cover.$el;
         let element = this.$refs.title;
         let height = element.offsetHeight;
         let value = parseInt(height) / rem + 3;
@@ -155,6 +156,43 @@
     @apply my-4;
   }
 
+  .section-link {
+    @apply block cursor-pointer relative mt-3 opacity-75 text-josa-grey-700;
+  }
+
+  .section-link:hover,
+  .section-link.nuxt-link-active {
+    @apply text-josa-black;
+  }
+
+  .section-link:hover::before,
+  .section-link.nuxt-link-active::before {
+    content: "";
+    background-color: #9bdedf;
+    height: 100%;
+    width: 8px;
+    display: block;
+    position: absolute;
+  }
+
+  [dir="ltr"] .section-link:hover:before,
+  [dir="ltr"] .section-link.nuxt-link-active:before {
+    left: -8px;
+  }
+
+  [dir="rtl"] .section-link:hover:before,
+  [dir="rtl"] .section-link.nuxt-link-active:before {
+    right: -8px;
+  }
+
+  [dir="ltr"] .section-link {
+    padding-left: 8px;
+  }
+
+  [dir="rtl"] .section-link {
+    padding-right: 8px;
+  }
+
   [lang="en"] .content-section-body>>>* {
     @apply text-base;
   }
@@ -164,7 +202,7 @@
   }
 
   @screen lg {
-    
+
     [lang="en"] .content-section-body>>>* {
       @apply text-lg;
     }
