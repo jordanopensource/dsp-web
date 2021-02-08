@@ -5,7 +5,7 @@
         <UIImage v-if="image" :image="image" size="medium" class="image" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
       </div>
-      <div class="md:mx-8">
+      <div class="md:mx-8 flex-grow">
         <NuxtLink :to="appLink">
           <h3>{{ name }}</h3>
         </NuxtLink>
@@ -24,7 +24,7 @@
         </div>
         <p v-if="description" class="mb-2 mt-4">{{ description }}</p>
       </div>
-      <div class="flex flex-col flex-wrap justify-end min-w-max">
+      <div class="flex flex-col flex-wrap justify-end min-w-max max-w-min">
         <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank"
           class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
           <span class="mx-2">{{ $t('devWebsite') }}</span>
