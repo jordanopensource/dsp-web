@@ -44,7 +44,7 @@
               <!-- Tabs -->
               <div class="content-body mt-8" v-if="section.steps_guides.length">
                 <h3>{{ $t("stepByStep") }}</h3>
-                <Tabs :options="{ useUrlFragment: true }" class="my-8">
+                <Tabs :options="{ useUrlFragment: false }" class="my-8">
                   <template v-for="tab in section.steps_guides">
                     <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id"
                       :name="tab['platform_' + $i18n.locale]" class="content-section">
