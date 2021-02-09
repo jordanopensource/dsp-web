@@ -2,7 +2,7 @@
   <div>
     <SlidersGuides :slider="slider" v-if="slider" class="bg-white mb-10" />
     <ListsAppGrid v-if="apps.length" :title="$t('weeklyRecommendations')" :contentList="apps.slice(0,2)" class="my-10 py-12"/>
-    <ListsGrid v-if="guides.length" :title="$t('popularGuides')" :contentList="guides" :count="3" class="my-10 py-12" />
+    <ListsGrid v-if="popularGuides.length" :title="$t('popularGuides')" :contentList="popularGuides" :count="3" class="my-10 py-12" />
     <Helpdesk v-if="helpdesksList.length" class="mt-10 py-12 bg-white" />
   </div>
 </template>
@@ -16,8 +16,8 @@
       this.$store.dispatch('helpdesk/fetch')
     },
     computed: {
-      guides() {
-        return this.$store.state.guides.list
+      popularGuides() {
+        return this.$store.state.guides.popular
       },
       slider() {
         return this.$store.state.sliders.list.find((obj) => {
