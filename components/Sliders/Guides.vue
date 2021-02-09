@@ -27,7 +27,6 @@
           let str = item.style.transform
           let newStr = str.replace('-', '')
           item.style.transform = newStr
-          console.log(item.style.transform)
         }
       }
     },

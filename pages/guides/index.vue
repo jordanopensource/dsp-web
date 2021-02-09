@@ -7,12 +7,13 @@
       <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
         class="search-bar mb-8 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsSpotlight v-if="guides.length && !searchString" :title="$t('spotlight')" :content="guides[0]" class="mt-10" />
-    <ListsGrid v-if="guides.length && !searchString" :title="$t('popularGuides')" :contentList="guides" :count="3"
-      class="mt-10" />
-    <ListsStacked v-if="guides.length"
+    <ListsSpotlight v-if="spotlightGuides.length && !searchString" :title="$t('spotlight')"
+      :content="orderBy(spotlightGuides, 'published_at', -1)[0]" class="mt-10" />
+    <ListsGrid v-if="popularGuides.length && !searchString" :title="$t('popularGuides')" :contentList="popularGuides"
+      :count="3" class="mt-10" />
+    <ListsStacked v-if="allGuides.length"
       :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allGuides')"
-      :contentList="filterBy(guides, searchString, 'title_en', 'description_en', 'title_ar', 'description_ar')"
+      :contentList="filterBy(allGuides, searchString, 'title_en', 'description_en', 'title_ar', 'description_ar')"
       class="mt-10" />
   </div>
 </template>
@@ -30,8 +31,30 @@
       pageInfo() {
         return this.$store.getters.getPages.find((page) => page.page_id == 'guides')
       },
-      guides() {
+      allGuides() {
         let list = this.$store.state.guides.list
+        if (this.active != 'all') {
+          let filteredList = list.filter((item) => {
+            return item.category.name == this.active
+          })
+          return filteredList
+        } else {
+          return list
+        }
+      },
+      popularGuides() {
+        let list = this.$store.state.guides.popular
+        if (this.active != 'all') {
+          let filteredList = list.filter((item) => {
+            return item.category.name == this.active
+          })
+          return filteredList
+        } else {
+          return list
+        }
+      },
+      spotlightGuides() {
+        let list = this.$store.state.guides.spotlight
         if (this.active != 'all') {
           let filteredList = list.filter((item) => {
             return item.category.name == this.active
@@ -48,9 +71,15 @@
         return this.active
       }
     },
-    created() {
-      this.$store.dispatch('guides/fetch')
-      this.$store.dispatch('guides/fetchCategories')
+    async fetch() {
+      let list = this.$store.state.guides.list
+      let categories = this.$store.state.guides.categories
+      if (list.length < 1) {
+        await this.$store.dispatch("guides/fetch")
+      }
+      if (categories.length < 1) {
+        await this.$store.dispatch('guides/fetchCategories')
+      }
     },
     methods: {
       setActiveCat(value) {
