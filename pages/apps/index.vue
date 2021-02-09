@@ -46,10 +46,19 @@
         return this.active
       }
     },
-    created() {
-      this.$store.dispatch('apps/fetch')
-      this.$store.dispatch('apps/fetchPublishers')
-      this.$store.dispatch('apps/fetchCategories')
+    async fetch() {
+      let list = this.$store.state.apps.list
+      let categories = this.$store.state.apps.categories
+      let publishers = this.$store.state.apps.publishers
+      if (list.length < 1) {
+        await this.$store.dispatch("apps/fetch")
+      }
+      if (categories.length < 1) {
+        await this.$store.dispatch('apps/fetchCategories')
+      }
+      if (publishers.length < 1) {
+        await this.$store.dispatch('apps/fetchPublishers')
+      }
     },
     methods: {
       setActiveCat(value) {
