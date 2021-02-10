@@ -22,4 +22,6 @@ export default {
     endorsed: 'مقترح من جوسا',
     free: 'مجاني',
     availableOn: 'متوفر على:',
+    commercial: 'تجاري',
+    closedSource: 'مغلق المصدر',
 }
