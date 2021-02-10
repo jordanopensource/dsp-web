@@ -84,9 +84,16 @@
     cursor: pointer;
     position: fixed;
     z-index: 1000;
-    right: 2rem;
     bottom: 2rem;
     text-align: center;
+  }
+
+  [dir="ltr"] .back-to-top {
+    right: 2rem;
+  }
+
+  [dir="rtl"] .back-to-top {
+    left: 2rem;
   }
 
   .back-to-top .default {
