@@ -22,4 +22,6 @@ export default {
     endorsed: 'Endorsed by JOSA',
     free: 'Free',
     availableOn: 'Available on:',
+    commercial: 'Commercial',
+    closedSource: 'Closed Source',
 }
