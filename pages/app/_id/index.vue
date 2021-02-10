@@ -11,16 +11,31 @@
               <!-- <NuxtLink v-if="app.app_publisher" :to="publisherLink"> -->
               <h3 v-if="app.app_publisher" class="my-2">{{ app.app_publisher['title_' + $i18n.locale] }}</h3>
               <!-- </NuxtLink> -->
-              <div class="display-faded mt-4 sm:mt-8 flex flex-col md:flex-row">
-                <span class="ltr:mr-4 rtl:ml-4" v-if="app.open_source"><i
-                    class="ri-open-source-fill text-2xl align-middle"></i><span
-                    class="text-sm mx-1 align-middle">{{$t('openSource')}}</span></span>
-                <span class="ltr:mr-4 rtl:ml-4" v-if="app.free"><i
-                    class="ri-creative-commons-nc-fill text-2xl align-middle"></i><span
-                    class="text-sm mx-1 align-middle">{{$t('free')}}</span></span>
-                <span class="ltr:mr-4 rtl:ml-4" v-if="app.endorsed"><i
-                    class="ri-medal-fill text-2xl align-middle"></i><span
-                    class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span></span>
+              <div class="mt-4 sm:mt-8 flex flex-col md:flex-row">
+                <span class="ltr:mr-4 rtl:ml-4">
+                  <template v-if="app.open_source">
+                    <i class="ri-open-source-fill text-2xl align-middle text-josa-teal"></i><span
+                      class="text-sm mx-1 align-middle">{{$t('openSource')}}</span>
+                  </template>
+                  <template v-else>
+                    <i class="ri-open-source-fill text-2xl align-middle display-faded"></i><span
+                      class="text-sm mx-1 align-middle display-faded">{{$t('closedSource')}}</span>
+                  </template>
+                </span>
+                <span class="ltr:mr-4 rtl:ml-4">
+                  <template v-if="app.free">
+                    <i class="ri-creative-commons-nc-fill text-2xl align-middle text-josa-teal"></i><span
+                      class="text-sm mx-1 align-middle">{{$t('free')}}</span>
+                  </template>
+                  <template v-else>
+                    <i class="ri-creative-commons-nc-fill text-2xl align-middle display-faded"></i><span
+                      class="text-sm mx-1 align-middle display-faded">{{$t('commercial')}}</span>
+                  </template>
+                </span>
+                <span class="ltr:mr-4 rtl:ml-4 flex flex-no-wrap items-center" v-if="app.endorsed">
+                  <img src="/images/logo/josa-icon-teal.svg" class="josa-icon inline" /><span
+                    class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span>
+                </span>
               </div>
             </div>
           </div>
@@ -97,6 +112,11 @@
 
   .content {
     @apply max-w-screen-md bg-white relative z-50 mx-auto;
+  }
+
+  .josa-icon {
+    width: 1.875rem;
+    height: 1.875rem;
   }
 
   @screen sm {
