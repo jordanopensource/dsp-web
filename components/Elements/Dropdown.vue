@@ -12,11 +12,11 @@
     <!-- Dropdown Menu -->
     <transition name="dropdown">
       <div class="dropdown-menu" v-bind:class="{ active: show }" v-if="show">
-        <div :class="active == 'all' ? 'active': ''" class="dropdown-menu-link" @click="setActive('all')">
+        <div :class="active == 'all' ? 'active': ''" class="dropdown-menu-link" @click="setActive('all', $t('all'))">
           <p class="dropdown-menu-text">{{ $t('all') }}</p>
         </div>
         <div v-for="item in items" :key="item.id" :class="active == item.name ? 'active': ''" class="dropdown-menu-link"
-          @click="setActive(item.name)">
+          @click="setActive(item.name, item['title_' + $i18n.locale])">
           <p class="dropdown-menu-text">{{ item['title_' + $i18n.locale] }}</p>
         </div>
       </div>
@@ -42,9 +42,9 @@
       }
     },
     methods: {
-      setActive(value) {
+      setActive(value, title) {
         this.show = false
-        this.$emit('setActive', value)
+        this.$emit('setActive', value, title)
       }
     },
     computed: {
@@ -52,7 +52,7 @@
         if (this.active == 'all') {
           return this.$t('all')
         } else {
-          return this.items.find((item) => item.name == this.active)?.['title_' + this.$i18n.locale]
+          return this.items.find((item) => item.name == this.active) ? . ['title_' + this.$i18n.locale]
         }
       }
     }

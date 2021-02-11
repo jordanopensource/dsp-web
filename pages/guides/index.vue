@@ -4,7 +4,7 @@
     <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
       <UIFilterMenu :items="guidesCategories" :active="activeCat" @setActive="setActiveCat"
         class="lg:ltr:mr-10 lg:rtl:ml-10" />
-      <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
+      <ElementsControlInput v-model="searchString" :placeholder="$t('search') + ' ' + activeCatTitle"
         class="search-bar mb-8 rounded-full flex-grow w-full lg:w-auto" />
     </div>
     <ListsSpotlight v-if="spotlightGuides.length && !searchString" :title="$t('spotlight')"
@@ -24,6 +24,7 @@
     data() {
       return {
         active: 'all',
+        activeCatTitle: this.$t('all'),
         searchString: ''
       }
     },
@@ -82,8 +83,9 @@
       }
     },
     methods: {
-      setActiveCat(value) {
+      setActiveCat(value, title) {
         this.active = value
+        this.activeCatTitle = title
       }
     }
   }

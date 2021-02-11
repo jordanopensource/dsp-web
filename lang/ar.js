@@ -10,7 +10,7 @@ export default {
     allHelpdesks: 'جميع مكاتب المساعدة',
     helpdesk: 'مكتب المساعدة',
     noResults: 'لا توجد نتائج',
-    search: 'بحث',
+    search: 'بحث في',
     searchResults: 'البحث عن:',
     stepByStep: 'خطوة بخطوة',
     submit: 'إرسال',

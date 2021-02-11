@@ -10,7 +10,7 @@ export default {
     allHelpdesks: 'All Helpdesks',
     helpdesk: 'Helpdesk',
     noResults: 'No results',
-    search: 'Search',
+    search: 'Search in',
     searchResults: 'Searching for:',
     stepByStep: 'Step-by-step',
     submit: 'Submit',
