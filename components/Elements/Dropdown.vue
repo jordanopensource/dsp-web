@@ -52,7 +52,7 @@
         if (this.active == 'all') {
           return this.$t('all')
         } else {
-          return this.items.find((item) => item.name == this.active) ? . ['title_' + this.$i18n.locale]
+          return this.items.find((item) => item.name == this.active)?.['title_' + this.$i18n.locale]
         }
       }
     }
