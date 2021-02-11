@@ -2,9 +2,9 @@
   <div class="tabs-component">
     <ul class="tabs-list">
       <li v-for="(tab, i) in tabs" :key="i" :class="{ 'is-active': tab.isActive, 'is-disabled': tab.isDisabled }"
-        class="tab-list-item" role="presentation" v-show="tab.isVisible">
-        <a v-html="tab.header" :aria-controls="tab.hash" :aria-selected="tab.isActive"
-          @click="selectTab(tab.hash, $event)" :href="tab.hash" class="tab-list-item-a" role="tab"></a>
+        class="tab-list-item" role="presentation" v-show="tab.isVisible" :aria-controls="tab.hash"
+        :aria-selected="tab.isActive" @click="selectTab(tab.hash, $event)">
+        <a v-html="tab.header" :href="tab.hash" class="tab-list-item-a" role="tab"></a>
       </li>
     </ul>
     <div class="tabs-panels">
