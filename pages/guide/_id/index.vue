@@ -47,7 +47,7 @@
                 <Tabs :options="{ useUrlFragment: false }" class="my-8">
                   <template v-for="tab in section.steps_guides">
                     <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id"
-                      :name="tab['platform_' + $i18n.locale]" class="content-section">
+                      :name="tab['platform_' + $i18n.locale]" class="">
                       <h3 class="content-section-title">
                         {{ tab["title_" + $i18n.locale] ? tab["title_" + $i18n.locale]: '' }}</h3>
                       <div v-if="tab['content_' + $i18n.locale]" v-html="tab['content_' + $i18n.locale]"
