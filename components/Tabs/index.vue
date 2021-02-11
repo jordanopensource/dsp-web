@@ -144,11 +144,11 @@
   }
 
   .tabs-list {
-    @apply list-none relative;
+    @apply list-none relative flex flex-row flex-no-wrap;
   }
 
   .tab-list-item {
-    @apply cursor-pointer relative inline-block m-0 py-4 px-8 bg-josa-grey-100 z-10 border-t border-b border-solid border-josa-grey;
+    @apply cursor-pointer relative inline-block m-0 p-2 bg-josa-grey-100 z-10 border-t border-b border-solid border-josa-grey;
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;
   }
@@ -180,6 +180,12 @@
 
   .tab-list-item-a {
     @apply z-0 font-medium text-josa-black;
+  }
+
+  @screen md {
+    .tab-list-item {
+      @apply py-4 px-8;
+    }
   }
 
 </style>
