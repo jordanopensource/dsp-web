@@ -129,39 +129,57 @@
     -webkit-transition: all 0.25s linear;
   }
 
+  .tabs-panels {
+    @apply relative block p-8 bg-white border-b border-l border-r border-solid border-josa-grey;
+  }
+
+  .tab-panel {
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+  }
+
+  .tabs-list:before {
+    content: "";
+    @apply absolute block bg-white top-auto left-0 right-0 bottom-0 border-b border-solid border-josa-grey;
+  }
+
   .tabs-list {
     @apply list-none relative;
   }
 
   .tab-list-item {
-    @apply cursor-pointer relative inline-block m-0 py-4 px-8 bg-josa-teal-100 z-10;
+    @apply cursor-pointer relative inline-block m-0 py-4 px-8 bg-josa-grey-100 z-10 border-t border-b border-solid border-josa-grey;
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;
   }
 
-  .tab-list-item.is-active {
-    @apply bg-white z-20;
+  [dir='ltr'] .tab-list-item {
+    @apply border-l;
+  }
+
+  [dir='rtl'] .tab-list-item {
+    @apply border-r;
+  }
+
+  [dir='ltr'] .tab-list-item:last-child {
+    @apply border-r;
+  }
+
+  [dir='rtl'] .tab-list-item:last-child {
+    @apply border-l;
   }
 
   .tab-list-item:hover {
     @apply bg-white;
   }
 
+  .tab-list-item.is-active {
+    @apply bg-white z-20;
+    border-bottom-color: white;
+  }
+
   .tab-list-item-a {
-    @apply z-0 font-medium;
-  }
-
-  .tab-list-item-a:hover,
-  .tab-list-item-a.active {
-    @apply text-josa-black;
-  }
-
-  .tabs-panels {
-    @apply block bg-white;
-  }
-
-  .tab-panel {
-    @apply pt-8;
+    @apply z-0 font-medium text-josa-black;
   }
 
 </style>
