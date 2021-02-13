@@ -1,7 +1,10 @@
 export default {
   spotlight: 'Spotlight',
   popularGuides: 'Popular Guides',
+  spotlightApp: 'Spotlight',
+  popularApps: 'Popular Apps',
   allGuides: 'All Guides',
+  allApps: 'All Apps',
   all: 'All',
   content: 'Content',
   weeklyRecommendations: 'Weekly Recommendations',

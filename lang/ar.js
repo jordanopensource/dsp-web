@@ -1,7 +1,10 @@
 export default {
   spotlight: 'دليل مختار',
   popularGuides: 'الأدلة الإرشادية الأكثر شعبية',
+  spotlightApp: 'تطبيق مختار',
+  popularApps: 'التطبيقات الأكثر شعبية',
   allGuides: 'جميع الأدلة الإرشادية',
+  allApps: 'جميع التطبيقات',
   all: 'الجميع',
   content: 'المحتوى',
   weeklyRecommendations: 'تطبيقات مقترحة أسبوعياً',
