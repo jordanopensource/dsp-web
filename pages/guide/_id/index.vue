@@ -75,14 +75,32 @@
       };
     },
     async fetch() {
-      this.guide = this.$store.state.guides.list.find((obj) => {
+      var guide = await this.$store.state.guides.list.find((obj) => {
         return obj.id == this.$route.params.id;
-      });
-      if (!this.guide) {
-        await this.$store.dispatch("guides/fetch");
-        this.guide = this.$store.state.guides.list.find((obj) => {
-          return obj.id == this.$route.params.id;
-        });
+      })
+      try {
+        if (guide && guide.id == this.$route.params.id) {
+          this.guide = guide
+          return guide
+        } else if (!guide) {
+          await this.$store.dispatch("guides/fetch");
+          guide = await this.$store.state.guides.list.find((obj) => {
+            return obj.id == this.$route.params.id;
+          })
+          if (guide && guide.id == this.$route.params.id) {
+            this.guide = guide
+            return guide
+          } else {
+            throw 404
+          }
+        } else {
+          throw 404
+        }
+      } catch(err) {
+        return this.$nuxt.error({
+          statusCode: 404,
+          message: '404 Page Not Found'
+        })
       }
     },
     mounted() {
