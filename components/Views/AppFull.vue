@@ -54,7 +54,7 @@
           <span class="mx-2">{{ $t('sourceCode') }}</span>
         </a>
         <hr class="w-full my-2">
-        <div v-if="platforms.length" class="flex flex-row flex-no-wrap justify-start items-end mb-4 md:mb-0 ">
+        <div v-if="platforms.length">
           <p class="font-medium my-1">{{ $t('availableOn')}}</p>
           <template v-for="platform in platforms">
             <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
