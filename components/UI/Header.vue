@@ -34,6 +34,19 @@
       return {
         isOpen: false,
       }
+    },
+    mounted() {
+      this.$nuxt.$on('routeChanged', () => {
+        this.isOpen = false
+      })
+      document.addEventListener('click', this.closeMenu)
+    },
+    methods: {
+      closeMenu(e) {
+        if (!this.$el.contains(e.target)) {
+          this.isOpen = false
+        }
+      }
     }
   }
 
