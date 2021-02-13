@@ -35,4 +35,10 @@ export default {
     lost: 'We can\'t seem to find the page you are looking for.',
     links: 'Here are some helpful links instead:',
   },
+  sort: {
+    publishedAtDESC: 'Newest',
+    publishedAtASC: 'Oldest',
+    alphabeticallyASC: 'Alphabetically from A to Z',
+    alphabeticallyDESC: 'Alphabetically from Z to A',
+  },
 }

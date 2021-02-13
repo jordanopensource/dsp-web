@@ -36,4 +36,10 @@ export default {
     links: 'إليك بعض الروابط المفيدة بدلاً من ذلك:',
     home: 'الصفحة الرئيسية'
   },
+  sort: {
+    publishedAtDESC: 'الأجدد',
+    publishedAtASC: 'الأقدم',
+    alphabeticallyASC: 'أبجدياً من أ إلى ي',
+    alphabeticallyDESC: 'أبجدياً من ي إلى أ',
+  },
 }
