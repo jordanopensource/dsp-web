@@ -37,7 +37,7 @@ export default {
     home: 'الصفحة الرئيسية'
   },
   sort: {
-    publishedAtDESC: 'الأجدد',
+    publishedAtDESC: 'الأحدث',
     publishedAtASC: 'الأقدم',
     alphabeticallyASC: 'أبجدياً من أ إلى ي',
     alphabeticallyDESC: 'أبجدياً من ي إلى أ',

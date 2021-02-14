@@ -10,9 +10,9 @@
       :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
     <ListsAppGrid v-if="popularApps.length && !searchString" :title="$t('popularApps')" :contentList="popularApps"
       :count="3" class="mt-10" />
-    <ListsAppStacked v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
+    <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
       :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
-      class="mt-10" />
+      class="my-10" />
   </div>
 </template>
 <script>
