@@ -127,17 +127,17 @@
         required: false
       },
       openSource: {
-        type: String,
+        type: Boolean,
         required: false,
         default: false
       },
       free: {
-        type: String,
+        type: Boolean,
         required: false,
         default: false
       },
       endorsed: {
-        type: String,
+        type: Boolean,
         required: false,
         default: false
       },
