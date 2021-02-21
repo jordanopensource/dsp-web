@@ -56,7 +56,7 @@
                 <span class="mx-2">{{ $t('sourceCode') }}</span>
               </a>
               <hr class="w-full my-2">
-              <div v-if="app.Platform.length" class="flex flex-row flex-no-wrap justify-start items-end mb-4 md:mb-0">
+              <div v-if="app.Platform.length">
                 <p class="font-medium my-1">{{ $t('availableOn')}}</p>
                 <template v-for="platform in app.Platform">
                   <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
@@ -109,7 +109,7 @@
         } else {
           throw 404
         }
-      } catch(err) {
+      } catch (err) {
         return this.$nuxt.error({
           statusCode: 404,
           message: '404 Page Not Found'

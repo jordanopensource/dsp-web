@@ -1,7 +1,10 @@
 export default {
   spotlight: 'دليل مختار',
   popularGuides: 'الأدلة الإرشادية الأكثر شعبية',
+  spotlightApp: 'تطبيق مختار',
+  popularApps: 'التطبيقات الأكثر شعبية',
   allGuides: 'جميع الأدلة الإرشادية',
+  allApps: 'جميع التطبيقات',
   all: 'الجميع',
   content: 'المحتوى',
   weeklyRecommendations: 'تطبيقات مقترحة أسبوعياً',
@@ -32,5 +35,11 @@ export default {
     lost: 'يبدو أننا لا نستطيع العثور على الصفحة التي تبحث عنها.',
     links: 'إليك بعض الروابط المفيدة بدلاً من ذلك:',
     home: 'الصفحة الرئيسية'
+  },
+  sort: {
+    publishedAtDESC: 'الأحدث',
+    publishedAtASC: 'الأقدم',
+    alphabeticallyASC: 'أبجدياً من أ إلى ي',
+    alphabeticallyDESC: 'أبجدياً من ي إلى أ',
   },
 }

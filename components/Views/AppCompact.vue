@@ -1,61 +1,50 @@
 <template>
-  <div class="view-full">
-    <div class="flex flex-col h-full">
+  <div class="view-compact flex flex-col">
+    <div class="flex flex-row flex-no-wrap md:flex-no-wrap flex-grow">
       <div class="block flex-shrink-0 mb-4">
         <UIImage v-if="image" :image="image" size="medium" class="image" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
       </div>
-      <div class="flex-grow">
+      <div class="ltr:ml-4 rtl:mr-4 flex-grow">
         <NuxtLink :to="appLink">
           <h3>{{ name }}</h3>
         </NuxtLink>
         <!-- <NuxtLink :to="publisherLink"> -->
         <h4 v-if="publisher" class="my-2">{{ publisher['title_' + $i18n.locale] }}</h4>
         <!-- </NuxtLink> -->
-        <div class="mt-4 sm:mt-8 flex flex-col md:flex-row">
-          <span class="ltr:mr-4 rtl:ml-4">
+        <div class="my-2 flex flex-row">
+          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-no-wrap items-center">
             <template v-if="openSource">
-              <i class="ri-open-source-fill text-2xl align-middle text-josa-teal"></i><span
-                class="text-sm mx-1 align-middle">{{$t('openSource')}}</span>
+              <i class="ri-open-source-fill text-2xl align-middle text-josa-teal"></i>
+              <span class="hidden sm:inline text-sm mx-1 align-middle" v-show="!viewGrid">{{$t('openSource')}}</span>
             </template>
             <template v-else>
-              <i class="ri-open-source-fill text-2xl align-middle display-faded"></i><span
-                class="text-sm mx-1 align-middle display-faded">{{$t('closedSource')}}</span>
+              <i class="ri-open-source-fill text-2xl align-middle display-faded"></i>
+              <span class="hidden sm:inline text-sm mx-1 align-middle display-faded"
+                v-show="!viewGrid">{{$t('closedSource')}}</span>
             </template>
           </span>
-          <span class="ltr:mr-4 rtl:ml-4">
+          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-no-wrap items-center">
             <template v-if="free">
-              <i class="ri-creative-commons-nc-fill text-2xl align-middle text-josa-teal"></i><span
-                class="text-sm mx-1 align-middle">{{$t('free')}}</span>
+              <i class="ri-creative-commons-nc-fill text-2xl align-middle text-josa-teal"></i>
+              <span class="hidden sm:inline text-sm mx-1 align-middle" v-show="!viewGrid">{{$t('free')}}</span>
             </template>
             <template v-else>
-              <i class="ri-creative-commons-nc-fill text-2xl align-middle display-faded"></i><span
-                class="text-sm mx-1 align-middle display-faded">{{$t('commercial')}}</span>
+              <i class="ri-creative-commons-nc-fill text-2xl align-middle display-faded"></i>
+              <span class="hidden sm:inline text-sm mx-1 align-middle display-faded"
+                v-show="!viewGrid">{{$t('commercial')}}</span>
             </template>
           </span>
-          <span class="ltr:mr-4 rtl:ml-4 flex flex-no-wrap items-center" v-if="endorsed">
+          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-no-wrap items-center" v-if="endorsed">
             <img src="/images/logo/josa-icon-teal.svg" class="josa-icon inline" /><span
-              class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span>
+              class="hidden sm:inline text-sm mx-1 align-middle" v-show="!viewGrid">{{$t('endorsed')}}</span>
           </span>
         </div>
-        <p v-if="description" class="mb-2 mt-4">{{ description }}</p>
       </div>
-      <div class="w-full">
-        <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank"
-          class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
-          <span class="mx-2">{{ $t('devWebsite') }}</span>
-        </a>
-        <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
-            class="ri-shield-keyhole-fill"></i>
-          <span class="mx-2">{{ $t('privacyPolicy') }}</span>
-        </a>
-        <a v-if="sourceCode" :href="sourceCode" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
-            class="ri-github-fill"></i>
-          <span class="mx-2">{{ $t('sourceCode') }}</span>
-        </a>
-        <hr class="w-full my-2">
-        <div v-if="platforms.length" class="">
-          <p class="font-medium my-1">{{ $t('availableOn')}}</p>
+      <div class=""
+        :class="viewGrid ? 'hidden' : 'hidden md:flex md:flex-col md:flex-wrap md:justify-end md:min-w-max md:w-48'">
+        <div v-if="platforms.length">
+          <p class="font-medium my-2">{{ $t('availableOn')}}</p>
           <template v-for="platform in platforms">
             <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
               class="ltr:mr-2 rtl:ml-2 inline-block">
@@ -63,6 +52,18 @@
             </a>
           </template>
         </div>
+      </div>
+    </div>
+    <div :class="viewGrid ? 'block' : 'block md:hidden'">
+      <hr class="w-full my-2">
+      <div v-if="platforms.length">
+        <p class="font-medium my-2">{{ $t('availableOn')}}</p>
+        <template v-for="platform in platforms">
+          <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
+            class="ltr:mr-2 rtl:ml-2 inline-block">
+            <i :class="logos[platform.name]" class="icon"></i>
+          </a>
+        </template>
       </div>
     </div>
   </div>
@@ -87,9 +88,16 @@
       },
       publisherLink() {
         return this.localePath('/publisher/' + this.publisher.id)
+      },
+      viewGrid() {
+        return this.view == 'grid' ? true : false
       }
     },
     props: {
+      view: {
+        type: String,
+        default: 'list'
+      },
       id: {
         type: Number,
         required: true
@@ -148,8 +156,8 @@
 
 <style scoped>
   .image {
-    width: 114px;
-    height: 114px;
+    width: 64px;
+    height: 64px;
     object-fit: cover;
     object-position: 50% 50%;
   }
@@ -157,6 +165,12 @@
   .josa-icon {
     width: 1.875rem;
     height: 1.875rem;
+  }
+
+  [class^="ri-"],
+  [class*=" ri-"] {
+    font-size: 1.875rem;
+    line-height: 1;
   }
 
 </style>

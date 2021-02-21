@@ -1,7 +1,10 @@
 export default {
   spotlight: 'Spotlight',
   popularGuides: 'Popular Guides',
+  spotlightApp: 'Spotlight',
+  popularApps: 'Popular Apps',
   allGuides: 'All Guides',
+  allApps: 'All Apps',
   all: 'All',
   content: 'Content',
   weeklyRecommendations: 'Weekly Recommendations',
@@ -31,5 +34,11 @@ export default {
     ops: 'Oops!',
     lost: 'We can\'t seem to find the page you are looking for.',
     links: 'Here are some helpful links instead:',
+  },
+  sort: {
+    publishedAtDESC: 'Newest',
+    publishedAtASC: 'Oldest',
+    alphabeticallyASC: 'Alphabetically from A to Z',
+    alphabeticallyDESC: 'Alphabetically from Z to A',
   },
 }

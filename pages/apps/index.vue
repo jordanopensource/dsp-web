@@ -6,9 +6,13 @@
       <ElementsControlInput v-model="searchString" :placeholder="$t('search') + ' ' + activeCatTitle"
         class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsAppGrid v-if="apps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
-      :contentList="filterBy(apps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
-      class="mt-10" />
+    <ListsAppSpotlight v-if="spotlightApps.length && !searchString" :title="$t('spotlightApp')"
+      :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
+    <ListsAppGrid v-if="popularApps.length && !searchString" :title="$t('popularApps')" :contentList="popularApps"
+      :count="3" class="mt-10" />
+    <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
+      :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
+      class="my-10" />
   </div>
 </template>
 <script>
@@ -26,8 +30,30 @@
       pageInfo() {
         return this.$store.getters.getPages.find((page) => page.page_id == 'apps')
       },
-      apps() {
+      allApps() {
         let list = this.$store.state.apps.list
+        if (this.active != 'all') {
+          let filteredList = list.filter((item) => {
+            return item.category.name == this.active
+          })
+          return filteredList
+        } else {
+          return list
+        }
+      },
+      popularApps() {
+        let list = this.$store.state.apps.popular
+        if (this.active != 'all') {
+          let filteredList = list.filter((item) => {
+            return item.category.name == this.active
+          })
+          return filteredList
+        } else {
+          return list
+        }
+      },
+      spotlightApps() {
+        let list = this.$store.state.apps.spotlight
         if (this.active != 'all') {
           let filteredList = list.filter((item) => {
             return item.category.name == this.active
