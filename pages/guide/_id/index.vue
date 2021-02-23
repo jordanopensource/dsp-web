@@ -47,7 +47,7 @@
                 <Tabs :options="{ useUrlFragment: false }" class="my-8">
                   <template v-for="tab in section.steps_guides">
                     <TabsTab v-if="tab['platform_' + $i18n.locale]" :key="tab.id"
-                      :name="tab['platform_' + $i18n.locale]" class="content-section">
+                      :name="tab['platform_' + $i18n.locale]" class="">
                       <h3 class="content-section-title">
                         {{ tab["title_" + $i18n.locale] ? tab["title_" + $i18n.locale]: '' }}</h3>
                       <div v-if="tab['content_' + $i18n.locale]" v-html="tab['content_' + $i18n.locale]"
@@ -75,14 +75,32 @@
       };
     },
     async fetch() {
-      this.guide = this.$store.state.guides.list.find((obj) => {
+      var guide = await this.$store.state.guides.list.find((obj) => {
         return obj.id == this.$route.params.id;
-      });
-      if (!this.guide) {
-        await this.$store.dispatch("guides/fetch");
-        this.guide = this.$store.state.guides.list.find((obj) => {
-          return obj.id == this.$route.params.id;
-        });
+      })
+      try {
+        if (guide && guide.id == this.$route.params.id) {
+          this.guide = guide
+          return guide
+        } else if (!guide) {
+          await this.$store.dispatch("guides/fetch");
+          guide = await this.$store.state.guides.list.find((obj) => {
+            return obj.id == this.$route.params.id;
+          })
+          if (guide && guide.id == this.$route.params.id) {
+            this.guide = guide
+            return guide
+          } else {
+            throw 404
+          }
+        } else {
+          throw 404
+        }
+      } catch(err) {
+        return this.$nuxt.error({
+          statusCode: 404,
+          message: '404 Page Not Found'
+        })
       }
     },
     mounted() {

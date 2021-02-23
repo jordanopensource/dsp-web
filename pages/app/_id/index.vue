@@ -11,16 +11,31 @@
               <!-- <NuxtLink v-if="app.app_publisher" :to="publisherLink"> -->
               <h3 v-if="app.app_publisher" class="my-2">{{ app.app_publisher['title_' + $i18n.locale] }}</h3>
               <!-- </NuxtLink> -->
-              <div class="display-faded mt-4 sm:mt-8 flex flex-col md:flex-row">
-                <span class="ltr:mr-4 rtl:ml-4" v-if="app.open_source"><i
-                    class="ri-open-source-fill text-2xl align-middle"></i><span
-                    class="text-sm mx-1 align-middle">{{$t('openSource')}}</span></span>
-                <span class="ltr:mr-4 rtl:ml-4" v-if="app.free"><i
-                    class="ri-creative-commons-nc-fill text-2xl align-middle"></i><span
-                    class="text-sm mx-1 align-middle">{{$t('free')}}</span></span>
-                <span class="ltr:mr-4 rtl:ml-4" v-if="app.endorsed"><i
-                    class="ri-medal-fill text-2xl align-middle"></i><span
-                    class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span></span>
+              <div class="mt-4 sm:mt-8 flex flex-col md:flex-row">
+                <span class="ltr:mr-4 rtl:ml-4">
+                  <template v-if="app.open_source">
+                    <i class="ri-open-source-fill text-2xl align-middle text-josa-teal"></i><span
+                      class="text-sm mx-1 align-middle">{{$t('openSource')}}</span>
+                  </template>
+                  <template v-else>
+                    <i class="ri-open-source-fill text-2xl align-middle display-faded"></i><span
+                      class="text-sm mx-1 align-middle display-faded">{{$t('closedSource')}}</span>
+                  </template>
+                </span>
+                <span class="ltr:mr-4 rtl:ml-4">
+                  <template v-if="app.free">
+                    <i class="ri-creative-commons-nc-fill text-2xl align-middle text-josa-teal"></i><span
+                      class="text-sm mx-1 align-middle">{{$t('free')}}</span>
+                  </template>
+                  <template v-else>
+                    <i class="ri-creative-commons-nc-fill text-2xl align-middle display-faded"></i><span
+                      class="text-sm mx-1 align-middle display-faded">{{$t('commercial')}}</span>
+                  </template>
+                </span>
+                <span class="ltr:mr-4 rtl:ml-4 flex flex-no-wrap items-center" v-if="app.endorsed">
+                  <img src="/images/logo/josa-icon-teal.svg" class="josa-icon inline" /><span
+                    class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span>
+                </span>
               </div>
             </div>
           </div>
@@ -41,7 +56,7 @@
                 <span class="mx-2">{{ $t('sourceCode') }}</span>
               </a>
               <hr class="w-full my-2">
-              <div v-if="app.Platform.length" class="flex flex-row flex-no-wrap justify-start items-end mb-4 md:mb-0">
+              <div v-if="app.Platform.length">
                 <p class="font-medium my-1">{{ $t('availableOn')}}</p>
                 <template v-for="platform in app.Platform">
                   <a v-if="platform.download_url" :key="platform.id" :href="platform.download_url" target="_blank"
@@ -73,17 +88,35 @@
       }
     },
     async fetch() {
-      this.app = this.$store.state.apps.list.find((obj) => {
+      var app = await this.$store.state.apps.list.find((obj) => {
         return obj.id == this.$route.params.id;
       })
-      if (!this.app) {
-        await this.$store.dispatch("apps/fetch");
-        this.app = this.$store.state.apps.list.find((obj) => {
-          return obj.id == this.$route.params.id;
+      try {
+        if (app && app.id == this.$route.params.id) {
+          this.app = app
+          return app
+        } else if (!app) {
+          await this.$store.dispatch("apps/fetch");
+          app = await this.$store.state.apps.list.find((obj) => {
+            return obj.id == this.$route.params.id;
+          })
+          if (app && app.id == this.$route.params.id) {
+            this.app = app
+            return app
+          } else {
+            throw 404
+          }
+        } else {
+          throw 404
+        }
+      } catch (err) {
+        return this.$nuxt.error({
+          statusCode: 404,
+          message: '404 Page Not Found'
         })
       }
     }
-  };
+  }
 
 </script>
 
@@ -97,6 +130,11 @@
 
   .content {
     @apply max-w-screen-md bg-white relative z-50 mx-auto;
+  }
+
+  .josa-icon {
+    width: 1.875rem;
+    height: 1.875rem;
   }
 
   @screen sm {

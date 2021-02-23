@@ -2,9 +2,9 @@
   <div class="tabs-component">
     <ul class="tabs-list">
       <li v-for="(tab, i) in tabs" :key="i" :class="{ 'is-active': tab.isActive, 'is-disabled': tab.isDisabled }"
-        class="tab-list-item" role="presentation" v-show="tab.isVisible">
-        <a v-html="tab.header" :aria-controls="tab.hash" :aria-selected="tab.isActive"
-          @click="selectTab(tab.hash, $event)" :href="tab.hash" class="tab-list-item-a" role="tab"></a>
+        class="tab-list-item" role="presentation" v-show="tab.isVisible" :aria-controls="tab.hash"
+        :aria-selected="tab.isActive" @click="selectTab(tab.hash, $event)">
+        <a v-html="tab.header" :href="tab.hash" class="tab-list-item-a" role="tab"></a>
       </li>
     </ul>
     <div class="tabs-panels">
@@ -129,39 +129,63 @@
     -webkit-transition: all 0.25s linear;
   }
 
-  .tabs-list {
-    @apply list-none relative;
+  .tabs-panels {
+    @apply relative block p-8 bg-white border-b border-l border-r border-solid border-josa-grey;
   }
 
-  .tab-list-item {
-    @apply cursor-pointer relative inline-block m-0 py-4 px-8 bg-josa-teal-100 z-10;
+  .tab-panel {
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;
   }
 
-  .tab-list-item.is-active {
-    @apply bg-white z-20;
+  .tabs-list:before {
+    content: "";
+    @apply absolute block bg-white top-auto left-0 right-0 bottom-0 border-b border-solid border-josa-grey;
+  }
+
+  .tabs-list {
+    @apply list-none relative flex flex-row flex-no-wrap;
+  }
+
+  .tab-list-item {
+    @apply cursor-pointer relative inline-block m-0 p-2 bg-josa-grey-100 z-10 border-t border-b border-solid border-josa-grey;
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+  }
+
+  [dir='ltr'] .tab-list-item {
+    @apply border-l;
+  }
+
+  [dir='rtl'] .tab-list-item {
+    @apply border-r;
+  }
+
+  [dir='ltr'] .tab-list-item:last-child {
+    @apply border-r;
+  }
+
+  [dir='rtl'] .tab-list-item:last-child {
+    @apply border-l;
   }
 
   .tab-list-item:hover {
     @apply bg-white;
   }
 
+  .tab-list-item.is-active {
+    @apply bg-white z-20;
+    border-bottom-color: white;
+  }
+
   .tab-list-item-a {
-    @apply z-0 font-medium;
+    @apply z-0 font-medium text-josa-black;
   }
 
-  .tab-list-item-a:hover,
-  .tab-list-item-a.active {
-    @apply text-josa-black;
-  }
-
-  .tabs-panels {
-    @apply block bg-white;
-  }
-
-  .tab-panel {
-    @apply pt-8;
+  @screen md {
+    .tab-list-item {
+      @apply py-4 px-8;
+    }
   }
 
 </style>

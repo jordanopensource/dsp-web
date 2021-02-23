@@ -1,20 +1,20 @@
 <template>
   <div id="footer" class="bg-josa-black-light">
-    <div class="flex items-center justify-between flex-wrap py-12 container">
+    <div class="flex items-center justify-between flex-wrap pt-12 pb-20 container">
       <div class="">
-        <a href="/" class="inline-block my-4 ltr:mr-8 rtl:ml-8">
+        <a href="/" class="inline-block my-2 ltr:mr-8 rtl:ml-8">
           <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/logo-arabic-white.svg"
             alt="منصة الأمان الرقمي">
           <img v-else class="logo" src="~/static/images/logo/logo-latin-full-white.svg" alt="Aman Raqami Logo">
         </a>
-        <a href="https://www.jordanopensource.org" target="_blank" class="inline-block my-4">
+        <a href="https://www.jordanopensource.org" target="_blank" class="inline-block my-2">
           <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/josa-logo-white-ar.svg"
             alt="الجمعية الأردنية للمصدر المفتوح">
           <img v-else class="logo" src="~/static/images/logo/josa-logo-white-en.svg"
             alt="Jordan Open Source Association Logo">
         </a>
       </div>
-      <div id="social-menu" class="inline-block my-4">
+      <div id="social-menu" class="inline-block my-2">
         <a href="https://web.facebook.com/jordanopensource/" target="_blank">
           <i class="ri-facebook-fill"></i>
         </a>

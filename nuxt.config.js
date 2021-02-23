@@ -26,7 +26,7 @@ export default {
         body: true,
         type: "text/javascript"
       },
-      { src:'/js/owa.js' },
+      { src:'/js/matomo.js' },
     ]
   },
 
@@ -35,6 +35,8 @@ export default {
     '@/assets/css/global.css',
     '@/assets/css/fonts/ibm-plex.css',
     '@/assets/css/typography.css',
+    '@/assets/css/hamburgers.css',
+    '@/assets/css/transitions.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
