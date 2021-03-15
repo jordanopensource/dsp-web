@@ -14,9 +14,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' },
     ],
-    script:[
+    script: [
       {
-        src:"https://code.jquery.com/jquery-2.1.4.min.js",
+        src: "https://code.jquery.com/jquery-2.1.4.min.js",
         body: true,
         type: "text/javascript"
       },
@@ -26,7 +26,7 @@ export default {
         body: true,
         type: "text/javascript"
       },
-      { src:'/js/matomo.js' },
+      { src: '/js/matomo.js' },
     ]
   },
 
@@ -74,6 +74,7 @@ export default {
     '@nuxtjs/axios',
     'nuxt-i18n',
     '@nuxtjs/moment',
+    'nuxt-healthcheck',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -111,7 +112,14 @@ export default {
     defaultLocale: 'en',
     locales: ['ar']
   },
-  
+
+  healthcheck: {
+    path: '/ping',
+    contentType: 'application/json',
+    healthy: () => {
+      return JSON.stringify({ result: 'pong' })
+    }
+  },
   publicRuntimeConfig: {
     APIBaseURL: process.env.API_BASE_URL,
   },
