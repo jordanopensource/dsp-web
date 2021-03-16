@@ -70,6 +70,17 @@
         return this.$store.state.apps.categories
       },
       activeCat() {
+        let hash = this.$route.hash.replace('#', '')
+        let cat = this.categories.find((cat) => {
+          return cat.name == hash
+        })
+        if (cat && hash != '#all') {
+          this.active = hash
+          this.activeCatTitle = cat['title_' + this.$i18n.locale]
+        } else {
+          this.active = 'all'
+          this.activeCatTitle = this.$t('all')
+        }
         return this.active
       }
     },
@@ -91,6 +102,11 @@
       setActiveCat(value, title) {
         this.active = value
         this.activeCatTitle = title
+        if (value == 'all') {
+          this.$router.push('')
+        } else {
+          this.$router.push('#' + value)
+        }
       }
     }
   }
