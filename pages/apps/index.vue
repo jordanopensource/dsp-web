@@ -4,14 +4,14 @@
     <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
       <ElementsDropdown :items="categories" :active="activeCat" @setActive="setActiveCat" class="min-w-xs" />
       <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
-        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
+        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto rtl:mr-8 ltr:ml-8" />
     </div>
     <ListsAppSpotlight v-if="spotlightApps.length && !searchString" :title="$t('spotlightApp')"
       :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
     <ListsAppGrid v-if="popularApps.length && !searchString" :title="$t('popularApps')" :contentList="popularApps"
       :count="3" class="mt-10" />
     <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
-      :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
+      :contentList="filterBy(allApps, searchString, 'name_en', 'name_ar')"
       class="my-10" />
   </div>
 </template>

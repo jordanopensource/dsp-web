@@ -4,7 +4,7 @@
     <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
       <ElementsDropdown :items="categories" :active="activeCat" @setActive="setActiveCat" class="min-w-xs" />
       <ElementsControlInput v-model="searchString" :placeholder="$t('searchIn') + ' ' + activeCatTitle"
-        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
+        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto rtl:mr-8 ltr:ml-8" />
     </div>
     <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
       :contentList="filterBy(allApps, searchString, 'name_en', 'name_ar')" class="my-10" />
