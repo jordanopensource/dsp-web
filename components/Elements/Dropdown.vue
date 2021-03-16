@@ -66,7 +66,7 @@
   }
 
   .dropdown-link {
-    @apply w-full flex flex-row flex-no-wrap items-center justify-start;
+    @apply w-full h-full flex flex-row flex-no-wrap items-center justify-start;
   }
 
   .dropdown-link:hover>* {
@@ -84,7 +84,6 @@
   .dropdown-menu {
     @apply absolute z-10 overflow-y-auto py-4 my-4 bg-white;
     top: 100%;
-    left: 40px;
     background-clip: padding-box;
   }
 
