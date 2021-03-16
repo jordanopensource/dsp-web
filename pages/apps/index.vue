@@ -4,7 +4,7 @@
     <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
       <ElementsDropdown :items="categories" :active="activeCat" @setActive="setActiveCat" class="min-w-xs" />
       <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
-        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto rtl:mr-8 ltr:ml-8" />
+        class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto lg:rtl:mr-8 lg:ltr:ml-8" />
     </div>
     <ListsAppSpotlight v-if="spotlightApps.length && !searchString" :title="$t('spotlightApp')"
       :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
