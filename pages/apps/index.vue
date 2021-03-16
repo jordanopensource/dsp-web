@@ -11,7 +11,7 @@
     <ListsAppGrid v-if="popularApps.length && !searchString" :title="$t('popularApps')" :contentList="popularApps"
       :count="3" class="mt-10" />
     <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
-      :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
+      :contentList="filterBy(allApps, searchString, 'name_en', 'name_ar')"
       class="my-10" />
   </div>
 </template>
