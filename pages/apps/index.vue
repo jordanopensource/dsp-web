@@ -26,6 +26,19 @@
         searchString: ''
       }
     },
+    created() {
+      let hash = this.$route.hash.replace('#', '')
+      let cat = this.categories.find((cat) => {
+        return cat.name == hash
+      })
+      if (cat && hash != '#all') {
+        this.active = hash
+        this.activeCatTitle = cat['title_' + this.$i18n.locale]
+      } else {
+        this.active = 'all'
+        this.activeCatTitle = this.$t('all')
+      }
+    },
     computed: {
       pageInfo() {
         return this.$store.getters.getPages.find((page) => page.page_id == 'apps')
@@ -34,7 +47,7 @@
         let list = this.$store.state.apps.list
         if (this.active != 'all') {
           let filteredList = list.filter((item) => {
-            return item.category.name == this.active
+            return item.category.name == this.activeCat
           })
           return filteredList
         } else {
@@ -43,9 +56,10 @@
       },
       popularApps() {
         let list = this.$store.state.apps.popular
-        if (this.active != 'all') {
+        let active = this.activeCat
+        if (active != 'all') {
           let filteredList = list.filter((item) => {
-            return item.category.name == this.active
+            return item.category.name == active
           })
           return filteredList
         } else {
@@ -54,9 +68,10 @@
       },
       spotlightApps() {
         let list = this.$store.state.apps.spotlight
-        if (this.active != 'all') {
+        let active = this.activeCat
+        if (active != 'all') {
           let filteredList = list.filter((item) => {
-            return item.category.name == this.active
+            return item.category.name == active
           })
           return filteredList
         } else {
@@ -75,7 +90,7 @@
           return cat.name == hash
         })
         if (cat && hash != '#all') {
-          this.active = hash
+          this.active = cat.name
           this.activeCatTitle = cat['title_' + this.$i18n.locale]
         } else {
           this.active = 'all'
