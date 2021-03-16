@@ -1,8 +1,8 @@
 <template>
   <div class="grid-list container">
     <div class="flex flex-row flex-wrap justify-between items-center mb-8">
-      <h2 v-if="title" class="mb-4 flex-grow">{{ title }}</h2>
-      <div class="flex flex-row flex-no-wrap justify-start items-center mb-4">
+      <h2 v-if="title" class="mb-4">{{ title }}</h2>
+      <div class="flex flex-grow flex-row flex-no-wrap justify-end items-center mb-4">
         <!-- Sort -->
         <div class="inline-block relative">
           <select name="sortMembers" id="sortMembers" v-model="sortValue"
