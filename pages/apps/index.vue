@@ -6,9 +6,9 @@
       <ElementsControlInput v-model="searchString" :placeholder="$t('search') + ' ' + activeCatTitle"
         class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsAppSpotlight v-if="active == 'all'" :title="$t('spotlightApp')"
+    <ListsAppSpotlight :key="componentKey" v-if="active == 'all'" :title="$t('spotlightApp')"
       :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
-    <ListsAppGrid v-if="active == 'all'" :title="$t('popularApps')" :contentList="popularApps"
+    <ListsAppGrid :key="componentKey+1" v-if="active == 'all'" :title="$t('popularApps')" :contentList="popularApps"
       :count="3" class="mt-10" />
     <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
       :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
@@ -21,22 +21,10 @@
     mixins: [Vue2Filters.mixin],
     data() {
       return {
-        active: 'all',
-        activeCatTitle: this.$t('all'),
-        searchString: ''
-      }
-    },
-    created() {
-      let hash = this.$route.hash.replace('#', '')
-      let cat = this.categories.find((cat) => {
-        return cat.name == hash
-      })
-      if (cat && hash != '#all') {
-        this.active = hash
-        this.activeCatTitle = cat['title_' + this.$i18n.locale]
-      } else {
-        this.active = 'all'
-        this.activeCatTitle = this.$t('all')
+        active: this.activeCat,
+        activeCatTitle: this.activeCatTitle,
+        searchString: '',
+        componentKey: 0
       }
     },
     computed: {
@@ -89,13 +77,14 @@
         let cat = this.categories.find((cat) => {
           return cat.name == hash
         })
-        if (cat && hash != '#all') {
+        if (cat) {
           this.active = cat.name
           this.activeCatTitle = cat['title_' + this.$i18n.locale]
         } else {
           this.active = 'all'
           this.activeCatTitle = this.$t('all')
         }
+        this.componentKey += 1
         return this.active
       }
     },
