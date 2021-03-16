@@ -6,9 +6,9 @@
       <ElementsControlInput v-model="searchString" :placeholder="$t('search') + ' ' + activeCatTitle"
         class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsAppSpotlight v-if="spotlightApps.length && !searchString" :title="$t('spotlightApp')"
+    <ListsAppSpotlight v-if="active == 'all'" :title="$t('spotlightApp')"
       :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
-    <ListsAppGrid v-if="popularApps.length && !searchString" :title="$t('popularApps')" :contentList="popularApps"
+    <ListsAppGrid v-if="active == 'all'" :title="$t('popularApps')" :contentList="popularApps"
       :count="3" class="mt-10" />
     <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
       :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
