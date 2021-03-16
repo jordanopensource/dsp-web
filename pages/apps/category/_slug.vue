@@ -3,16 +3,11 @@
     <UIBanner :title="pageInfo['title_' + $i18n.locale]" :description="pageInfo['description_' + $i18n.locale]" />
     <div class="container flex flex-col-reverse lg:flex-row justify-between py-6">
       <ElementsDropdown :items="categories" :active="activeCat" @setActive="setActiveCat" class="min-w-xs" />
-      <ElementsControlInput v-model="searchString" :placeholder="$t('search')"
+      <ElementsControlInput v-model="searchString" :placeholder="$t('searchIn') + ' ' + activeCatTitle"
         class="search-bar mb-8 lg:mb-0 rounded-full flex-grow w-full lg:w-auto" />
     </div>
-    <ListsAppSpotlight v-if="spotlightApps.length && !searchString" :title="$t('spotlightApp')"
-      :content="orderBy(spotlightApps, 'published_at', -1)[0]" class="mt-10" />
-    <ListsAppGrid v-if="popularApps.length && !searchString" :title="$t('popularApps')" :contentList="popularApps"
-      :count="3" class="mt-10" />
-    <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : $t('allApps')"
-      :contentList="filterBy(allApps, searchString, 'name_en', 'description_en', 'name_ar', 'description_ar')"
-      class="my-10" />
+    <ListsAppAll v-if="allApps.length" :title="searchString ? $t('searchResults') + ' ' + searchString : ''"
+      :contentList="filterBy(allApps, searchString, 'name_en', 'name_ar')" class="my-10" />
   </div>
 </template>
 <script>
@@ -21,9 +16,25 @@
     mixins: [Vue2Filters.mixin],
     data() {
       return {
-        active: 'all',
-        activeCatTitle: this.$t('all'),
+        active: '',
+        activeCatTitle: '',
         searchString: ''
+      }
+    },
+    mounted() {
+      let category = this.$route.params.slug
+      let categories = this.categories
+      try {
+        let activeCat = categories.find((cat) => {
+          return cat.name == category
+        })
+        this.active = activeCat.name
+        this.activeCatTitle = activeCat['title_' + this.$i18n.locale]
+      } catch (err) {
+        return this.$nuxt.error({
+          statusCode: 404,
+          message: '404 Page Not Found'
+        })
       }
     },
     computed: {
@@ -31,13 +42,11 @@
         return this.$store.getters.getPages.find((page) => page.page_id == 'apps')
       },
       allApps() {
-        return this.$store.state.apps.list
-      },
-      popularApps() {
-        return this.$store.state.apps.popular
-      },
-      spotlightApps() {
-        return this.$store.state.apps.spotlight
+        let list = this.$store.state.apps.list
+        let filteredList = list.filter((item) => {
+          return item.category.name == this.active
+        })
+        return filteredList
       },
       categories() {
         return this.$store.state.apps.categories
@@ -58,10 +67,13 @@
     },
     methods: {
       setActiveCat(value) {
-        if (value != 'all') {
-          let path = this.localePath('/apps/category/' + value)
-          this.$router.push(path)
+        let path
+        if (value == 'all') {
+          path = this.localePath('/apps')
+        } else {
+          path = this.localePath('/apps/category/' + value)
         }
+        this.$router.push(path)
       }
     }
   }
