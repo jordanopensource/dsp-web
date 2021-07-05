@@ -32,4 +32,4 @@ steps:
         from_secret: slack_webhook
       channel: heartbeat
     depends_on:
-      - build and release JOSA strapi
+      - build and release DSP web client
