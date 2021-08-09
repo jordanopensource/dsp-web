@@ -16,9 +16,9 @@
     computed: {
       imageUrl() {
         try {
-          return this.$config.APIBaseURL + this.format().url
+          return this.format().url
         } catch {
-          return this.$config.APIBaseURL + this.image.url
+          return this.image.url
         }
       }
     },
