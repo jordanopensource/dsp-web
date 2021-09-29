@@ -13,7 +13,7 @@
     <a href="https://github.com/jordanopensource/dsp-web"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jordanopensource/dsp-web">View Demo</a>
+    <a href="https://amanraqami.org">Visit the Portal</a>
     ·
     <a href="https://github.com/jordanopensource/dsp-web/issues">Report Bug</a>
     ·
