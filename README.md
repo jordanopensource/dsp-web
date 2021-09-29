@@ -69,11 +69,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* Install npm
-
-  ```sh
-  npm install npm@latest -g
-  ```
+1. Download and install the latest version of Node.js from [here](https://nodejs.org/en/download/).
 
 ### Installation
 
@@ -147,6 +143,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@@jo_osa](https://twitter.com/@jo_osa) - info@josa.ngo
+Jordan Open Source Association - [@jo_osa](https://twitter.com/@jo_osa) - info@josa.ngo
 
 Project Link: [https://github.com/jordanopensource/dsp-web](https://github.com/jordanopensource/dsp-web)
