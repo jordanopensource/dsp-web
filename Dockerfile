@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14.18-alpine3.12
 
 # Create app directory
 WORKDIR /srv/app
@@ -12,7 +12,7 @@ RUN npm run build
 
 ENV HOST 0.0.0.0
 # ENV API_BASE_URL https://dsp.dev.api.jordanopensource.org/
-ENV API_BASE_URL https://dsp.api.jordanopensource.org
+ENV API_BASE_URL https://dsp.api.prod.josa.ngo
 EXPOSE 3000
 
 # start command
