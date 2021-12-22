@@ -10,7 +10,7 @@ export default {
   mounted() {
     window.$(this.$refs.supportform).ZammadForm({
       messageTitle: "Support Form",
-      messageSubmit: this.$t("submit"),
+      messageSubmit: "Send",
       messageThankYou:
         "Thank you for your contacting JOSA (#%s)! We'll contact you as soon as possible.",
       modal: false,
