@@ -21,7 +21,7 @@
   </p>
 </p>
 
-
+[![Build Status](https://builds.josa.dev/api/badges/jordanopensource/dsp-web/status.svg)](https://builds.josa.dev/jordanopensource/dsp-web)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
