@@ -13,6 +13,7 @@ RUN npm run build
 ENV HOST 0.0.0.0
 # ENV API_BASE_URL https://dsp.dev.api.jordanopensource.org/
 ENV API_BASE_URL https://dsp.api.jordanopensource.org
+ENV OTS_FORM_LINK https://ots.josa.ngo/assets/form/form.js
 EXPOSE 3000
 
 # start command
