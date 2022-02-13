@@ -24,7 +24,7 @@ export default {
         type: "text/javascript"
       },
       {
-        src: "https://ots.jordanopensource.org/assets/form/form.js",
+        src: "https://ots.josa.ngo/assets/form/form.js",
         id: "zammad_form_script",
         body: true,
         type: "text/javascript"
