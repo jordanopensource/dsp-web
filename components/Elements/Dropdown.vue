@@ -28,7 +28,7 @@
   export default {
     data() {
       return {
-        show: false
+        show: false,
       }
     },
     props: {
@@ -41,10 +41,18 @@
         required: true
       }
     },
+    mounted() {
+      document.addEventListener('click', this.closetheMenu)
+    },
     methods: {
       setActive(value, title) {
         this.show = false
         this.$emit('setActive', value, title)
+      },
+      closetheMenu(e) {
+        if (!this.$el.contains(e.target)) {
+          this.show = false
+        }
       }
     },
     computed: {
