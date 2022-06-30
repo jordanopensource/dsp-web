@@ -1,11 +1,9 @@
 <template>
   <div class="dropdown">
     <div class="dropdown-link">
-      <button class="dropdown-button" v-if="show" key="on" @click="show = false">
-        <i class="ri-close-fill"></i>
-      </button>
-      <button class="dropdown-button" v-else key="off" @click="show = true">
-        <i class="ri-list-settings-fill"></i>
+      <button class="dropdown-button" @click="show = !show">
+        <i class="ri-close-fill" v-if="show"></i>
+        <i class="ri-list-settings-fill" v-else></i>
       </button>
       <h4 @click="show = !show" class="flex-grow ltr:ml-4 rtl:mr-4">{{ getTitle }}</h4>
     </div>
@@ -41,10 +39,21 @@
         required: true
       }
     },
+    mounted() {
+      this.$nuxt.$on('routeChanged', () => {
+        this.show = false
+      })
+      document.addEventListener('click', this.closeMenu)
+    },
     methods: {
       setActive(value, title) {
         this.show = false
         this.$emit('setActive', value, title)
+      },
+      closeMenu(e) {
+        if (!this.$el.contains(e.target)) {
+          this.show = false
+        }
       }
     },
     computed: {
