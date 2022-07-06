@@ -1,8 +1,8 @@
 FROM node:14.18-alpine3.12
 
 # Create app directory
-WORKDIR /srv/app
-ADD . /srv/app/
+WORKDIR /app
+ADD . /app/
 
 # RUN rm yarn.lock
 RUN npm install
