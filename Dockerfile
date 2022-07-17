@@ -1,14 +1,17 @@
-FROM node:14.18-alpine3.12
+FROM node:16-alpine3.14
 
 # Create app directory
-WORKDIR /app
-ADD . /app/
 
-# RUN rm yarn.lock
-RUN npm install
+COPY package*.json /tmp/
+RUN cd /tmp && npm install
+
+WORKDIR /app
+COPY . .
+
+RUN mv /tmp/node_modules .
 
 # Build NuxtJS project
-RUN npm run build
+RUN npm run build:modern
 
 ENV HOST 0.0.0.0
 # ENV API_BASE_URL https://dsp.dev.api.jordanopensource.org/
