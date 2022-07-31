@@ -7,7 +7,7 @@ ARG API_BASE_URL=https://dsp.api.prod.josa.ngo HOST=0.0.0.0 PORT=3000 USER=node
 FROM node:16-alpine3.14 AS builder
 
 # pass the global args
-ARG BASE_API_URL
+ARG API_BASE_URL
 ARG HOST
 ARG PORT
 
@@ -28,7 +28,7 @@ RUN npm run build
 FROM node:16-slim
 
 # pass the global args
-ARG BASE_API_URL
+ARG API_BASE_URL
 ARG HOST
 ARG PORT
 ARG USER
