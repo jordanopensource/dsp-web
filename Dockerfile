@@ -1,22 +1,53 @@
-FROM node:16-alpine3.14
+# set global args
+ARG API_BASE_URL=https://dsp.api.prod.josa.ngo HOST=0.0.0.0 PORT=3000 USER=node
+
+###########
+# BUILDER #
+###########
+FROM node:16-alpine3.14 AS builder
+
+# pass the global args
+ARG BASE_API_URL
+ARG HOST
+ARG PORT
 
 # Create app directory
-
-COPY package*.json /tmp/
-RUN cd /tmp && npm install
-
-WORKDIR /app
+WORKDIR /workspace
 COPY . .
+RUN npm install
 
-RUN mv /tmp/node_modules .
+# Inject the enviromental variables
+ENV API_BASE_URL=${API_BASE_URL} HOST=${HOST} PORT=${PORT}
 
 # Build NuxtJS project
-RUN npm run build:modern
+RUN npm run build
 
-ENV HOST 0.0.0.0
-# ENV API_BASE_URL https://dsp.dev.api.jordanopensource.org/
-ENV API_BASE_URL https://dsp.api.prod.josa.ngo
-EXPOSE 3000
+###########
+# PROJECT #
+###########
+FROM node:16-slim
+
+# pass the global args
+ARG BASE_API_URL
+ARG HOST
+ARG PORT
+ARG USER
+
+# copy builder output to project workdir
+WORKDIR /app
+COPY --from=builder --chown=${USER}:${USER} /workspace/.nuxt /app/.nuxt
+COPY --from=builder --chown=${USER}:${USER} /workspace/node_modules /app/node_modules
+COPY --from=builder --chown=${USER}:${USER} /workspace/package.json /app/
+
+# Inject the enviromental variables
+ENV API_BASE_URL=${API_BASE_URL} HOST=${HOST} PORT=${PORT}
+
+# set user context
+USER ${USER}
+
+# expose port
+EXPOSE ${PORT}
+
 
 # start command
 CMD [ "npm", "run", "start"]
