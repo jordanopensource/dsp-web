@@ -22,3 +22,10 @@ LICENSE
 
 # Drone
 .drone.yml
+
+.env
+.env.*
+
+# editot configs
+.eslintrc.*
+.prettierrc
