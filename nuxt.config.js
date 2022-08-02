@@ -124,11 +124,11 @@ export default {
     }
   },
   publicRuntimeConfig: {
-    APIBaseURL: process.env.API_BASE_URL
+    APIBaseURL: process.env.DSP_API_URL
   },
 
   privateRuntimeConfig: {
-    APIBaseURL: process.env.API_BASE_URL
+    APIBaseURL: process.env.DSP_API_URL
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
