@@ -28,8 +28,7 @@ export default {
         id: "zammad_form_script",
         body: true,
         type: "text/javascript"
-      },
-      { src: "/js/matomo.js" }
+      }
     ]
   },
 
@@ -74,6 +73,10 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    [
+      "@zecar/nuxt-matomo",
+      { matomoUrl: "//track.josa.ngo/", siteId: process.env.MATOMO_SITE_ID }
+    ],
     "@nuxtjs/axios",
     "nuxt-i18n",
     "@nuxtjs/moment",
@@ -129,6 +132,12 @@ export default {
 
   privateRuntimeConfig: {
     APIBaseURL: process.env.DSP_API_URL
+  },
+
+  runtimeConfig: {
+    matomo: {
+      siteId: process.env.MATOMO_SITE_ID || 1
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
