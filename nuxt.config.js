@@ -84,7 +84,15 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    "/api": {
+      target: process.env.DSP_API_URL,
+      pathRewrite: { "^/api/": "" }
+    }
+  },
 
   // I18n conmodule configurationfig
   i18n: {
@@ -127,17 +135,12 @@ export default {
     }
   },
   publicRuntimeConfig: {
-    APIBaseURL: process.env.DSP_API_URL
+    APIBaseURL: process.env.DSP_API_URL,
+    siteId: process.env.MATOMO_SITE_ID || 1
   },
 
   privateRuntimeConfig: {
     APIBaseURL: process.env.DSP_API_URL
-  },
-
-  runtimeConfig: {
-    matomo: {
-      siteId: process.env.MATOMO_SITE_ID || 1
-    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
