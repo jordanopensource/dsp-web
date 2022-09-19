@@ -9,7 +9,7 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        default: '2rem',
+        DEFAULT: '2rem',
         sm: '2rem',
         lg: '4rem',
         xl: '5rem',
@@ -21,17 +21,17 @@ module.exports = {
         'josa-teal': {
           '100': '#daf3f3',
           '300': '#9bdedf',
-          default: '#14b7b8',
+          DEFAULT: '#14b7b8',
           '700': '#099293'
         },
         'josa-black': {
           'light': '#282e30',
-          default: '#2e3436',
+          DEFAULT: '#2e3436',
         },
         'josa-grey': {
           '100': '#f7f6f5',
           '300': '#e2d7cd',
-          default: '#aea79f',
+          DEFAULT: '#aea79f',
           '700': '#665f56',
         },
       },

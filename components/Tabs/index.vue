@@ -144,7 +144,7 @@
   }
 
   .tabs-list {
-    @apply list-none relative flex flex-row flex-no-wrap;
+    @apply list-none relative flex flex-row flex-nowrap;
   }
 
   .tab-list-item {

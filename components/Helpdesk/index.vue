@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="flex flex-wrap md:flex-no-wrap justify-between mb-12">
+      <div class="flex flex-wrap md:flex-nowrap justify-between mb-12">
         <div class="w-full ltr:pr-12 rtl:pl-12">
           <div>
             <h2 class="mb-4">{{ $t('helpdesk') }}</h2>

@@ -33,7 +33,7 @@
                 class="text-sm mx-1 align-middle display-faded">{{$t('commercial')}}</span>
             </template>
           </span>
-          <span class="ltr:mr-4 rtl:ml-4 flex flex-no-wrap items-center" v-if="endorsed">
+          <span class="ltr:mr-4 rtl:ml-4 flex flex-nowrap items-center" v-if="endorsed">
             <img src="/images/logo/josa-icon-teal.svg" class="josa-icon inline" /><span
               class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span>
           </span>
@@ -42,14 +42,14 @@
       </div>
       <div class="w-full">
         <a v-if="publisher.website_url" :href="publisher.website_url" target="_blank"
-          class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
+          class="flex flex-row flex-nowrap items-center"><i class="ri-global-fill"></i>
           <span class="mx-2">{{ $t('devWebsite') }}</span>
         </a>
-        <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
+        <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank" class="flex flex-row flex-nowrap items-center"><i
             class="ri-shield-keyhole-fill"></i>
           <span class="mx-2">{{ $t('privacyPolicy') }}</span>
         </a>
-        <a v-if="sourceCode" :href="sourceCode" target="_blank" class="flex flex-row flex-no-wrap items-center"><i
+        <a v-if="sourceCode" :href="sourceCode" target="_blank" class="flex flex-row flex-nowrap items-center"><i
             class="ri-github-fill"></i>
           <span class="mx-2">{{ $t('sourceCode') }}</span>
         </a>

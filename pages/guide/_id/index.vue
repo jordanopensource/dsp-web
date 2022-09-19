@@ -16,7 +16,7 @@
             </p>
             <div v-if="guide.contributors.length" class="flex flex-wrap">
               <div v-for="contributor in guide.contributors" :key="contributor.id"
-                class="flex flex-row flex-no-wrap items-center ltr:mr-8 rtl:ml-8 mt-4">
+                class="flex flex-row flex-nowrap items-center ltr:mr-8 rtl:ml-8 mt-4">
                 <UIImage v-if="contributor.image" :image="contributor.image" size="small" class="icon inline-block" />
                 <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
                 <h4 class="inline-block ltr:ml-4 rtl:mr-4 max-w-xxs">

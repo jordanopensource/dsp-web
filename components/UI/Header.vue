@@ -1,7 +1,7 @@
 <template>
   <header class="py-8 bg-white">
     <div class="container">
-      <div class="flex justify-between flex-wrap lg:flex-no-wrap items-center">
+      <div class="flex justify-between flex-wrap lg:flex-nowrap items-center">
         <div class="flex items-center flex-shrink-0">
           <NuxtLink :to="localePath('index')" class="block">
             <img v-if="$i18n.locale == 'ar'" class="logo" src="~/static/images/logo/logo-arabic-minimal.svg"

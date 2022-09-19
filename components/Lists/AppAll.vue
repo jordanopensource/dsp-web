@@ -2,7 +2,7 @@
   <div class="grid-list container">
     <div class="flex flex-col lg:flex-row flex-wrap justify-between lg:items-center mb-8">
       <h2 v-if="title" class="mb-8 lg:mb-4">{{ title }}</h2>
-      <div class="flex flex-grow flex-row flex-no-wrap lg:justify-end justify-start items-center mb-4">
+      <div class="flex flex-grow flex-row flex-nowrap lg:justify-end justify-start items-center mb-4">
         <!-- Sort -->
         <div class="inline-block relative">
           <select name="sortMembers" id="sortMembers" v-model="sortValue"
