@@ -56,16 +56,6 @@ module.exports = {
       }
     }
   },
-  variants: {
-    textAlign: ['responsive', 'direction'],
-    margin: ['responsive', 'direction'],
-    padding: ['responsive', 'direction'],
-    fontSize: ['responsive', 'direction'],
-    lineHeight: ['responsive', 'direction'],
-    borderRadius: ['responsive', 'direction'],
-    inset: ['responsive', 'hover', 'focus', 'direction'],
-    alignItems: ['hover', 'focus', 'direction'],
-  },
   plugins: [
     require('tailwindcss-dir')(),
   ]
