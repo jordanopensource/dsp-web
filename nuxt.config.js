@@ -136,7 +136,10 @@ export default {
   },
   publicRuntimeConfig: {
     APIBaseURL: process.env.DSP_API_URL,
-    siteId: process.env.MATOMO_SITE_ID || 1
+    siteId: process.env.MATOMO_SITE_ID || 1,
+    buildBranch: process.env.DRONE_BRANCH,
+    buildID: process.env.DRONE_BUILD_PARENT,
+    buildCommitSHA: process.env.DRONE_COMMIT_SHA
   },
 
   privateRuntimeConfig: {
