@@ -49,6 +49,5 @@ USER ${USER}
 # expose port
 EXPOSE ${PORT}
 
-
 # start command
 CMD [ "npm", "run", "start"]

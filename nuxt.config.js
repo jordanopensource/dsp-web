@@ -21,7 +21,7 @@ export default {
       {
         src: "https://code.jquery.com/jquery-2.1.4.min.js",
         body: true,
-        type: "text/javascript"
+        type: "text/javascript",
       },
       {
         src: "https://ots.josa.ngo/assets/form/form.js",
@@ -119,7 +119,7 @@ export default {
     lazy: true,
     langDir: "lang/",
     detectBrowserLanguage: false,
-    seo: true
+    seo: true,
   },
 
   moment: {
