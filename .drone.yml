@@ -15,10 +15,10 @@ steps:
     image: plugins/docker
     settings:
       repo: josaorg/dsp-web
-      build_args: [DSP_API_URL=https://dsp.api.prod.josa.ngo, MATOMO_SITE_ID=5]
+      build_args: [DSP_API_URL=https://dsp.api.prod.josa.ngo, MATOMO_SITE_ID=3]
       tags:
         - ${DRONE_COMMIT_SHA}
-        - latest
+        - stable
       username:
         from_secret: docker_username
       password:
