@@ -60,7 +60,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .dropdown {
     @apply relative flex justify-start items-start;
   }

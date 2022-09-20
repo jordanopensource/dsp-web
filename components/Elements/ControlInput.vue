@@ -62,7 +62,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .input-control input,
   .input-control textarea {
     @apply p-3 bg-josa-grey-100 w-full;

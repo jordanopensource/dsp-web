@@ -36,7 +36,7 @@
 
 </script>
 
-<style>
+<style lang="postcss">
   .__nuxt-error-page {
     background-color: #fff;
     color: #2e3436;

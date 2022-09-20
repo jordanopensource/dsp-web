@@ -52,7 +52,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .logo {
     width: 125px;
     height: 125px;

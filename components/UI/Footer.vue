@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped  lang="postcss">
   .logo {
     /* width: 160px; */
     height: 75px;

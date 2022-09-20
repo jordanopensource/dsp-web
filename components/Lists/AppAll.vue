@@ -83,7 +83,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .layout-icons>i {
     @apply text-3xl text-josa-grey cursor-pointer;
   }

@@ -123,7 +123,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .tab-component {
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;

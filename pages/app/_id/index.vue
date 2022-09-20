@@ -120,7 +120,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .app-image {
     width: 124px;
     height: 124px;

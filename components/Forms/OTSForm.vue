@@ -20,7 +20,7 @@
 
 </script>
 
-<style>
+<style lang="postcss">
   /* purgecss start ignore */
   /* Zammad form */
   .zammad-form label {
