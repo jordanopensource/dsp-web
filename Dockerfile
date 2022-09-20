@@ -18,7 +18,7 @@ COPY . .
 RUN npm install
 
 # Inject the enviromental variables
-ENV DSP_API_URL=${DSP_API_URL} HOST=${HOST} PORT=${PORT} MATOMO_SITE_ID=${MATOMO_SITE_ID}
+ENV DSP_API_URL=$DSP_API_URL HOST=$HOST PORT=$PORT MATOMO_SITE_ID=$MATOMO_SITE_ID
 
 # Build NuxtJS project
 RUN npm run build
@@ -41,7 +41,7 @@ COPY --from=builder --chown=${USER}:${USER} /workspace/ /app/
 COPY --from=builder --chown=${USER}:${USER} /workspace/.nuxt /app/.nuxt
 
 # Inject the enviromental variables
-ENV DSP_API_URL=${DSP_API_URL} PORT=${PORT} HOST=${HOST} MATOMO_SITE_ID=${MATOMO_SITE_ID}
+ENV DSP_API_URL=$DSP_API_URL PORT=$PORT HOST=$HOST MATOMO_SITE_ID=$MATOMO_SITE_ID
 
 # set user context
 USER ${USER}
