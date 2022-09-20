@@ -1,0 +1,31 @@
+# Git
+.git
+.gitignore
+.gitattributes
+.github
+
+# Docker
+Dockerfile
+docker-compose.yaml
+docker-compose.yml
+.dockerignore
+
+# Documentation
+*.md
+LICENSE
+
+# macOS (optional)
+.DS_Store
+
+# Visual Studio Code (optional)
+.vscode
+
+# Drone
+.drone.yml
+
+.env
+.env.*
+
+# editot configs
+.eslintrc.*
+.prettierrc

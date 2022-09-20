@@ -5,18 +5,17 @@ type: kubernetes
 name: default
 
 metadata:
-  namespace: josa-builds
+  namespace: builds
 
 node_selector:
   doks.digitalocean.com/node-pool: josa-cloud-np
 
 steps:
-  - name: build and release DSP web client
+  - name: build
     image: plugins/docker
     settings:
-      # context: josa/
-      # dockerfile: josa/Dockerfile
       repo: josaorg/dsp-web
+      build_args: [DSP_API_URL=https://dsp.api.prod.josa.ngo, MATOMO_SITE_ID=5]
       tags:
         - ${DRONE_COMMIT_SHA}
         - latest
@@ -24,12 +23,11 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      auto_tag: false
-  - name: notify on Slack
+  - name: notify
     image: plugins/slack
     settings:
       webhook:
         from_secret: slack_webhook
       channel: heartbeat
     depends_on:
-      - build and release DSP web client
+      - build

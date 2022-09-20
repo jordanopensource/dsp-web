@@ -27,9 +27,8 @@ export default {
         src: "https://ots.josa.ngo/assets/form/form.js",
         id: "zammad_form_script",
         body: true,
-        type: "text/javascript",
-      },
-      { src: "/js/matomo.js" }
+        type: "text/javascript"
+      }
     ]
   },
 
@@ -74,6 +73,10 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
+    [
+      "@zecar/nuxt-matomo",
+      { matomoUrl: "//track.josa.ngo/", siteId: process.env.MATOMO_SITE_ID }
+    ],
     "@nuxtjs/axios",
     "nuxt-i18n",
     "@nuxtjs/moment",
@@ -81,7 +84,15 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    "/api": {
+      target: process.env.DSP_API_URL,
+      pathRewrite: { "^/api/": "" }
+    }
+  },
 
   // I18n conmodule configurationfig
   i18n: {
@@ -124,11 +135,15 @@ export default {
     }
   },
   publicRuntimeConfig: {
-    APIBaseURL: process.env.API_BASE_URL
+    APIBaseURL: process.env.DSP_API_URL,
+    siteId: process.env.MATOMO_SITE_ID || 1,
+    buildBranch: process.env.DRONE_BRANCH,
+    buildID: process.env.DRONE_BUILD_PARENT,
+    buildCommitSHA: process.env.DRONE_COMMIT_SHA
   },
 
   privateRuntimeConfig: {
-    APIBaseURL: process.env.API_BASE_URL
+    APIBaseURL: process.env.DSP_API_URL
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

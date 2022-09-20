@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/moment": "^1.6.1",
+    "@zecar/nuxt-matomo": "^1.2.11",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12",
     "nuxt-healthcheck": "^1.0.1",

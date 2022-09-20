@@ -1,20 +1,53 @@
-FROM node:12
+# set global args
+ARG DSP_API_URL=https://dsp.api.prod.josa.ngo PORT=3000 USER=node HOST=0.0.0.0 MATOMO_SITE_ID=5
+
+###########
+# BUILDER #
+###########
+FROM node:16-alpine3.14 AS builder
+
+# pass the global args
+ARG DSP_API_URL
+ARG HOST
+ARG PORT
+ARG MATOMO_SITE_ID
 
 # Create app directory
-WORKDIR /srv/app
-ADD . /srv/app/
-
-# RUN rm yarn.lock
+WORKDIR /workspace
+COPY . .
 RUN npm install
+
+# Inject the enviromental variables
+ENV DSP_API_URL=$DSP_API_URL HOST=$HOST PORT=$PORT MATOMO_SITE_ID=$MATOMO_SITE_ID
 
 # Build NuxtJS project
 RUN npm run build
 
-ENV HOST 0.0.0.0
-# ENV API_BASE_URL https://dsp.dev.api.jordanopensource.org/
-ENV API_BASE_URL https://dsp.api.josa.ngo
-ENV OTS_FORM_LINK https://ots.josa.ngo/assets/form/form.js
-EXPOSE 3000
+###########
+# PROJECT #
+###########
+FROM node:16-slim
+
+# pass the global args
+ARG DSP_API_URL
+ARG HOST
+ARG PORT
+ARG USER
+ARG MATOMO_SITE_ID
+
+# copy builder output to project workdir
+WORKDIR /app
+COPY --from=builder --chown=${USER}:${USER} /workspace/ /app/
+COPY --from=builder --chown=${USER}:${USER} /workspace/.nuxt /app/.nuxt
+
+# Inject the enviromental variables
+ENV DSP_API_URL=$DSP_API_URL PORT=$PORT HOST=$HOST MATOMO_SITE_ID=$MATOMO_SITE_ID
+
+# set user context
+USER ${USER}
+
+# expose port
+EXPOSE ${PORT}
 
 # start command
 CMD [ "npm", "run", "start"]
