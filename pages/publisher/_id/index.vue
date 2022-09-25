@@ -2,11 +2,11 @@
   <div class="bg-white">
     <p v-if="$fetchState.pending">...</p>
     <div v-else>
-      <h1 id="publisher-name">{{publisher.title_en}}</h1>
-      <ul id="publisher-apps">
-        <li v-for="app in publisher.apps"
-            :key="app.id">{{app.name_en}}</li>
-      </ul>
+      <article v-if="publisher" class="container py-12">
+        <h1 id="publisher-name">{{publisher["title_" + $i18n.locale]}}</h1>
+        <ListsAppGrid :title="$t('Apps by ' + publisher.title_en)" :contentList="publisher.apps"
+            :count="3" class="mt-10" />
+      </article>
     </div>
   </div>
 </template>
@@ -51,6 +51,6 @@ export default {
 
 </script>
 
-<style>
+<style scoped lang="postcss">
 
 </style>
