@@ -3,8 +3,14 @@
     <p v-if="$fetchState.pending">...</p>
     <div v-else>
       <article v-if="publisher" class="container py-12">
-        <h1 id="publisher-name">{{publisher["title_" + $i18n.locale]}}</h1>
-        <ListsAppGrid :title="$t('Apps by ' + publisher.title_en)" :contentList="publisher.apps"
+        <h1 id="publisher-name">
+          {{publisher["title_" + $i18n.locale]}}
+        </h1>
+        <p v-if="publisher['description_' + $i18n.locale]"
+          class="py-8">
+          {{publisher["description_" + $i18n.locale]}}
+        </p>
+        <ListsAppGrid :title="$t('Apps by ' + publisher['title_' + $i18n.locale])" :contentList="publisher.apps"
             :count="3" class="mt-10" />
       </article>
     </div>
