@@ -63,5 +63,23 @@ export default {
 </script>
 
 <style scoped lang="postcss">
+  .app-image {
+    width: 124px;
+    height: 124px;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  @screen sm {
+    .app-image {
+      width: 140px;
+      height: 140px;
+    }
+  }
 
+  @screen lg {
+    .app-image {
+      width: 160px;
+      height: 160px;
+    }
+  }
 </style>
