@@ -21,7 +21,7 @@
         </p>
         <ListsAppAll 
           v-if="publisher.apps.length"
-          :title="$t('Apps by ' + publisher['title_' + $i18n.locale])"
+          :title="$t('appsBy') + ' ' + publisher['title_' + $i18n.locale]"
           :contentList="publisher.apps"
           class="my-10" />
       </article>

@@ -7,6 +7,7 @@ export default {
   allApps: 'All Apps',
   apps: 'Apps',
   all: 'All',
+  appsBy: 'Apps by',
   content: 'Content',
   weeklyRecommendations: 'Weekly Recommendations',
   availableOn: 'Available on',

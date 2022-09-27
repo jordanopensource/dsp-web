@@ -7,6 +7,7 @@ export default {
   allApps: 'جميع التطبيقات',
   apps: 'التطبيقات',
   all: 'الجميع',
+  appsBy: 'تطبيقات من',
   content: 'المحتوى',
   weeklyRecommendations: 'تطبيقات مقترحة أسبوعياً',
   availableOn: 'متوفر على',
