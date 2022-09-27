@@ -75,6 +75,7 @@ export default {
     height: 124px;
     object-fit: cover;
     object-position: 50% 50%;
+    @apply rounded-2xl;
   }
   @screen sm {
     .app-image {
