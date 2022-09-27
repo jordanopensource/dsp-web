@@ -3,8 +3,12 @@
     <p v-if="$fetchState.pending">...</p>
     <div v-else>
       <article v-if="publisher" class="container py-12">
-        <div class="flex flex-col sm:flex-row flex-nowrap items-start mb-12">
-          <UIImage v-if="publisher.Image" :image="publisher.Image" size="medium" class="app-image" />
+        <div class="flex flex-col sm:flex-row flex-nowrap mb-12 items-center justify-start">
+          <UIImage 
+            v-if="publisher.Image" 
+            :image="publisher.Image"
+            size="medium"
+            class="app-image" />
           <div class="mt-4 sm:mt-0 sm:ltr:ml-8 sm:rtl:mr-8">
             <h1 id="publisher-name">
               {{publisher["title_" + $i18n.locale]}}
