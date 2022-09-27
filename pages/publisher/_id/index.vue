@@ -15,8 +15,11 @@
           class="py-8">
           {{publisher["description_" + $i18n.locale]}}
         </p>
-        <ListsAppGrid :title="$t('Apps by ' + publisher['title_' + $i18n.locale])" :contentList="publisher.apps"
-            :count="3" class="mt-10" />
+        <ListsAppAll 
+          v-if="publisher.apps.length"
+          :title="$t('Apps by ' + publisher['title_' + $i18n.locale])"
+          :contentList="publisher.apps"
+          class="my-10" />
       </article>
     </div>
   </div>
