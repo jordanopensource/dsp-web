@@ -62,20 +62,15 @@
       sortBy() {
         switch (this.sortValue) {
           case 'publishedAtASC':
-            return ['published_at', 1]
-            break;
+            return ['published_at', 1];
           case 'publishedAtDESC':
-            return ['published_at', -1]
-            break;
+            return ['published_at', -1];
           case 'alphabeticallyASC':
-            return ['name_' + this.$i18n.locale, 1]
-            break;
+            return ['name_' + this.$i18n.locale, 1];
           case 'alphabeticallyDESC':
-            return ['name_' + this.$i18n.locale, -1]
-            break;
+            return ['name_' + this.$i18n.locale, -1];
           default:
-            return ['published_at', -1]
-            break;
+            return ['published_at', -1];
         }
       },
     }
