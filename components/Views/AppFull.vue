@@ -9,9 +9,9 @@
         <NuxtLink :to="appLink">
           <h3>{{ name }}</h3>
         </NuxtLink>
-        <!-- <NuxtLink :to="publisherLink"> -->
-        <h4 v-if="publisher" class="my-2">{{ publisher['title_' + $i18n.locale] }}</h4>
-        <!-- </NuxtLink> -->
+        <NuxtLink :to="publisherLink">
+          <h4 v-if="publisher" class="my-2">{{ publisher['title_' + $i18n.locale] }}</h4>
+        </NuxtLink>
         <div class="mt-4 sm:mt-8 flex flex-col md:flex-row">
           <span class="ltr:mr-4 rtl:ml-4">
             <template v-if="openSource">
