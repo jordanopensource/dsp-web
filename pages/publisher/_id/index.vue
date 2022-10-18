@@ -4,7 +4,6 @@
     <div v-else>
       <article v-if="publisher" class="container py-12">
         <ViewsPublisherHeader :publisher="publisher"/>
-        <!-- TODO: Fix ListsAppAll getting the publisher from this page as a number not an object -->
         <ListsAppAll 
           v-if="publisher.apps.length"
           :title="$t('appsBy') + ' ' + publisher['title_' + $i18n.locale]"

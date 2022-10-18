@@ -29,7 +29,7 @@
     <div class="grid grid-cols-1 gap-4" :class="viewLayout == 'grid' ? 'view-grid sm:grid-cols-2 lg:grid-cols-3' : ''">
       <ViewsAppCompact v-for="item in orderedContentList" :key="item.id" :id="item.id" :image="item.image"
         :name="item['name_' + $i18n.locale]" :description="item['description_' + $i18n.locale]"
-        :publisher="item.app_publisher" :website="item.website" :platforms="item.Platform"
+        :publisher="checkPublisherType(item.app_publisher)" :website="item.website" :platforms="item.Platform"
         :privacyPolicy="item.privacy_policy_url" :sourceCode="item.github_url" :openSource="item.open_source"
         :free="item.free" :endorsed="item.endorsed" class="p-4 bg-white" :view="viewLayout" />
     </div>
@@ -72,6 +72,15 @@
           default:
             return ['published_at', -1];
         }
+      },
+    },
+    methods: {
+      checkPublisherType(item) {
+        // To prevent type error when passing the prop from publisher component
+        if (typeof item === 'number') {
+          return null
+        }
+        return item
       },
     }
   }
