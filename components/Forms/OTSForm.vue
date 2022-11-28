@@ -32,7 +32,7 @@ export default {
   components: {
     AppControlInput: () =>
       import("@/components/FormComponents/AppControlInput"),
-    AppButton: () => import("@/components/FormComponents/AppButton")
+    AppButton: () => import("@/components/FormComponents/AppButton"),
   },
   data() {
     return {
@@ -40,8 +40,8 @@ export default {
         name: "",
         email: "",
         subject: "",
-        description: ""
-      }
+        description: "",
+      },
     };
   },
   methods: {
@@ -60,31 +60,31 @@ export default {
                 internal: false,
                 sender: "Customer",
                 type: "web",
-                body: `${this.form.description}`
-              }
+                body: `${this.form.description}`,
+              },
             },
             {
               headers: {
-                Authorization: `Bearer ${this.$config.otsToken}`
-              }
+                Authorization: `Token token=${this.$config.otsToken}`,
+                "Content-Type": `application/json`,
+              },
             }
           )
-          .then(res => {
+          .then((res) => {
             if (res.status === 201) {
               this.$notify({
                 group: "feedback",
                 type: "success",
                 title: "Your inquiry has been sent",
                 text: "We will get back to you as soon as possible.",
-                width: "35%"
+                width: "35%",
               });
             } else {
               this.$notify({
                 group: "feedback",
                 type: "error",
-                text:
-                  "There was an error while sending your inquiry, please try again later.",
-                width: "35%"
+                text: "There was an error while sending your inquiry, please try again later.",
+                width: "35%",
               });
             }
           });
@@ -92,12 +92,11 @@ export default {
         this.$notify({
           group: "feedback",
           type: "error",
-          text:
-            "There was an error while sending your inquiry, please try again later.",
-          width: "35%"
+          text: "There was an error while sending your inquiry, please try again later.",
+          width: "35%",
         });
       }
-    }
-  }
+    },
+  },
 };
 </script>

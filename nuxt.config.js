@@ -93,6 +93,10 @@ export default {
     "/api": {
       target: process.env.DSP_API_URL,
       pathRewrite: { "^/api/": "" }
+    },
+    "/ots": {
+      target: process.env.OTS_API_URL,
+      pathRewrite: { "^/ots/": "" }
     }
   },
 
