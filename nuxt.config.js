@@ -21,7 +21,7 @@ export default {
       {
         src: "https://code.jquery.com/jquery-2.1.4.min.js",
         body: true,
-        type: "text/javascript",
+        type: "text/javascript"
       },
       {
         src: "https://ots.josa.ngo/assets/form/form.js",
@@ -46,7 +46,8 @@ export default {
     { src: "~/plugins/i18n" },
     { src: "~/plugins/datetime-filter" },
     { src: "~/plugins/vue2-filters" },
-    { src: "~/plugins/vue-agile" }
+    { src: "~/plugins/vue-agile" },
+    { src: "~/plugins/vue-notification", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -72,7 +73,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@josango/nuxt-build-banner',
+    "@josango/nuxt-build-banner",
     // https://go.nuxtjs.dev/axios
     [
       "@zecar/nuxt-matomo",
@@ -120,7 +121,7 @@ export default {
     lazy: true,
     langDir: "lang/",
     detectBrowserLanguage: false,
-    seo: true,
+    seo: true
   },
 
   moment: {
@@ -136,6 +137,9 @@ export default {
     }
   },
   publicRuntimeConfig: {
+    otsUrl: process.env.OTS_API_URL,
+    otsToken: process.env.OTS_API_TOKEN,
+    otsFormGroup: process.env.OTS_FORM_GROUP,
     APIBaseURL: process.env.DSP_API_URL,
     siteId: process.env.MATOMO_SITE_ID || 1,
     buildBranch: process.env.DRONE_BRANCH,
