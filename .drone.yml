@@ -19,7 +19,7 @@ steps:
         [
           DSP_API_URL=https://dsp.api.prod.josa.ngo,
           MATOMO_SITE_ID=3,
-          TARGET_ENV=development
+          TARGET_ENV=production
         ]
       build_args_from_env:
         [
@@ -32,7 +32,7 @@ steps:
         ]
       tags:
         - ${DRONE_COMMIT_SHA}
-        - latest
+        - stable
       username:
         from_secret: docker_username
       password:
