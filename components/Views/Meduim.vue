@@ -1,5 +1,5 @@
 <template>
-  <div class="view-full p-4 bg-white flex flex-row md:flex-col flex-no-wrap">
+  <div class="view-full p-4 bg-white flex flex-row md:flex-col flex-nowrap">
     <NuxtLink :to="link" class="block w-2/5 md:w-full flex-shrink-0">
       <UIImage v-if="image" :image="image" size="medium" class="image" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />

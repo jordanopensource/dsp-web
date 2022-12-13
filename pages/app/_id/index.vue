@@ -4,7 +4,7 @@
     <div v-else>
       <article v-if="app" class="container py-12">
         <div class="content">
-          <div class="flex flex-col sm:flex-row flex-no-wrap items-start mb-12">
+          <div class="flex flex-col sm:flex-row flex-nowrap items-start mb-12">
             <UIImage v-if="app.image" :image="app.image" size="medium" class="app-image" />
             <div class="mt-4 sm:mt-0 sm:ltr:ml-8 sm:rtl:mr-8">
               <h1>{{ app["name_" + $i18n.locale] }}</h1>
@@ -32,27 +32,27 @@
                       class="text-sm mx-1 align-middle display-faded">{{$t('commercial')}}</span>
                   </template>
                 </span>
-                <span class="ltr:mr-4 rtl:ml-4 flex flex-no-wrap items-center" v-if="app.endorsed">
+                <span class="ltr:mr-4 rtl:ml-4 flex flex-nowrap items-center" v-if="app.endorsed">
                   <img src="/images/logo/josa-icon-teal.svg" class="josa-icon inline" /><span
                     class="text-sm mx-1 align-middle">{{$t('endorsed')}}</span>
                 </span>
               </div>
             </div>
           </div>
-          <div class="flex flex-row flex-wrap md:flex-no-wrap my-12">
+          <div class="flex flex-row flex-wrap md:flex-nowrap my-12">
             <p class="display-excerpt mb-8 md:ltr:mr-8 md:rtl:ml-8 flex-grow" v-if="app['description_' + $i18n.locale]">
               {{ app["description_" + $i18n.locale] }}</p>
             <div class="flex flex-col justify-end min-w-max max-w-min">
               <a v-if="app.app_publisher.website_url" :href="app.app_publisher.website_url" target="_blank"
-                class="flex flex-row flex-no-wrap items-center"><i class="ri-global-fill"></i>
+                class="flex flex-row flex-nowrap items-center"><i class="ri-global-fill"></i>
                 <span class="mx-2">{{ $t('devWebsite') }}</span>
               </a>
               <a v-if="app.privacy_policy_url" :href="app.privacy_policy_url" target="_blank"
-                class="flex flex-row flex-no-wrap items-center"><i class="ri-shield-keyhole-fill"></i>
+                class="flex flex-row flex-nowrap items-center"><i class="ri-shield-keyhole-fill"></i>
                 <span class="mx-2">{{ $t('privacyPolicy') }}</span>
               </a>
               <a v-if="app.github_url" :href="app.github_url" target="_blank"
-                class="flex flex-row flex-no-wrap items-center"><i class="ri-github-fill"></i>
+                class="flex flex-row flex-nowrap items-center"><i class="ri-github-fill"></i>
                 <span class="mx-2">{{ $t('sourceCode') }}</span>
               </a>
               <hr class="w-full my-2">
@@ -84,6 +84,9 @@
           mac: 'ri-apple-fill',
           windows: 'ri-windows-fill',
           linux: 'ri-ubuntu-fill',
+          firefox: 'ri-firefox-fill',
+          chrome: 'ri-chrome-fill',
+          web: 'ri-global-fill',
         }
       }
     },
@@ -120,7 +123,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .app-image {
     width: 124px;
     height: 124px;

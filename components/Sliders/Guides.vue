@@ -52,7 +52,7 @@
 
 </script>
 
-<style>
+<style lang="postcss">
   .agile__slide {
     @apply h-full flex flex-col justify-start;
   }

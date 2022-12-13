@@ -2,7 +2,7 @@
   <div>
     <h3 class="mb-4">{{ title }}</h3>
     <a v-for="item in contentList" :key="item.id" :href="item.url" target="_blank"
-      class="mt-8 flex flex-row flex-no-wrap">
+      class="mt-8 flex flex-row flex-nowrap">
       <div class="">
         <UIImage v-if="item.image" :image="item.image" size="small" class="icon" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon" />

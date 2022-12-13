@@ -21,7 +21,7 @@ export default {
       {
         src: "https://code.jquery.com/jquery-2.1.4.min.js",
         body: true,
-        type: "text/javascript",
+        type: "text/javascript"
       },
       {
         src: "https://ots.josa.ngo/assets/form/form.js",
@@ -46,7 +46,8 @@ export default {
     { src: "~/plugins/i18n" },
     { src: "~/plugins/datetime-filter" },
     { src: "~/plugins/vue2-filters" },
-    { src: "~/plugins/vue-agile" }
+    { src: "~/plugins/vue-agile" },
+    { src: "~/plugins/vue-notification", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -66,12 +67,13 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
-    "tailwindcss-dir"
+    "tailwindcss-dir",
+    '@nuxt/postcss8'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@josango/nuxt-build-banner",
     // https://go.nuxtjs.dev/axios
     [
       "@zecar/nuxt-matomo",
@@ -91,6 +93,10 @@ export default {
     "/api": {
       target: process.env.DSP_API_URL,
       pathRewrite: { "^/api/": "" }
+    },
+    "/ots": {
+      target: process.env.OTS_API_URL,
+      pathRewrite: { "^/ots/": "" }
     }
   },
 
@@ -119,7 +125,7 @@ export default {
     lazy: true,
     langDir: "lang/",
     detectBrowserLanguage: false,
-    seo: true,
+    seo: true
   },
 
   moment: {
@@ -135,11 +141,21 @@ export default {
     }
   },
   publicRuntimeConfig: {
+    otsUrl: process.env.OTS_API_URL,
+    otsToken: process.env.OTS_API_TOKEN,
+    otsFormGroup: process.env.OTS_FORM_GROUP,
     APIBaseURL: process.env.DSP_API_URL,
     siteId: process.env.MATOMO_SITE_ID || 1,
     buildBranch: process.env.DRONE_BRANCH,
     buildID: process.env.DRONE_BUILD_PARENT,
-    buildCommitSHA: process.env.DRONE_COMMIT_SHA
+    buildCommitSHA: process.env.DRONE_COMMIT_SHA,
+    DRONE_COMMIT_SHA: process.env.DRONE_COMMIT_SHA,
+    DRONE_COMMIT_LINK: process.env.DRONE_COMMIT_LINK,
+    DRONE_BUILD_NUMBER: process.env.DRONE_BUILD_NUMBER,
+    DRONE_BUILD_LINK: process.env.DRONE_BUILD_LINK,
+    DRONE_REPO_LINK: process.env.DRONE_REPO_LINK,
+    DRONE_BUILD_FINISHED: process.env.DRONE_BUILD_FINISHED,
+    TARGET_ENV: process.env.TARGET_ENV
   },
 
   privateRuntimeConfig: {
@@ -148,6 +164,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ["vue-agile"]
+    transpile: ["vue-agile"],
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
   }
 };

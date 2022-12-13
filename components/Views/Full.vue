@@ -1,5 +1,5 @@
 <template>
-  <div class="view-full p-4 bg-white flex flex-row flex-wrap md:flex-no-wrap">
+  <div class="view-full p-4 bg-white flex flex-row flex-wrap md:flex-nowrap">
     <NuxtLink :to="link" class="block flex-shrink-0 w-full md:w-1/2 lg:w-2/5">
       <UIImage v-if="image" :image="image" size="medium" class="image" />
       <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
@@ -10,7 +10,7 @@
       </NuxtLink>
       <p>{{ dateUpdated | fullDate($i18n.locale) }}</p>
       <p class="flex-grow my-4">{{ description }}</p>
-      <div v-if="contributor" class="flex flex-row flex-no-wrap items-center">
+      <div v-if="contributor" class="flex flex-row flex-nowrap items-center">
         <UIImage v-if="contributor.image" :image="contributor.image" size="small" class="icon inline-block" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="icon inline-block" />
         <h4 class="inline-block ltr:ml-4 rtl:mr-4 max-w-xxs">{{contributor['name_' + $i18n.locale]}}</h4>
