@@ -33,7 +33,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .link {
     @apply cursor-pointer p-2;
   }

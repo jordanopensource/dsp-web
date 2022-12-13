@@ -60,13 +60,13 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .dropdown {
     @apply relative flex justify-start items-start;
   }
 
   .dropdown-link {
-    @apply w-full h-full flex flex-row flex-no-wrap items-center justify-start;
+    @apply w-full h-full flex flex-row flex-nowrap items-center justify-start;
   }
 
   .dropdown-link:hover>* {
