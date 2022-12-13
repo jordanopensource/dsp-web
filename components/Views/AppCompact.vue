@@ -1,6 +1,6 @@
 <template>
   <div class="view-compact flex flex-col">
-    <div class="flex flex-row flex-no-wrap md:flex-no-wrap flex-grow">
+    <div class="flex flex-row flex-nowrap md:flex-nowrap flex-grow">
       <div class="block flex-shrink-0 mb-4">
         <UIImage v-if="image" :image="image" size="medium" class="image" />
         <img v-else src="/images/placeholder.png" alt="Placeholder" class="image" />
@@ -13,7 +13,7 @@
         <h4 v-if="publisher" class="my-2">{{ publisher['title_' + $i18n.locale] }}</h4>
         <!-- </NuxtLink> -->
         <div class="my-2 flex flex-row">
-          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-no-wrap items-center">
+          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-nowrap items-center">
             <template v-if="openSource">
               <i class="ri-open-source-fill text-2xl align-middle text-josa-teal"></i>
               <span class="hidden sm:inline text-sm mx-1 align-middle" v-show="!viewGrid">{{$t('openSource')}}</span>
@@ -24,7 +24,7 @@
                 v-show="!viewGrid">{{$t('closedSource')}}</span>
             </template>
           </span>
-          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-no-wrap items-center">
+          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-nowrap items-center">
             <template v-if="free">
               <i class="ri-creative-commons-nc-fill text-2xl align-middle text-josa-teal"></i>
               <span class="hidden sm:inline text-sm mx-1 align-middle" v-show="!viewGrid">{{$t('free')}}</span>
@@ -35,7 +35,7 @@
                 v-show="!viewGrid">{{$t('commercial')}}</span>
             </template>
           </span>
-          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-no-wrap items-center" v-if="endorsed">
+          <span class="ltr:mr-2 rtl:ml-2 ltr:sm:mr-4 rtl:sm:ml-4 flex flex-nowrap items-center" v-if="endorsed">
             <img src="/images/logo/josa-icon-teal.svg" class="josa-icon inline" /><span
               class="hidden sm:inline text-sm mx-1 align-middle" v-show="!viewGrid">{{$t('endorsed')}}</span>
           </span>
@@ -81,6 +81,7 @@
           linux: 'ri-ubuntu-fill',
           firefox: 'ri-firefox-fill',
           chrome: 'ri-chrome-fill',
+          web: 'ri-global-fill',
         }
       }
     },
