@@ -84,6 +84,7 @@
           mac: 'ri-apple-fill',
           windows: 'ri-windows-fill',
           linux: 'ri-ubuntu-fill',
+          web: 'ri-global-fill',
         }
       }
     },
