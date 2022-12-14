@@ -70,7 +70,10 @@ export default {
     "tailwindcss-dir",
     '@nuxt/postcss8'
   ],
-
+  // nuxt router
+  router: {
+    middleware: ['onion-service']
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     "@josango/nuxt-build-banner",
