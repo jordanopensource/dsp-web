@@ -1,5 +1,8 @@
 import http from 'http'
 
 export default function (context) {
-  context.res.setHeader('Onion-Location', process.env.ONION_ADDRESS)
+  if (process.server) {
+    // const { req, res, beforeNuxtRender } = context
+    context.res.setHeader('Onion-Location', process.env.ONION_ADDRESS)
+  }
 }

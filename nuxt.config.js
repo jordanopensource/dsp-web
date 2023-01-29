@@ -72,7 +72,9 @@ export default {
   ],
   // nuxt router
   router: {
-    middleware: ['onion-service']
+    middleware: [
+      'onion-service'
+    ],
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
