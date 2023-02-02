@@ -8,9 +8,9 @@
             <UIImage v-if="app.image" :image="app.image" size="medium" class="app-image" />
             <div class="mt-4 sm:mt-0 sm:ltr:ml-8 sm:rtl:mr-8">
               <h1>{{ app["name_" + $i18n.locale] }}</h1>
-              <!-- <NuxtLink v-if="app.app_publisher" :to="publisherLink"> -->
-              <h3 v-if="app.app_publisher" class="my-2">{{ app.app_publisher['title_' + $i18n.locale] }}</h3>
-              <!-- </NuxtLink> -->
+              <NuxtLink v-if="app.app_publisher" :to="publisherLink">
+                <h3 class="my-2">{{ app.app_publisher['title_' + $i18n.locale] }}</h3>
+              </NuxtLink>
               <div class="mt-4 sm:mt-8 flex flex-col md:flex-row">
                 <span class="ltr:mr-4 rtl:ml-4">
                   <template v-if="app.open_source">
@@ -117,6 +117,11 @@
           statusCode: 404,
           message: '404 Page Not Found'
         })
+      }
+    },
+    computed: {
+      publisherLink() {
+          return this.localePath('/publisher/' + this.app.app_publisher.id)
       }
     }
   }
