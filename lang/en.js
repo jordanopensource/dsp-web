@@ -34,14 +34,30 @@ export default {
   apps: 'Apps',
   home: 'Home',
   error: {
-    ops: 'Oops!',
-    lost: 'We can\'t seem to find the page you are looking for.',
-    links: 'Here are some helpful links instead:',
+    ops: "Oops!",
+    lost: "We can't seem to find the page you are looking for.",
+    links: "Here are some helpful links instead:"
   },
   sort: {
-    publishedAtDESC: 'Newest',
-    publishedAtASC: 'Oldest',
-    alphabeticallyASC: 'Alphabetically from A to Z',
-    alphabeticallyDESC: 'Alphabetically from Z to A',
+    publishedAtDESC: "Newest",
+    publishedAtASC: "Oldest",
+    alphabeticallyASC: "Alphabetically from A to Z",
+    alphabeticallyDESC: "Alphabetically from Z to A"
   },
-}
+  feedback: {
+    title: "Feedback and Inquiries",
+    description:
+      "Whoever you are, whether you are happy or unhappy about any aspect of our activity or work, we value you feedback.",
+    fillForm:
+      "If you have a comment or complaint, please fill in our online feedback form below.",
+    form: {
+      subject: "What is your feedback or inquiry about?",
+      inquiry: "Please describe it in details.",
+      name: "Your Name",
+      email: "Your Email",
+      submit: "Submit"
+    },
+    sent: "Thank you for your feedback!",
+    fail: "Sorry! Something went wrong, please try again later."
+  }
+};

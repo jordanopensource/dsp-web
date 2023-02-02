@@ -79,6 +79,9 @@
           mac: 'ri-apple-fill',
           windows: 'ri-windows-fill',
           linux: 'ri-ubuntu-fill',
+          firefox: 'ri-firefox-fill',
+          chrome: 'ri-chrome-fill',
+          web: 'ri-global-fill',
         }
       }
     },

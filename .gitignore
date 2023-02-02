@@ -138,6 +138,7 @@ dist
 *.launch
 .settings/
 *.sublime-workspace
+jsconfig.json
 
 # Other
 assets/data
