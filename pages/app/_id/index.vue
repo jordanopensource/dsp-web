@@ -98,8 +98,8 @@
                 :href="app.github_url"
                 target="_blank"
                 class="flex flex-row flex-nowrap items-center"
-                ><i class="ri-github-fill"></i>
-                <span class="mx-2">{{ $t("sourceCode") }}</span>
+                ><i :class="logos.versionControl"></i>
+                <span class="mx-2">{{ $t("versionControl") }}</span>
               </a>
               <hr class="w-full my-2" />
               <div v-if="app.Platform.length">
@@ -138,31 +138,17 @@ export default {
         firefox: "ri-firefox-fill",
         chrome: "ri-chrome-fill",
         web: "ri-global-fill",
+        versionControl: "ri-git-repository-fill",
       },
     };
   },
   async fetch() {
-    var app = await this.$store.state.apps.list.find((obj) => {
-      return obj.id == this.$route.params.id;
-    });
     try {
-      if (app && app.id == this.$route.params.id) {
-        this.app = app;
-        return app;
-      } else if (!app) {
-        await this.$store.dispatch("apps/fetch");
-        app = await this.$store.state.apps.list.find((obj) => {
-          return obj.id == this.$route.params.id;
-        });
-        if (app && app.id == this.$route.params.id) {
-          this.app = app;
-          return app;
-        } else {
-          throw 404;
-        }
-      } else {
-        throw 404;
-      }
+      const response = await this.$axios.get(
+        `/api/apps/${this.$route.params.id}`
+      );
+      this.app = response.data;
+      console.log(this.app);
     } catch (err) {
       return this.$nuxt.error({
         statusCode: 404,
