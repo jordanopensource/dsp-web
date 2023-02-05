@@ -17,8 +17,8 @@ steps:
       repo: josaorg/dsp-web
       build_args:
         [
-          DSP_API_URL=https://dsp.api.dev.josa.ngo,
-          MATOMO_SITE_ID=5,
+          DSP_API_URL=https://dsp.api.prod.josa.ngo,
+          MATOMO_SITE_ID=3,
           TARGET_ENV=development,
           ONION_ADDRESS=http://l4sfvhqr7ucjprkiik6cryrysfmgzjvv4koykokfargphihqmglx2xid.onion,
         ]
