@@ -33,7 +33,7 @@ steps:
         ]
       tags:
         - ${DRONE_COMMIT_SHA}
-        - latest
+        - stable
       username:
         from_secret: docker_username
       password:
