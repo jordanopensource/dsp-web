@@ -15,11 +15,12 @@ steps:
     image: plugins/docker
     settings:
       repo: josaorg/dsp-web
-      build_args: 
+      build_args:
         [
-          DSP_API_URL=https://dsp.api.prod.josa.ngo,
-          MATOMO_SITE_ID=3,
-          TARGET_ENV=production
+          DSP_API_URL=https://dsp.api.dev.josa.ngo,
+          MATOMO_SITE_ID=5,
+          TARGET_ENV=development,
+          ONION_ADDRESS=http://l4sfvhqr7ucjprkiik6cryrysfmgzjvv4koykokfargphihqmglx2xid.onion,
         ]
       build_args_from_env:
         [

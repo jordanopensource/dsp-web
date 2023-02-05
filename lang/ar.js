@@ -7,6 +7,7 @@ export default {
   allApps: "جميع التطبيقات",
   apps: "التطبيقات",
   all: "الجميع",
+  appsBy: "تطبيقات من",
   content: "المحتوى",
   weeklyRecommendations: "تطبيقات مقترحة أسبوعياً",
   availableOn: "متوفر على",
@@ -32,17 +33,18 @@ export default {
   guides: "أدلة إرشادية",
   apps: "التطبيقات",
   home: "الصحفة الرئيسية",
+  versionControl: "التحكم بالمصدر",
   error: {
     ops: "عفوًا!",
     lost: "يبدو أننا لا نستطيع العثور على الصفحة التي تبحث عنها.",
     links: "إليك بعض الروابط المفيدة بدلاً من ذلك:",
-    home: "الصفحة الرئيسية"
+    home: "الصفحة الرئيسية",
   },
   sort: {
     publishedAtDESC: "الأحدث",
     publishedAtASC: "الأقدم",
     alphabeticallyASC: "أبجدياً من أ إلى ي",
-    alphabeticallyDESC: "أبجدياً من ي إلى أ"
+    alphabeticallyDESC: "أبجدياً من ي إلى أ",
   },
   feedback: {
     title: "الاقتراحات والاستفسارات",
@@ -55,7 +57,7 @@ export default {
       inquiry: "نرجو إضافة أي تفاصيل عنه",
       name: "اسمك",
       email: "بريدك الإلكتروني",
-      submit: "إرسال"
-    }
-  }
+      submit: "إرسال",
+    },
+  },
 };

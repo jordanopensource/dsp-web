@@ -7,6 +7,7 @@ export default {
   allApps: "All Apps",
   apps: "Apps",
   all: "All",
+  appsBy: "Apps by",
   content: "Content",
   weeklyRecommendations: "Weekly Recommendations",
   availableOn: "Available on",
@@ -32,16 +33,17 @@ export default {
   guides: "Guides",
   apps: "Apps",
   home: "Home",
+  versionControl: "Version Control",
   error: {
     ops: "Oops!",
     lost: "We can't seem to find the page you are looking for.",
-    links: "Here are some helpful links instead:"
+    links: "Here are some helpful links instead:",
   },
   sort: {
     publishedAtDESC: "Newest",
     publishedAtASC: "Oldest",
     alphabeticallyASC: "Alphabetically from A to Z",
-    alphabeticallyDESC: "Alphabetically from Z to A"
+    alphabeticallyDESC: "Alphabetically from Z to A",
   },
   feedback: {
     title: "Feedback and Inquiries",
@@ -54,9 +56,9 @@ export default {
       inquiry: "Please describe it in details.",
       name: "Your Name",
       email: "Your Email",
-      submit: "Submit"
+      submit: "Submit",
     },
     sent: "Thank you for your feedback!",
-    fail: "Sorry! Something went wrong, please try again later."
-  }
+    fail: "Sorry! Something went wrong, please try again later.",
+  },
 };
